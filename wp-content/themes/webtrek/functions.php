@@ -44,7 +44,7 @@ if ( ! function_exists( 'webtrek_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'webtrek' ),
+			'primary' => esc_html__( 'Primary', 'webtrek' ),
 		) );
 
 		/*
@@ -210,3 +210,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Remove Admin Bar
+ */
+add_filter('show_admin_bar', '__return_false');
+
+
+
+/**
+ * Bootstrap navwalker
+ */
+require_once get_template_directory() . '/inc/bootstrap-navwalker.php';

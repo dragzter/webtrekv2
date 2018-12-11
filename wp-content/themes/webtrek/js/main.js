@@ -40,24 +40,27 @@
       id: 'mobile-nav'
     });
     $mobile_nav.find('> ul').attr({
-      'class': '',
+      'class': 'test',
       'id': ''
     });
     $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>');
+    $('.appender').prepend('<div id="mobile-toggle-wrapper"><button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button></div>');
     $('body').append('<div id="mobile-body-overly"></div>');
-    $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
+    $('#mobile-nav').find('.dropdown-toggle').addClass('chevron-down');
 
-    $(document).on('click', '.menu-has-children i', function(e) {
+    $('#mobile-toggle-wrapper').addClass('text-right order-last col align-self-center')
+
+    $('.dropdown-toggle').click(function() {
       $(this).next().toggleClass('menu-item-active');
       $(this).nextAll('ul').eq(0).slideToggle();
-      $(this).toggleClass("fa-chevron-up fa-chevron-down");
+      $(this).toggleClass("chevron-up chevron-down");
     });
 
     $(document).on('click', '#mobile-nav-toggle', function(e) {
       $('body').toggleClass('mobile-nav-active');
       $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
       $('#mobile-body-overly').toggle();
+      
     });
 
     $(document).click(function(e) {

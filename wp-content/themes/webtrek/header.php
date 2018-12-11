@@ -42,35 +42,38 @@
   ============================-->
   <header id="header">
     <div class="container-fluid">
-
+    <div class="row align-items-center appender">
+      <div class="col">
+      
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">BizPage</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-         <a href="#intro"><?php the_custom_logo(); ?></a>
-	  </div>
-	  
+        <?php the_custom_logo(); ?>
+	    </div>
+      </div>
+      <div class="col">
+      <nav id="nav-menu-container" role="navigation">
+        
+          <?php
+          wp_nav_menu( array(
+            'theme_location'    => 'primary',
+            'depth'             => 2,
+            'container'         => 'ul',
+            'container_class'   => 'collapse navbar-collapse nav-menu',
+            'container_id'      => 'nabvar-container',
+            'menu_class'        => 'nav-menu',
+            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'            => new WP_Bootstrap_Navwalker(),
+          ) );
+          ?>
+       
+      </nav>
+      </div>
+      
+      
+    </div>
+      
 
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="menu-has-children"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
-		</ul>
-		
 
 
-
-      </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
