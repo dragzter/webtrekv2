@@ -15,49 +15,51 @@ get_header(); ?>
 
 <main id="main"><?php  
 
-    $box = rwmb_meta('testmeta');
+    $box = rwmb_meta('section_control');
 
     foreach($box as $key => $value) {
 
-        if ($value['test1'] == 'cta') {
+        if ($value['section_selector'] == 'cta') {
             get_partial_cta($value['cta']);
         } 
-        if ($value['test1'] == 'clients') {
+        if ($value['section_selector'] == 'clients') {
             get_partial_clients('placeholder');
         } 
-        if ($value['test1'] == 'about') {
+        if ($value['section_selector'] == 'about') {
             get_partial_about('placeholder');
         } 
-        if ($value['test1'] == 'contact') {
+        if ($value['section_selector'] == 'contact') {
             get_partial_contact('placeholder');
         }
-        if ($value['test1'] == 'facts') {
+        if ($value['section_selector'] == 'facts') {
             get_partial_facts('placeholder');
         } 
-        if ($value['test1'] == 'featured_services') {
+        if ($value['section_selector'] == 'featured_services') {
             get_partial_featured_services('placeholder');
         }
-        if ($value['test1'] == 'services') {
+        if ($value['section_selector'] == 'services') {
             get_partial_services('placeholder');
         } 
-        if ($value['test1'] == 'hero') {
-            get_partial_intro('placeholder');
+        if ($value['section_selector'] == 'alt-hero') {
+            get_partial_alt_hero('placeholder');
         }
-        if ($value['test1'] == 'portfolio') {
+        if ($value['section_selector'] == 'hero') {
+            get_partial_hero('placeholder');
+        }
+        if ($value['section_selector'] == 'portfolio') {
             get_partial_portfolio('placeholder');
         } 
-        if ($value['test1'] == 'skills') {
+        if ($value['section_selector'] == 'skills') {
             get_partial_skills('placeholder');
         }
-        if ($value['test1'] == 'team') {
+        if ($value['section_selector'] == 'team') {
             get_partial_team('placeholder');
         } 
-        if ($value['test1'] == 'testimonials') {
+        if ($value['section_selector'] == 'testimonials') {
             get_partial_testimonials('placeholder');
         }
     }
    
- 
 ?>
 </main><?php 
 

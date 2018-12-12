@@ -190,7 +190,7 @@ require get_template_directory() . '/inc/metabox/metabox.php';
  * Partials
  */
 require get_template_directory() . '/partials/partial-cta.php';
-require get_template_directory() . '/partials/partial-intro.php';
+require get_template_directory() . '/partials/partial-hero.php';
 require get_template_directory() . '/partials/partial-about-us.php';
 require get_template_directory() . '/partials/partial-clients.php';
 require get_template_directory() . '/partials/partial-contact.php';
@@ -201,6 +201,7 @@ require get_template_directory() . '/partials/partial-services.php';
 require get_template_directory() . '/partials/partial-skills.php';
 require get_template_directory() . '/partials/partial-team.php';
 require get_template_directory() . '/partials/partial-testimonials.php';
+require get_template_directory() . '/partials/partial-alternate-hero.php';
 
 
 /**

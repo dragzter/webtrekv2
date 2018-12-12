@@ -48,7 +48,7 @@
     $('body').append('<div id="mobile-body-overly"></div>');
     $('#mobile-nav').find('.dropdown-toggle').addClass('chevron-down');
 
-    $('#mobile-toggle-wrapper').addClass('text-right order-last col align-self-center')
+    $('#mobile-toggle-wrapper').addClass('text-right order-last col align-self-center d-md-none')
 
     $('.dropdown-toggle').click(function() {
       $(this).next().toggleClass('menu-item-active');

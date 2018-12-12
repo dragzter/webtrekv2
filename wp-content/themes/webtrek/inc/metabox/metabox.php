@@ -8,9 +8,9 @@ function metabox_section_creator( $meta_boxes ) {
         'fields'        => array(
 
             array(
-                'id'            => 'testmeta',
+                'id'            => 'section_control',
                 'type'          => 'group',
-                'group_title'   => array('field' => 'test1'),
+                'group_title'   => array('field' => 'section_selector'),
                 'clone'         => true,
                 'sort_clone'    => true,
                 'collapsible'   => true,
@@ -20,7 +20,7 @@ function metabox_section_creator( $meta_boxes ) {
                 'fields' => array(
                     array(
                         'name'  => 'selector',
-                        'id'=> 'test1',
+                        'id'=> 'section_selector',
                         'type' => 'select',
                         'options' => array(
                             'cta' => 'cta section',
@@ -31,6 +31,7 @@ function metabox_section_creator( $meta_boxes ) {
                             'featured_services' => 'featured services section',
                             'services' => 'services section',
                             'hero' => 'hero section',
+                            'alt-hero' => 'alt hero section',
                             'portfolio' => 'portfolio section',
                             'skills' => 'skills section',
                             'team' => 'team section',
@@ -46,7 +47,7 @@ function metabox_section_creator( $meta_boxes ) {
                         'group_title'   => array('field' => 'client_heading'),
                         'collapsible'   => true,
                         'save_state'    => true,
-                        'visible'       => array( 'test1', '=', 'clients' ),
+                        'visible'       => array( 'section_selector', '=', 'clients' ),
                         'fields'        => array(
                             array(
                                 'name'      => 'Client Heading',
@@ -68,7 +69,7 @@ function metabox_section_creator( $meta_boxes ) {
                         'group_title'   => array('field' => 'cta_heading'),
                         'collapsible'   => true,
                         'save_state'    => true,
-                        'visible'       => array( 'test1', '=', 'cta' ),
+                        'visible'       => array( 'section_selector', '=', 'cta' ),
                         'fields'        => array(
                             array(
                                 'name'      => 'CTA Heading',
