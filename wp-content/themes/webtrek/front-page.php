@@ -40,11 +40,8 @@ get_header(); ?>
         if ($value['section_selector'] == 'services') {
             get_partial_services('placeholder');
         } 
-        if ($value['section_selector'] == 'alt-hero') {
-            get_partial_alt_hero('placeholder');
-        }
         if ($value['section_selector'] == 'hero') {
-            get_partial_hero('placeholder');
+            get_partial_hero($value['hero']);
         }
         if ($value['section_selector'] == 'portfolio') {
             get_partial_portfolio('placeholder');

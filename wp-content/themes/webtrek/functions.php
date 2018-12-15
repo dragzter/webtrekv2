@@ -201,7 +201,6 @@ require get_template_directory() . '/partials/partial-services.php';
 require get_template_directory() . '/partials/partial-skills.php';
 require get_template_directory() . '/partials/partial-team.php';
 require get_template_directory() . '/partials/partial-testimonials.php';
-require get_template_directory() . '/partials/partial-alternate-hero.php';
 
 
 /**
@@ -215,8 +214,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Remove Admin Bar
  */
 add_filter('show_admin_bar', '__return_false');
-
-
 
 /**
  * Bootstrap navwalker

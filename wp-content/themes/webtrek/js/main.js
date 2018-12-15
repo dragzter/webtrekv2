@@ -121,6 +121,14 @@
   });
 
   // Intro carousel
+
+  // Kick off the carousel
+  $(document).ready(function() {
+    var introInner = $('.carousel-inner');
+    introInner.children()[0].classList.add('active');
+  })
+  
+
   var introCarousel = $(".carousel");
   var introCarouselIndicators = $(".carousel-indicators");
   introCarousel.find(".carousel-inner").children(".carousel-item").each(function(index) {
@@ -137,7 +145,8 @@
       if (direction == 'left') $(this).carousel('next');
       if (direction == 'right') $(this).carousel('prev');
     },
-    allowPageScroll:"vertical"
+    allowPageScroll:"vertical",
+    
   });
 
   // Skills section
