@@ -2,7 +2,8 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all of the <head> section
+ * Closing </body> and </html> 
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -35,16 +36,13 @@
 
 <body <?php body_class(); ?>>
 
-  <!--==========================
-    Header
-  ============================-->
+  <!-- Header -->
   <header id="header">
     <div class="container-fluid">
     <div class="row align-items-center appender">
       <div class="col">
       
       <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use an image logo -->
         <?php the_custom_logo(); ?>
 	    </div>
       </div>

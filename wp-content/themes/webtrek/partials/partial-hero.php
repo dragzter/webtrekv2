@@ -1,8 +1,12 @@
 <?php  
 function get_partial_hero($mb) { 
-    
+
+
     $slide_count = count($mb['hero_slide']); 
-    $height = (isset($mb['section_height'])) ? 'height:'.$mb['section_height'].';': 'height: 100vh;'; ?>
+    $height = (isset($mb['section_height'])) ? 'height:'.$mb['section_height'].';': 'height: 100vh;';
+    
+    
+    ?>
  
     <!-- Hero Section Partial -->
     <section id="intro" style="<?php echo $height; ?>">
@@ -55,3 +59,16 @@ function get_partial_hero($mb) {
 
 <?php 
 }
+
+// function do_hero_style($mb) {
+    
+//     $output = '';
+//     $output .= '<style>';
+//     $output .= '#intro .carousel-item::before { ';
+//     $output .= 'background-color: '.$mb['section_overlay_color'] .'; ';
+//     $output .= 'opacity: '.$mb['section_overlay_opacity'].';';
+//     $output .= '}';
+//     $output .= ' </style>';
+//     echo $output;
+// }
+// add_action( 'wp_head', 'do_hero_style');

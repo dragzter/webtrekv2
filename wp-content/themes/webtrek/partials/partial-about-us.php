@@ -1,61 +1,65 @@
 <?php 
-function get_partial_about($mb) { ?>
-    <!--==========================
-      About Us Section
-    ============================-->
-    <section id="about">
+function get_partial_about($mb) { 
+    
+    $heading = (isset($card['about_heading'])) ? '<h3>'.$card['about_heading'].'</h3>' : '';
+    $text = (isset($card['about_text'])) ? '<p>'.$card['about_text'].'</p>' : '';
+    $text_align;
+
+    ?>
+    
+    <!-- About Us Section -->
+    <section id="about" class="">
         <div class="container">
 
-            <header class="section-header">
-            <h3>About Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <header class="section-header"><?php
+                echo $heading;
+                echo $text; ?>
             </header>
 
-            <div class="row about-cols">
 
-            <div class="col-md-4 wow fadeInUp">
-                <div class="about-col">
-                <div class="img">
-                    <img src="<?php echo get_template_directory_uri() . '/img/about-mission.jpg' ?>" alt="" class="img-fluid">
-                    <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-                </div>
-                <h2 class="title"><a href="#">Our Mission</a></h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                </div>
+            <div class="row about-cols justify-content-center"><?php 
+
+                if (isset($mb['about_cards'])) {
+                    foreach( $mb['about_cards'] as $card ) { 
+                        
+                        $card_title = (isset($card['about_card_title'])) ? $card['about_card_title'] : '';
+                        $card_title_url = (isset($card['about_card_title_url'])) ? $card['about_card_title_url'] : '#';
+
+                        $card_text = (isset($card['about_card_text'])) ? $card['about_card_text'] : '';
+
+                        $card_icon = (isset($card['about_card_icon'])) ? $card['about_card_icon'] : '';
+                        $card_image = (isset($card['about_card_img'])) ? $card['about_card_img'] : 'https://via.placeholder.com/150x150';                
+                        
+                        $card_blank = (isset($card['about_card_blank'])) ? 'target="_blank"' : ''; ?>
+
+                    <div class="col-md-4 align-self-center wow fadeInUp">
+                        <div class="about-col">
+                            <div class="img"><?php
+
+                                if ($card_image !== '') {
+                                    echo "<img src='{$card_image}' alt='' class='img-fluid'>";
+                                }
+
+                                if ($card_icon !== '') {
+                                echo "<div class='icon'><i class='{$card_icon}'></i></div>";
+                                } ?>
+
+                            </div><?php 
+
+                                if ($card_title !== '') { 
+                                    echo "<h2 {$card_blank} class='title'><a href='{$card_title_url}'>{$card_title}</a></h2>";
+                                } 
+                                
+                                if ($card_text !== '') {
+                                    echo "<p>{$card_text}</p>";
+                                } ?>
+
+                        </div>
+                    </div><?php
+                    } 
+                } ?>
             </div>
-
-            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="about-col">
-                <div class="img">
-                    <img src="<?php echo get_template_directory_uri() . '/img/about-plan.jpg' ?>" alt="" class="img-fluid">
-                    <div class="icon"><i class="ion-ios-list-outline"></i></div>
-                </div>
-                <h2 class="title"><a href="#">Our Plan</a></h2>
-                <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem  doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                </p>
-                </div>
-            </div>
-
-            <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="about-col">
-                <div class="img">
-                    <img src="<?php echo get_template_directory_uri() . '/img/about-vision.jpg' ?>" alt="" class="img-fluid">
-                    <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-                </div>
-                <h2 class="title"><a href="#">Our Vision</a></h2>
-                <p>
-                    Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-                </p>
-                </div>
-            </div>
-
-            </div>
-
         </div>
     </section><!-- #about -->
-
 <?php
 }

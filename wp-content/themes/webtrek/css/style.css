@@ -883,24 +883,24 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Clients Section
   --------------------------------*/
-#clients {
+.clients {
   padding: 60px 0; }
 
-#clients img {
+.clients img {
   max-width: 100%;
   opacity: 0.5;
   transition: 0.3s;
   padding: 15px 0; }
 
-#clients img:hover {
+.clients img:hover {
   opacity: 1; }
 
-#clients .owl-nav,
-#clients .owl-dots {
+.clients .owl-nav,
+.clients .owl-dots {
   margin-top: 5px;
   text-align: center; }
 
-#clients .owl-dot {
+.clients .owl-dot {
   display: inline-block;
   margin: 0 5px;
   width: 12px;
@@ -908,7 +908,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-radius: 50%;
   background-color: #ddd; }
 
-#clients .owl-dot.active {
+.clients .owl-dot.active {
   background-color: #18d26e; }
 
 /* Testimonials Section

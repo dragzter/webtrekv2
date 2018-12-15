@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * @package Metabox
+ * @version 4.15.9
+ * 
+ * @package Metabox Group
+ * @version 1.2.17
+ * 
+ * @package Metabox Show Hide
+ * @version 1.1.0
+ * 
+ * @link https://metabox.io
+ * 
+ */
+
 add_filter( 'rwmb_meta_boxes', 'metabox_section_creator' );
 function metabox_section_creator( $meta_boxes ) {
     $meta_boxes[] = array(
@@ -38,29 +52,176 @@ function metabox_section_creator( $meta_boxes ) {
                         ),
                         'placeholder'     => 'Select an Item',
                     ),
-                    // Clients Section
+                     
+                    /**
+                     *  Section Arrays 
+                     *  For individual content blocks at page level
+                     */
+
+                    // About Section
                     array(
-                        'name'          => 'Clients Section',
+                        'name'          => 'About Section',
+                        'id'            => 'about',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'about' ),
+                        'group_title'   => 'Settings',
+                        'fields' => array(
+                            array(
+                                'name'      => 'Heading',
+                                'id'        => 'about_heading',
+                                'type'      => 'text',
+                            ),
+                            array(
+                                'name'      => 'Text',
+                                'id'        => 'about_text',
+                                'type'      => 'textarea',
+                            ),
+                            array(
+                                'name' => 'Text Alignment',
+                                'id' => 'about_text_align',
+                                'type' => 'select',
+                                'options' => array(
+                                    'text-left' => 'Left Align',
+                                    'text-center' => 'Center Align',
+                                    'text-right' => 'Right Align'
+                                ),
+                                'std' => 'text-center',
+                            ),
+                            array(
+                                'id'            => 'about_cards',
+                                'type'          => 'group',
+                                'group_title'   => 'Card {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'    => array(
+                                    array(
+                                        'name'      => 'Card Title',
+                                        'id'        => 'about_card_title',
+                                        'type'      => 'text',
+                                    ),
+                                    array(
+                                        'name'      => 'Card Title URL',
+                                        'id'        => 'about_card_title_url',
+                                        'type'      => 'url',
+                                    ),
+                                    array(
+                                        'name'      => 'Card Text',
+                                        'id'        => 'about_card_text',
+                                        'type'      => 'textarea',
+                                    ),
+                                    array(
+                                        'name'      => 'Card Icon',
+                                        'id'        => 'about_card_icon',
+                                        'type'      => 'text',
+                                        'desc' => 'Get Class names at https://ionicons.com/v2/ (One class name per card)',
+                                    ),
+                                    array(
+                                        'name'      => 'Card Image',
+                                        'id'        => 'about_card_img',
+                                        'type'      => 'url',
+                                    ),
+                                    array(
+                                        'name'      => 'Open in new tab?',
+                                        'id'        => 'about_card_blank',
+                                        'type'      => 'checkbox',
+                                    ),
+                                ),
+                            ),     
+                        ),
+                    ),
+
+                    // CTA Section array
+                    array(
+                        'name' => 'CTA Section',
+                        'id' => 'cta',
+                        'type' => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'cta' ),
+                        'group_title'   => 'Settings',
+                        'fields' => array(
+                            array(
+                                'name' => 'Heading',
+                                'id' => 'cta_heading',
+                                'type' => 'text',
+                            ),
+                            array(
+                                'name' => 'Text',
+                                'id' => 'cta_text',
+                                'type' => 'textarea',
+                            ),
+                            array(
+                                'name' => 'Btn Text',
+                                'id' => 'cta_btn_text',
+                                'type' => 'text',
+                            ),
+                            array(
+                                'name' => 'Btn URL',
+                                'id' => 'cta_btn_url',
+                                'type' => 'url',
+                            ),
+                            array(
+                                'name' => 'Open in new tab?',
+                                'id' => 'cta_blank',
+                                'type' => 'checkbox',
+                            ),
+                            array(
+                                'name' => 'Text Alignment',
+                                'id' => 'cta_text_align',
+                                'type' => 'select',
+                                'options' => array(
+                                    'text-left' => 'Left Align',
+                                    'text-center' => 'Center Align',
+                                    'text-right' => 'Right Align'
+                                ),
+                                'std' => 'text-center',
+                            ),
+                        ),
+                    ),
+
+                    // Clients / Affiliations Section array
+                    array(
+                        'name'          => 'Clients / Affiliations Section',
                         'id'            => 'client',
                         'type'          => 'group',
-                        'group_title'   => array('field' => 'client_heading'),
+                        'group_title'   => 'Settings',
                         'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'clients' ),
                         'fields'        => array(
                             array(
-                                'name'      => 'Client Heading',
+                                'name'      => 'Heading',
                                 'id'        => 'client_heading',
                                 'type'      => 'text',
                             ),
                             array(
-                                'name'      => 'Client Text',
-                                'id'        => 'client_text',
-                                'type'      => 'text',
+                                'name'      => 'Sub Text',
+                                'id'        => 'client_subtext',
+                                'type'      => 'textarea',
+                            ),
+                            array(
+                                'id'            => 'client_image',
+                                'type'          => 'group',
+                                'group_title'   => 'Image {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(       
+                                        'name'      => 'Image Slide',
+                                        'id'        => 'image',
+                                        'type'      => 'url',          
+                                    ),
+                                ),
                             ),
                         ),
                     ),
-                    // Hero section (Array to pass into hero partial)
+                    // Hero section array
                     array(
                         'id'            => 'hero',
                         'type'          => 'group',
@@ -74,30 +235,6 @@ function metabox_section_creator( $meta_boxes ) {
                                 'name'      => 'Hero Height',
                                 'id'        => 'section_height',
                                 'type'      => 'text',         
-                            ),
-                            array(      
-                                'name'      => 'Hero Overlay Color',
-                                'id'        => 'section_overlay_color',
-                                'type'      => 'color',         
-                            ),
-                            array(      
-                                'name'      => 'Hero Overlay Opacity',
-                                'id'        => 'section_overlay_opacity',
-                                'type'      => 'select',  
-                                'options' => array(
-                                    '0' => 'Transparent',
-                                    '10' => '10%',
-                                    '20' => '20%',
-                                    '30' => '30%',
-                                    '40' => '40%',
-                                    '50' => '50%',
-                                    '60' => '60%',
-                                    '70' => '70%',
-                                    '80' => '80%',
-                                    '90' => '90%',
-                                    '100' => '100%',
-                                ),
-                                'placeholder'     => 'Select Opacity',      
                             ),
                             array(      
                                 'name'      => 'Add Slides?',
