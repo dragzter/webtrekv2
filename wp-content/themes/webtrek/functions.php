@@ -185,6 +185,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Custom Functions and Includes
  */
 require get_template_directory() . '/inc/metabox/metabox.php';
+require get_template_directory() . '/inc/custom-functions/webtrek.php';
 
 /**
  * Partials
@@ -201,6 +202,7 @@ require get_template_directory() . '/partials/partial-services.php';
 require get_template_directory() . '/partials/partial-skills.php';
 require get_template_directory() . '/partials/partial-team.php';
 require get_template_directory() . '/partials/partial-testimonials.php';
+require get_template_directory() . '/partials/partial-content.php';
 
 
 /**

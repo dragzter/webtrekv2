@@ -1,22 +1,18 @@
 <?php  
 function get_partial_hero($mb) { 
-
-
-    $slide_count = count($mb['hero_slide']); 
-    $height = (isset($mb['section_height'])) ? 'height:'.$mb['section_height'].';': 'height: 100vh;';
-    
-    
-    ?>
+    $height = (isset($mb['section_height'])) ? 'height:'.$mb['section_height'].';': 'height: 100vh;'; ?>
  
     <!-- Hero Section Partial -->
     <section id="intro" style="<?php echo $height; ?>">
         <div class="intro-container">
             <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
-
                 <ol class="carousel-indicators"></ol>
 
                 <div class="carousel-inner" role="listbox"><?php 
                 if ($mb['use_slides'] == 'yes') {
+
+                    $slide_count = count($mb['hero_slide']); 
+
                     foreach ( $mb['hero_slide'] as $slide  ) { 
                     
                     $heading = (isset($slide['slide_heading'])) ? '<h2>'.$slide['slide_heading'].'</h2>'  : '';
@@ -39,7 +35,7 @@ function get_partial_hero($mb) {
                         </div>
                     </div><?php
                     }
-                } ?>
+                 ?>
                 </div><!-- carousel-inner -->
                 <?php  
                 if ( $slide_count >= 2 ) { ?>
@@ -52,23 +48,9 @@ function get_partial_hero($mb) {
                     <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a><?php 
+                }
                 } ?>
             </div>
         </div>
-    </section><!-- #intro -->
-
-<?php 
+    </section><!-- #intro --><?php 
 }
-
-// function do_hero_style($mb) {
-    
-//     $output = '';
-//     $output .= '<style>';
-//     $output .= '#intro .carousel-item::before { ';
-//     $output .= 'background-color: '.$mb['section_overlay_color'] .'; ';
-//     $output .= 'opacity: '.$mb['section_overlay_opacity'].';';
-//     $output .= '}';
-//     $output .= ' </style>';
-//     echo $output;
-// }
-// add_action( 'wp_head', 'do_hero_style');

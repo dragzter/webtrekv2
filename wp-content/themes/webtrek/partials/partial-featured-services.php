@@ -1,34 +1,33 @@
 <?php 
-
 function get_partial_featured_services($mb) { ?>
-   <!--==========================
-      Featured Services Section
-    ============================-->
+
+   <!-- Featured Services Section -->
     <section id="featured-services">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center"><?php
+            if (isset($mb['featured_box'])) {
 
-            <div class="col-lg-4 box">
-                <i class="ion-ios-bookmarks-outline"></i>
-                <h4 class="title"><a href="">Lorem Ipsum Delino</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
+                $box_width = Webtrek::if_exists($mb, 'feat_box_width');
 
-            <div class="col-lg-4 box box-bg">
-                <i class="ion-ios-stopwatch-outline"></i>
-                <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
+                foreach($mb['featured_box'] as $box) {
+                    
+                    $icon = Webtrek::if_exists($box, 'box_icon');
+                    $link_url = Webtrek::if_exists($box, 'link_url');
+                    $link_text_title = Webtrek::if_exists($box, 'link_text');
+                    $text = Webtrek::if_exists($box, 'box_text', 'p', 'description testt');
+                    $d_icon = Webtrek::display(array($icon));
+                    $d_title = Webtrek::display(array($link_text_title));
 
-            <div class="col-lg-4 box">
-                <i class="ion-ios-heart-outline"></i>
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
+                    $output = "<div class='col-lg-{$box_width} box'>";
+                    $output .= "<i class='{$icon}{$d_icon}'></i>";
+                    $output .= "<h4 class='title {$d_title}'><a href='{$link_url}'>{$link_text_title}</a></h4>";
+                    $output .= $text;
+                    $output .= '</div>';
+                    echo $output;
 
+                }
+            } ?>
             </div>
         </div>
-    </section><!-- #featured-services -->
-
-    <?php
+    </section><!-- #featured-services --><?php
 }

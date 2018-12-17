@@ -1,28 +1,22 @@
 <?php  
-
 function get_partial_clients($mb) {  
-  $heading = (isset($mb['client_heading'])) ? $mb['client_heading'] : '';
-  $text = (isset($mb['client_subtext'])) ? '<p class="text-center client-subtext">'.$mb['client_subtext'].'</p>' : '';
-?>
+  $heading = Webtrek::if_exists($mb, 'client_heading', 'h3', 'client-heading-1');
+  $text = Webtrek::if_exists($mb, 'client_subtext', 'p', 'text-center');
+  $d = Webtrek::display(array($heading)); ?>
+
 <!-- Clients Section -->
 <section id="clients" class="wow fadeInUp clients">
-  <div class="container"><?php 
-  
-    if ($heading !== '') { ?>
-    <header class="section-header">
-      <h3><?php echo $heading; ?></h3>
-    </header><?php 
-    }
-    echo $text; ?>
+  <div class="container"><?php
+    echo "<header class='section-header {$d}'>{$heading}</header>";
+    echo $text; 
 
-    <div class="owl-carousel clients-carousel"><?php  
-
-      foreach( $mb['client_image'] as $img ) { ?>
-        <img class="carousel-image" src="<?php echo $img['image']; ?>" alt=""><?php
-      } ?>
-
-    </div>
-
+    if (isset($mb['client_image'])) {
+      echo '<div class="owl-carousel clients-carousel">';
+      foreach( $mb['client_image'] as $img ) { 
+        echo Webtrek::if_exists($img, 'image', 'img', 'carousel-image test');
+      }
+      echo '</div>';
+    } ?>
   </div>
 </section><!-- #clients -->
 <?php 

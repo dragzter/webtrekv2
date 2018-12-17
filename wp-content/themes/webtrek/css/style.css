@@ -1350,3 +1350,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     display: none; }
   #mobile-nav-toggle {
     display: inline; } }
+
+#primary-content {
+  padding: 60px 0 40px 0;
+  background: #fff;
+  background-size: cover; }

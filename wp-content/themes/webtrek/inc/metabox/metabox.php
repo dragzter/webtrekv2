@@ -19,6 +19,9 @@ function metabox_section_creator( $meta_boxes ) {
     $meta_boxes[] = array(
         'title'         => 'Content Sections',
         'post_types'    => 'page',
+        'include'       => array(
+            'template' => array('front-page.php', 'page.php'),
+        ),
         'fields'        => array(
 
             array(
@@ -38,6 +41,7 @@ function metabox_section_creator( $meta_boxes ) {
                         'type' => 'select',
                         'options' => array(
                             'cta' => 'CTA Section',
+                            'content' => 'WP Content Section',
                             'clients' => 'Clients Section',
                             'about' => 'About Section',
                             'contact' => 'Contact Section',
@@ -58,6 +62,62 @@ function metabox_section_creator( $meta_boxes ) {
                      *  For individual content blocks at page level
                      */
 
+                    // Featured Services Section
+                    array(
+                        'name'          => 'About Section',
+                        'id'            => 'featured_services',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'featured_services' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Box Width',
+                                'id'    => 'feat_box_width',
+                                'type'  => 'select',
+                                'options' => array (
+                                    '4' => '1/3rd of Page',
+                                    '3' => '1/4th of Page',
+                                    '6' => '1/2 of Page',
+                                    '12' => 'Full Page',
+                                ),
+                            ),
+                            array(
+                                'id'            => 'featured_box',
+                                'type'          => 'group',
+                                'group_title'   => 'Box {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Icon (full css class name)',
+                                        'desc'  => 'Get Class names at https://ionicons.com/v2/ (One class name per icon)',
+                                        'id'    => 'box_icon',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Link Text (Title)',
+                                        'id'    => 'link_text',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Link URL',
+                                        'id'    => 'link_url',
+                                        'type'  => 'url',
+                                    ),
+                                    array(
+                                        'name'  => 'Box Text',
+                                        'desc'  => 'Main text under title.',
+                                        'id'    => 'box_text',
+                                        'type'  => 'text',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
                     // About Section
                     array(
                         'name'          => 'About Section',
@@ -117,7 +177,7 @@ function metabox_section_creator( $meta_boxes ) {
                                         'name'      => 'Card Icon',
                                         'id'        => 'about_card_icon',
                                         'type'      => 'text',
-                                        'desc' => 'Get Class names at https://ionicons.com/v2/ (One class name per card)',
+                                        'desc' => 'Get Class names at https://ionicons.com/v2/ (One class name per icon)',
                                     ),
                                     array(
                                         'name'      => 'Card Image',
