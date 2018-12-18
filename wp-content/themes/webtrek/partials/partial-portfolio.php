@@ -14,9 +14,9 @@ function get_partial_portfolio($mb) { ?>
           <div class="col-lg-12">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">Lorem</li>
+              <li data-filter=".filter-card">Ipsum</li>
+              <li data-filter=".filter-web">Set</li>
             </ul>
           </div>
         </div>
@@ -47,7 +47,7 @@ function get_partial_portfolio($mb) { ?>
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">Web 3</a></h4>
+                <h4><a href="#">Lorem Ipsum</a></h4>
                 <p>Web</p>
               </div>
             </div>
@@ -62,7 +62,7 @@ function get_partial_portfolio($mb) { ?>
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">App 2</a></h4>
+                <h4><a href="#">Praesent</a></h4>
                 <p>App</p>
               </div>
             </div>
@@ -77,7 +77,7 @@ function get_partial_portfolio($mb) { ?>
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">Card 2</a></h4>
+                <h4><a href="#">Integer</a></h4>
                 <p>Card</p>
               </div>
             </div>
@@ -92,7 +92,7 @@ function get_partial_portfolio($mb) { ?>
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">Web 2</a></h4>
+                <h4><a href="#">Morbi vitae</a></h4>
                 <p>Web</p>
               </div>
             </div>
@@ -107,7 +107,7 @@ function get_partial_portfolio($mb) { ?>
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">App 3</a></h4>
+                <h4><a href="#">Lorem 2</a></h4>
                 <p>App</p>
               </div>
             </div>
@@ -122,7 +122,7 @@ function get_partial_portfolio($mb) { ?>
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">Card 1</a></h4>
+                <h4><a href="#">Integer 2</a></h4>
                 <p>Card</p>
               </div>
             </div>
@@ -137,7 +137,7 @@ function get_partial_portfolio($mb) { ?>
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">Card 3</a></h4>
+                <h4><a href="#">Lorem 3</a></h4>
                 <p>Card</p>
               </div>
             </div>

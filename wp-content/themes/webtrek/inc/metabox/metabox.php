@@ -112,7 +112,7 @@ function metabox_section_creator( $meta_boxes ) {
                                         'name'  => 'Box Text',
                                         'desc'  => 'Main text under title.',
                                         'id'    => 'box_text',
-                                        'type'  => 'text',
+                                        'type'  => 'textarea',
                                     ),
                                 ),
                             ),
@@ -325,7 +325,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'name'      => 'Text',
                                         'id'        => 'slide_text',
-                                        'type'      => 'text',
+                                        'type'      => 'textarea',
                                     ),
                                     array(
                                         'name'      => 'Background Image',

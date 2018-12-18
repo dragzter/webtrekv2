@@ -6,7 +6,7 @@ function get_partial_team($mb) { ?>
     <section id="team">
       <div class="container">
         <div class="section-header wow fadeInUp">
-          <h3>Team</h3>
+          <h3>Lorem Ipsum Works</h3>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
