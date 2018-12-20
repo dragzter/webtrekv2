@@ -62,6 +62,110 @@ function metabox_section_creator( $meta_boxes ) {
                      *  For individual content blocks at page level
                      */
 
+                    // Services Section
+                    array(
+                        'name'          => 'Services Section',
+                        'id'            => 'services',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'services' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'services_title',
+                                'type'  => 'test',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'services_subtitle',
+                                'type'  => 'test',
+                            ),
+                            array(
+                                'id'            => 'single_service',
+                                'type'          => 'group',
+                                'group_title'   => 'Service {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Service Name / Heading',
+                                        'id'    => 'service_name',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Service Link',
+                                        'id'    => 'service_link',
+                                        'type'  => 'url',
+                                    ),
+                                    array(
+                                        'name'  => 'Text',
+                                        'id'    => 'service_text',
+                                        'type'  => 'textarea',
+                                    ),
+                                    array(
+                                        'name'  => 'Icon',
+                                        'id'    => 'service_icon',
+                                        'type'  => 'text',
+                                    ),
+
+                                ),
+                            ),
+                        ),
+                    ),
+
+                    // Testimonials Section
+                    array(
+                        'name'          => 'Testimonials Section',
+                        'id'            => 'testimonials',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'testimonials' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'testimonial_title',
+                                'type'  => 'test',
+                            ),
+                            array(
+                                'id'            => 'single_testimonial',
+                                'type'          => 'group',
+                                'group_title'   => 'Testimonial {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Image',
+                                        'id'    => 'reviewer_img',
+                                        'type'  => 'url',
+                                    ),
+                                    array(
+                                        'name'  => 'Title / Name',
+                                        'id'    => 'title',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Subtitle',
+                                        'id'    => 'sub_title',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Testimonial',
+                                        'id'    => 'testimonial',
+                                        'type'  => 'textarea',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+
                     // Featured Services Section
                     array(
                         'name'          => 'About Section',

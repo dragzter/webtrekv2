@@ -38,4 +38,5 @@ class Webtrek {
             return "{$a}{$mb[$key]}{$b}";
         }
     }
+
 }

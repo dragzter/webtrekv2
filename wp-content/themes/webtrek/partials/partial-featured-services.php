@@ -24,7 +24,6 @@ function get_partial_featured_services($mb) { ?>
                     $output .= $text;
                     $output .= '</div>';
                     echo $output;
-
                 }
             } ?>
             </div>

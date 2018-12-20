@@ -41,29 +41,30 @@ get_header(); ?>
         if ($value['section_selector'] == 'hero') {
             get_partial_hero($value['hero']);
         }
-
-
-        // High Priority
         if ($value['section_selector'] == 'testimonials') {
-            get_partial_testimonials('');
+            get_partial_testimonials($value['testimonials']);
         }
         if ($value['section_selector'] == 'content') {
             get_partial_content('');
         }
         if ($value['section_selector'] == 'services') {
-            get_partial_services('');
-        } 
+            get_partial_services($value['services']);
+        }
+
+
+        // High Priority
         if ($value['section_selector'] == 'contact') {
             get_partial_contact('');
         }
+        if ($value['section_selector'] == 'skills') {
+            get_partial_skills('');
+        }
+
 
         // Low Priority
         if ($value['section_selector'] == 'portfolio') {
             get_partial_portfolio('');
         } 
-        if ($value['section_selector'] == 'skills') {
-            get_partial_skills('');
-        }
         if ($value['section_selector'] == 'team') {
             get_partial_team('');
         }

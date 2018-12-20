@@ -1,64 +1,52 @@
 <?php  
 function get_partial_testimonials($mb) {
+
+  $quote_left = get_template_directory_uri() . '/img/quote-sign-left.png';
+  $quote_right = get_template_directory_uri() . '/img/quote-sign-right.png';
+  $section_title = Webtrek::if_exists($mb, 'testimonial_title', 'h3');
+
 ?>
     <!-- Testimonials Section -->
     <section id="testimonials" class="section-bg wow fadeInUp">
-      <div class="container">
+      <div class="container"><?php 
 
-        <header class="section-header">
-          <h3>Testimonials</h3>
-        </header>
+        echo "<header class='section-header'>";
+        echo $section_title;
+        echo "</header>"; ?>
 
-        <div class="owl-carousel testimonials-carousel">
+        <div class="owl-carousel testimonials-carousel"><?php 
 
-          <div class="testimonial-item">
-            <img src="<?php echo get_template_directory_uri() . '/img/testimonial-1.jpg' ?>" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo &amp; Founder</h4>
-            <p>
-              <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-left.png' ?>" class="quote-sign-left" alt="">
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-              <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-right.png' ?>" class="quote-sign-right" alt="">
-            </p>
-          </div>
+        if (isset($mb['single_testimonial'])) { 
+          
+          
+          foreach ( $mb['single_testimonial'] as $testimonial ) { 
+            
+            $t_img = Webtrek::if_exists($testimonial, 'reviewer_img', 'img', 'testimonial-img');
+            $t_text = Webtrek::if_exists($testimonial, 'testimonial');
+            $t_title = Webtrek::if_exists($testimonial, 'title', 'h3', 'testimonial-title');
+            $t_subtitle = Webtrek::if_exists($testimonial, 'sub_title', 'h4', 'testimonial-subtitle'); ?>
 
-          <div class="testimonial-item">
-            <img src="<?php echo get_template_directory_uri() . '/img/testimonial-2.jpg' ?>" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-            <p>
-            <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-left.png' ?>" class="quote-sign-left" alt="">
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-right.png' ?>" class="quote-sign-right" alt="">
-            </p>
-          </div>
+          <div class="testimonial-item"><?php  
 
-          <div class="testimonial-item">
-            <img src="<?php echo get_template_directory_uri() . '/img/testimonial-3.jpg' ?>" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-            <p>
-            <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-left.png' ?>" class="quote-sign-left" alt="">
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-right.png' ?>" class="quote-sign-right" alt="">
-            </p>
-          </div>
+            // Testimonial Image
+            echo $t_img; 
 
-          <div class="testimonial-item">
-            <img src="<?php echo get_template_directory_uri() . '/img/testimonial-4.jpg' ?>" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-            <p>
-            <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-left.png' ?>" class="quote-sign-left" alt="">
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <img src="<?php echo get_template_directory_uri() . '/img/quote-sign-right.png' ?>" class="quote-sign-right" alt="">
-            </p>
-          </div>
+            // Testimonial title / name (h3)
+            echo $t_title;
 
+            // Testimonial subtitle (h4)
+            echo $t_subtitle;
+
+            // Testimonial with quotes
+            $output = "<img src='{$quote_left}' class='quote-sign-left' alt=''>";
+            $output .= $t_text;
+            $output .= "<img src='{$quote_right}' class='quote-sign-left' alt=''>";
+            echo "<p>{$output}</p>";  ?>
+            
+          </div><?php 
+          } 
+        } ?>
         </div>
-
       </div>
-    </section><!-- #testimonials -->
-
-    <?php  
+    </section><!-- #testimonials --><?php  
 }
