@@ -1,5 +1,8 @@
 <?php  
 function get_partial_hero($mb) { 
+    $display_section = Webtrek::if_exists($mb, 'show_hide');
+    if ($display_section == "yes") :
+
     $height = (isset($mb['section_height'])) ? 'height:'.$mb['section_height'].';': 'height: 100vh;'; ?>
  
     <!-- Hero Section Partial -->
@@ -52,5 +55,6 @@ function get_partial_hero($mb) {
                 } ?>
             </div>
         </div>
-    </section><!-- #intro --><?php 
+    </section><!-- #intro --><?php
+    endif; 
 }

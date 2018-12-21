@@ -1,5 +1,8 @@
 <?php  
 function get_partial_services($mb) { 
+
+  $display_section = Webtrek::if_exists($mb, 'show_hide');
+  if ($display_section == "yes") :
   
   $title = Webtrek::if_exists($mb, 'services_title', 'h3');
   $subtitle = Webtrek::if_exists($mb, 'services_subtitle', 'p'); ?>
@@ -41,4 +44,5 @@ function get_partial_services($mb) {
   </div>
 </section><!-- #services -->
 <?php  
+endif;
 }

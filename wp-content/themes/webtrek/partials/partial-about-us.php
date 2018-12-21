@@ -1,6 +1,9 @@
 <?php 
 function get_partial_about($mb) { 
 
+    $display_section = Webtrek::if_exists($mb, 'show_hide');
+    if ($display_section == "yes") :
+
     $heading = Webtrek::if_exists($mb, 'about_heading', 'h3');
     $text = Webtrek::if_exists($mb, 'about_text', 'p'); 
     $check_header = array($heading, $text);
@@ -47,4 +50,5 @@ function get_partial_about($mb) {
         </div>
     </section><!-- #about -->
 <?php
+endif;
 }

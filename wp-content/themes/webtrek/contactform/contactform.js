@@ -35,6 +35,12 @@ jQuery(document).ready(function($) {
             }
             break;
 
+          case 'math':
+            if (i.val() !== '7' && i.val() !== 'seven') {
+              ferror = ierror = true;
+            }
+            break;
+
           case 'email':
             if (!emailExp.test(i.val())) {
               ferror = ierror = true;
@@ -92,7 +98,7 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     var action = $(this).attr('action');
     if( ! action ) {
-      action = 'contactform/contactform.php';
+      action = 'contactform.php';
     }
     $.ajax({
       type: "POST",
@@ -100,7 +106,7 @@ jQuery(document).ready(function($) {
       data: str,
       success: function(msg) {
         // alert(msg);
-        if (msg == 'OK') {
+        if (msg == 'OK' || msg == 'OKOK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");

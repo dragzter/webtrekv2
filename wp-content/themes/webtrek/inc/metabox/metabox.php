@@ -62,6 +62,54 @@ function metabox_section_creator( $meta_boxes ) {
                      *  For individual content blocks at page level
                      */
 
+                    // Contact Form Section
+                    array(
+                        'name'          => 'Contact Form Section',
+                        'id'            => 'contact',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'contact' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'contact_title',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'contact_subtitle',
+                                'type'  => 'textarea',
+                            ),
+                            array(
+                                'name'  => 'Email',
+                                'id'    => 'contact_email',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Phone',
+                                'id'    => 'contact_phone',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Address',
+                                'id'    => 'contact_address',
+                                'type'  => 'text',
+                            ),
+                        ),
+                    ),
+
                     // Services Section
                     array(
                         'name'          => 'Services Section',
@@ -73,14 +121,24 @@ function metabox_section_creator( $meta_boxes ) {
                         'group_title'   => 'Settings',
                         'fields'        => array(
                             array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
                                 'name'  => 'Title',
                                 'id'    => 'services_title',
-                                'type'  => 'test',
+                                'type'  => 'text',
                             ),
                             array(
                                 'name'  => 'Subtitle',
                                 'id'    => 'services_subtitle',
-                                'type'  => 'test',
+                                'type'  => 'text',
                             ),
                             array(
                                 'id'            => 'single_service',
@@ -128,9 +186,19 @@ function metabox_section_creator( $meta_boxes ) {
                         'group_title'   => 'Settings',
                         'fields'        => array(
                             array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
                                 'name'  => 'Title',
                                 'id'    => 'testimonial_title',
-                                'type'  => 'test',
+                                'type'  => 'text',
                             ),
                             array(
                                 'id'            => 'single_testimonial',
@@ -176,6 +244,16 @@ function metabox_section_creator( $meta_boxes ) {
                         'visible'       => array( 'section_selector', '=', 'featured_services' ),
                         'group_title'   => 'Settings',
                         'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
                             array(
                                 'name'  => 'Box Width',
                                 'id'    => 'feat_box_width',
@@ -232,6 +310,16 @@ function metabox_section_creator( $meta_boxes ) {
                         'visible'       => array( 'section_selector', '=', 'about' ),
                         'group_title'   => 'Settings',
                         'fields' => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
                             array(
                                 'name'      => 'Heading',
                                 'id'        => 'about_heading',
@@ -309,6 +397,16 @@ function metabox_section_creator( $meta_boxes ) {
                         'group_title'   => 'Settings',
                         'fields' => array(
                             array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
                                 'name' => 'Heading',
                                 'id' => 'cta_heading',
                                 'type' => 'text',
@@ -358,6 +456,16 @@ function metabox_section_creator( $meta_boxes ) {
                         'visible'       => array( 'section_selector', '=', 'clients' ),
                         'fields'        => array(
                             array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
                                 'name'      => 'Heading',
                                 'id'        => 'client_heading',
                                 'type'      => 'text',
@@ -395,6 +503,16 @@ function metabox_section_creator( $meta_boxes ) {
                         'visible'       => array( 'section_selector', '=', 'hero' ), // Show if Hero selected
                         'fields'        => array(
                             // Global Settings
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
                             array(      
                                 'name'      => 'Hero Height',
                                 'id'        => 'section_height',

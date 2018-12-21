@@ -1,6 +1,9 @@
 <?php 
 
 function get_partial_cta($mb) { 
+
+  $display_section = Webtrek::if_exists($mb, 'show_hide');
+  if ($display_section == "yes") :
   
   $text_align = (isset($mb['cta_text_align'])) ? $mb['cta_text_align'] : 'text-center';
   $heading = (isset($mb['cta_heading'])) ? '<h3>'.$mb['cta_heading'].'</h3>' : '';
@@ -20,5 +23,6 @@ function get_partial_cta($mb) {
     } ?>
   </div>
 </section><!-- #call-to-action -->
-<?php  
+<?php 
+endif; 
 }

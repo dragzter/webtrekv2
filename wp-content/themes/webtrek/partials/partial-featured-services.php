@@ -1,5 +1,8 @@
 <?php 
-function get_partial_featured_services($mb) { ?>
+function get_partial_featured_services($mb) { 
+    
+    $display_section = Webtrek::if_exists($mb, 'show_hide');
+    if ($display_section == "yes") : ?>
 
    <!-- Featured Services Section -->
     <section id="featured-services">
@@ -29,4 +32,5 @@ function get_partial_featured_services($mb) { ?>
             </div>
         </div>
     </section><!-- #featured-services --><?php
+    endif;
 }

@@ -174,6 +174,7 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/metabox/metabox.php';
 require get_template_directory() . '/inc/custom-functions/webtrek.php';
 require get_template_directory() . '/inc/custom-widgets.php';
+//require get_template_directory() . '/contactform/contactform.php';
 
 /**
  * Partials

@@ -1,5 +1,9 @@
 <?php  
 function get_partial_clients($mb) {  
+
+  $display_section = Webtrek::if_exists($mb, 'show_hide');
+  if ($display_section == "yes") :
+
   $heading = Webtrek::if_exists($mb, 'client_heading', 'h3', 'client-heading-1');
   $text = Webtrek::if_exists($mb, 'client_subtext', 'p', 'text-center');
   $d = Webtrek::display(array($heading)); ?>
@@ -20,4 +24,5 @@ function get_partial_clients($mb) {
   </div>
 </section><!-- #clients -->
 <?php 
+endif;
 }
