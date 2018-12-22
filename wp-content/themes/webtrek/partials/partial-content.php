@@ -11,6 +11,7 @@ function get_partial_content($mb) { ?>
                     //get_template_part( 'template-parts/content', 'page' );
                     the_content();
                 endwhile; ?>
+               
             </div>
         </div>
     </div><!-- .container -->

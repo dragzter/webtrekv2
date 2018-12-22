@@ -1359,31 +1359,29 @@ body.mobile-nav-active #mobile-nav-toggle {
     color: #111 !important;
     text-transform: normal;
     position: relative;
-    padding-bottom: 15px; }
-  #primary-content .site-main p {
-    margin-bottom: 50px; }
+    padding-bottom: 15px;
+    font-weight: 600; }
   #primary-content .site-main h1 {
-    font-weight: 700;
     font-size: 48px; }
   #primary-content .site-main h2 {
-    font-weight: 600;
     font-size: 38px; }
   #primary-content .site-main h3 {
-    font-weight: 600;
     font-size: 32px; }
   #primary-content .site-main h4 {
-    font-weight: 600;
     font-size: 26px;
     padding-bottom: 0; }
   #primary-content .site-main h5 {
-    font-weight: 600;
     font-size: 20px;
     padding-bottom: 0; }
   #primary-content .site-main h6 {
-    font-weight: 600;
     font-size: 18px;
     padding-bottom: 0; }
 
 .article-block-padding {
   padding-top: 10px;
   padding-bottom: 40px; }
+
+pre {
+  background: #edf5ff;
+  padding: 15px;
+  border-radius: 4px; }

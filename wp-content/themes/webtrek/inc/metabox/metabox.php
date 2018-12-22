@@ -18,10 +18,10 @@ add_filter( 'rwmb_meta_boxes', 'metabox_section_creator' );
 function metabox_section_creator( $meta_boxes ) {
     $meta_boxes[] = array(
         'title'         => 'Content Sections',
-        'post_types'    => 'page',
-        'include'       => array(
-            'template' => array('front-page.php', 'page.php'),
-        ),
+        'post_types'    => array('page', 'post'),
+        // 'include'       => array(
+        //     'template' => array('front-page.php', 'page.php', 'single.php', 'index.php'),
+        // ),
         'fields'        => array(
 
             array(
@@ -53,6 +53,7 @@ function metabox_section_creator( $meta_boxes ) {
                             'skills' => 'Skills Section',
                             'team' => 'Team Section',
                             'testimonials' => 'Testimonials Section',
+                            'post_partial' => 'Posts',
                         ),
                         'placeholder'     => 'Select an Item',
                     ),
