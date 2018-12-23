@@ -1,4 +1,12 @@
 <?php
+/**
+ * Display Single Post
+ * Called in single.php
+ * 
+ * Must be called in blog template to display post content.
+ * @package webtrek
+ * 
+ */
 
 function get_post_partial() { 
     

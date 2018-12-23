@@ -1,4 +1,14 @@
 <?php 
+
+/**
+ * Display Page content.
+ * Include as partial in front-page.php
+ * or any other template.
+ * 
+ * @package webtrek
+ * 
+ */
+
 function get_partial_content($mb) { ?>
 
 <section id="primary-content" class="content-page">
@@ -8,7 +18,6 @@ function get_partial_content($mb) { ?>
 
                 while ( have_posts() ) :
                     the_post();
-                    //get_template_part( 'template-parts/content', 'page' );
                     the_content();
                 endwhile; ?>
                

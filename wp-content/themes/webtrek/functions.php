@@ -167,6 +167,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/blog-customizer-settings.php';
 
 /**
  * Custom Functions and Includes
@@ -199,6 +200,13 @@ require get_template_directory() . '/partials/partial-post.php';
  */
 add_filter('show_admin_bar', '__return_false');
 
+/**
+ * Set custom excerpt length
+ */
+function custom_excerpt_length( $length ) {
+	return 30;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 /**
  * Bootstrap navwalker
  */
