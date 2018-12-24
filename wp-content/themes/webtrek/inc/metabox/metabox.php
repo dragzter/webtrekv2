@@ -551,8 +551,30 @@ function metabox_section_creator( $meta_boxes ) {
                                         'type'      => 'textarea',
                                     ),
                                     array(
-                                        'name'      => 'Background Image',
+                                        'name'      => 'Video or Image?',
+                                        'id'        => 'slide_media_choice',
+                                        'type'      => 'select',
+                                        'options'    => array(
+                                            'image' => 'Image',
+                                            'video' => 'Video',
+                                        )
+                                    ),
+                                    array(
+                                        'name'      => 'Image URL',
                                         'id'        => 'slide_image',
+                                        'visible'       => array( 'slide_media_choice', '=', 'image' ),
+                                        'type'      => 'url',
+                                    ),
+                                    array(
+                                        'name'      => 'Video URL',
+                                        'id'        => 'slide_video_url',
+                                        'visible'       => array( 'slide_media_choice', '=', 'video' ),
+                                        'type'      => 'url',
+                                    ),
+                                    array(
+                                        'name'      => 'Video Poster',
+                                        'id'        => 'slide_video_poster',
+                                        'visible'       => array( 'slide_media_choice', '=', 'video' ),
                                         'type'      => 'url',
                                     ),
                                     array(

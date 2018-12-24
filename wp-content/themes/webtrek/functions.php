@@ -88,27 +88,12 @@ endif;
 add_action( 'after_setup_theme', 'webtrek_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function webtrek_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'webtrek_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'webtrek_content_width', 0 );
-
-
-/**
  * Enqueue scripts and styles.
  */
 function webtrek_scripts() {
 
 	$style_path = get_template_directory() . '/css/style.css';
+	$ob_style_path = get_template_directory() . '/css/clean-css.css';
 	$script_path = get_template_directory() . '/js/main.js';
 	
 	// Deregister WP jQuery
@@ -123,6 +108,7 @@ function webtrek_scripts() {
 	wp_enqueue_style( 'owl-carousel-css', get_template_directory_uri() . '/lib/owlcarousel/assets/owl.carousel.min.css', array(), '1.0.0', false );
 	wp_enqueue_style( 'lightbox-css', get_template_directory_uri() . '/lib/lightbox/css/lightbox.min.css', array(), '1.0.0', false );
 	wp_enqueue_style( 'wt-main', get_template_directory_uri() . '/css/style.css', array(), filemtime( $style_path ), false );
+	wp_enqueue_style( 'wt-custom-ob-css', get_template_directory_uri() . '/css/clean-css.css', array(), filemtime( $ob_style_path ), false );
 
 	wp_enqueue_script( 'wt-jquery-migrate', get_template_directory_uri() . '/lib/jquery/jquery-migrate.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'bs-bundle', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.bundle.min.js', array(), '20151215', true );
@@ -140,6 +126,8 @@ function webtrek_scripts() {
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-main', get_template_directory_uri() . '/js/main.js', array(), filemtime( $script_path ), true );
 	wp_enqueue_script( 'webtrek-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -166,8 +154,9 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer/customizer.php';
 require get_template_directory() . '/inc/customizer/blog-customizer-settings.php';
+require get_template_directory() . '/inc/customizer/brand-customizations.php';
 
 /**
  * Custom Functions and Includes
@@ -175,7 +164,7 @@ require get_template_directory() . '/inc/customizer/blog-customizer-settings.php
 require get_template_directory() . '/inc/metabox/metabox.php';
 require get_template_directory() . '/inc/custom-functions/webtrek.php';
 require get_template_directory() . '/inc/custom-widgets.php';
-//require get_template_directory() . '/contactform/contactform.php';
+require get_template_directory() . '/inc/ob-css.php';
 
 /**
  * Partials
@@ -221,3 +210,8 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
  * Bootstrap navwalker
  */
 require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
+
+/**
+ * Run Custom css through output buffer
+ */
+css_generate();

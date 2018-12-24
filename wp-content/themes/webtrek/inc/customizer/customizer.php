@@ -28,6 +28,21 @@ function webtrek_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'webtrek_customize_register' );
 
+
+/**
+ * Remove redundant/default WordPress sections in the Theme Customizer.
+ * 
+ * This removes unused customizer sections.
+ * Conets out or remove this function to re-enabl them.
+ * 
+ */
+function remove_redundant_sections( $wp_customize ) {
+	$wp_customize->remove_section('colors');
+    $wp_customize->remove_section('header_image');
+    $wp_customize->remove_section('background_image');
+}
+add_action( 'customize_register', 'remove_redundant_sections' );
+
 /**
  * Render the site title for the selective refresh partial.
  *

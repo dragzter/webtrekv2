@@ -9,13 +9,13 @@ function get_partial_clients($mb) {
   $d = Webtrek::display(array($heading)); ?>
 
 <!-- Clients Section -->
-<section id="clients" class="wow fadeInUp clients">
+<section id="clients" class=" clients">
   <div class="container"><?php
     echo "<header class='section-header {$d}'>{$heading}</header>";
     echo $text; 
 
     if (isset($mb['client_image'])) {
-      echo '<div class="owl-carousel clients-carousel">';
+      echo '<div class="wow fadeInUp owl-carousel clients-carousel">';
       foreach( $mb['client_image'] as $img ) { 
         echo Webtrek::if_exists($img, 'image', 'img', 'carousel-image test');
       }

@@ -12,6 +12,7 @@ function get_partial_hero($mb) {
                 <ol class="carousel-indicators"></ol>
 
                 <div class="carousel-inner" role="listbox"><?php 
+                
                 if ($mb['use_slides'] == 'yes') {
 
                     $slide_count = count($mb['hero_slide']); 
@@ -22,10 +23,28 @@ function get_partial_hero($mb) {
                     $text = (isset($slide['slide_text'])) ? '<p>'.$slide['slide_text'].'</p>' : '';
                     $btn_text = (isset($slide['slide_btn_text'])) ? $slide['slide_btn_text'] : '';
                     $btn_url = (isset($slide['slide_btn_url'])) ? $slide['slide_btn_url'] : '#';
-                    $slide_img = (isset($slide['slide_image'])) ? $slide['slide_image'] : 'https://via.placeholder.com/1920x800'; ?>
+                    $slide_img = (isset($slide['slide_image'])) ? $slide['slide_image'] : 'https://via.placeholder.com/1920x800';
+                    
+                    $media_choice = (isset($slide['slide_media_choice'])) ? $slide['slide_media_choice'] : 'image';
+                    
+                    ?>
                 
-                    <div class="carousel-item" style="<?php echo $height; ?>">
-                        <div class="carousel-background"><img src="<?php echo $slide_img; ?>" alt=""></div>
+                    <div class="carousel-item" style="<?php echo $height; ?>"><?php 
+                    
+                        
+                        if ($media_choice == 'image' ) { ?>
+                            <div class="carousel-background"><img src="<?php echo $slide_img; ?>" alt=""></div><?php 
+                        } else { 
+
+                            $video_url = Webtrek::if_exists($slide, 'slide_video_url');
+                            $video_poster = Webtrek::if_exists($slide, 'slide_video_poster'); ?>
+
+                            <!-- <div class="carousel-background"><img src="" alt=""></div> -->
+                            <video autoplay muted loop id="hero-video" poster="<?php echo $video_poster ?>">
+                                    <source src="<?php echo $video_url ?>" type="video/mp4">
+                            </video><?php  
+                        } ?>
+
                         <div class="carousel-container">
                             <div class="carousel-content"><?php 
                                 echo $heading; 
@@ -36,10 +55,13 @@ function get_partial_hero($mb) {
                                 } ?>
                             </div>
                         </div>
+
                     </div><?php
-                    }
-                 ?>
-                </div><!-- carousel-inner -->
+                    } ?>
+                </div> 
+
+
+
                 <?php  
                 if ( $slide_count >= 2 ) { ?>
                 <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
