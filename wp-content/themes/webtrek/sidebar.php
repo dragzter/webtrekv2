@@ -12,6 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="blog-sidebar" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside id="blog-sidebar" class="widget-area"><?php 
+	get_template_part('partials/search-form');
+	dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

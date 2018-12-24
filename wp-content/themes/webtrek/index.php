@@ -31,13 +31,12 @@ function blog_background($choice) {
 		$back = "background-image: url(".get_theme_mod('blog_settings_blog_background_image').");";
 	}
 	return $back;
-}
+} ?>
 
-?>
 <div class="blog-header" style="<?php echo blog_background($bckg); ?>">
 	<div class="overlay" style="<?php echo $o_color; echo $o_opacity; ?>"></div>
 	<div class="blog-header-inner d-flex justify-content-center">
-		<h1 class="align-self-center d-flex" style="color:<?php echo $title_color; ?>;"><?php echo get_theme_mod('blog_settings_blog_heading'); ?></h1>
+		<h1 class="align-self-center d-flex text-center" style="color:<?php echo $title_color; ?>;"><?php echo get_theme_mod('blog_settings_blog_heading'); ?></h1>
 	</div>
 </div>
 <div id="primary-content" class="blog-index container">
@@ -64,7 +63,7 @@ function blog_background($choice) {
 					endif; ?>
 					
 					<div class="d-flex justify-content-center text-center"><?php 
-					// Pgination
+					// Pagination
 					the_posts_pagination( array(
 						'mid_size' => 2,
 						'prev_text' => "<span class='previous-page-link'>Prev</span>",

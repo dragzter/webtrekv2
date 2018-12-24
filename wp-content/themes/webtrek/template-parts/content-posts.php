@@ -26,7 +26,7 @@ $classes = array(
                 echo "<img src='".get_template_directory_uri() . '/img/blog-placeholder.jpg'."' class='img-fluid placeholder no-thumbnail' />";
             } ?>
             <div class="overlay">
-                <div class="overlay-text"><a href="<?php esc_url( get_permalink()); ?>">Read More <i class="ion-ios-redo"></i></a></div>
+                <div class="overlay-text"><a href="<?php echo esc_url( get_permalink()); ?>">Read More <i class="ion-ios-redo"></i></a></div>
             </div>
         </div>
         <header class="entry-header">

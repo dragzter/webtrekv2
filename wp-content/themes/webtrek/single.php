@@ -50,12 +50,12 @@ get_header(); ?>
             get_partial_team('');
         } elseif ($value['section_selector'] == 'facts') {
             get_partial_facts('');
-        } elseif ($value['section_selector'] == 'post_partial') {
-			get_post_partial();
-		} else {
+        } else {
             echo '';
         }   
-    }
+	}
+	// Always show the post partial
+	get_post_partial();
 ?>
 </main><?php 
 get_footer();

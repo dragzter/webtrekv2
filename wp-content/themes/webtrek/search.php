@@ -8,48 +8,77 @@
  */
 
 get_header();
+
+$index_page = rwmb_meta('section_control');
+$bckg = (get_theme_mod('blog_settings_background_choice')) ? get_theme_mod('blog_settings_background_choice') : '';
+$title_color = get_theme_mod('blog_settings_blog_heading_color');
+
+$o_opacity = "opacity:".get_theme_mod('blog_settings_blog_header_overlay').";";
+$o_color = "background-color:".get_theme_mod('blog_settings_blog_header_overlay_color').";";
+
+function blog_background($choice) {
+	$back = '';
+	if ($choice == 'color') {
+		$back = "background:".get_theme_mod('blog_settings_blog_background_color').";";
+	} else {
+		$back = "background-image: url(".get_theme_mod('blog_settings_blog_background_image').");";
+	}
+	return $back;
+}
+
+
 ?>
+<div class="blog-header" style="<?php echo blog_background($bckg); ?>">
+	<div class="overlay" style="<?php echo $o_color; echo $o_opacity; ?>"></div>
+	<div class="blog-header-inner d-flex justify-content-center">
+		<h1 class="align-self-center d-flex text-center" style="color:<?php echo $title_color; ?>;"><?php echo get_theme_mod('blog_settings_blog_heading'); ?></h1>
+	</div>
+</div>
+<div id="primary-content" class="blog-index search-index container">
+	<div class="row">
+		<div class="col-md-9">
+		 	<div class="section-heading">
+			 	<h1 class="">Search Results</h1>
+			</div>
+			<?php get_template_part('partials/search-form') ?>
+			<main>
+				<div class="row"><?php
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+					if ( have_posts() ) :
+						if ( is_home() && ! is_front_page() ) :
 
-		<?php if ( have_posts() ) : ?>
+						endif;
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'webtrek' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+						/* Start the Loop */
+						while ( have_posts() ) :
+							the_post();
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+							// Use content-posts.php to display list of all posts
+							get_template_part( 'template-parts/content', 'posts' );
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+						endwhile;
+					else :
+						get_template_part( 'template-parts/content', 'none' );
+					endif; ?>
+					
+					<div class="d-flex justify-content-center text-center"><?php 
+					// Pgination
+					the_posts_pagination( array(
+						'mid_size' => 2,
+						'prev_text' => "<span class='previous-page-link'>Prev</span>",
+						'next_text' => "<span class='next-page-link'>Next</span>",
+						'screen_reader_text' => " "
+					)); ?>
+					</div>
 
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+				</div><!-- /.row -->
+			</main>
+		</div><!-- /.col-9 -->
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>
+		</div>
+	</div><!-- /.row -->
+</div><!-- /.container -->
 
 <?php
-get_sidebar();
 get_footer();

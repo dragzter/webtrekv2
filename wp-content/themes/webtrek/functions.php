@@ -167,7 +167,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/blog-customizer-settings.php';
+require get_template_directory() . '/inc/customizer/blog-customizer-settings.php';
 
 /**
  * Custom Functions and Includes
@@ -207,6 +207,16 @@ function custom_excerpt_length( $length ) {
 	return 30;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+/**
+ * Change Seach form placeholder text
+ */
+// function wpforo_search_form( $html ) {
+
+// 	$html = str_replace( 'placeholder="Search ', 'placeholder="Search Webtrek', $html );
+// 	return $html;
+// }
+// add_filter( 'get_search_form', 'wpforo_search_form' );
 /**
  * Bootstrap navwalker
  */
