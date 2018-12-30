@@ -49,11 +49,10 @@ get_header(); ?>
                 get_partial_accordion($value['accordion']);
             } elseif ($value['section_selector'] == 'team') {
                 get_partial_team($value['team']);
-            
+            } elseif ($value['section_selector'] == 'skills') {
+                get_partial_skills($value['skills']);
 
             // Low Priority / not dynamic
-            } elseif ($value['section_selector'] == 'skills') {
-                get_partial_skills('');
             } elseif ($value['section_selector'] == 'portfolio') {
                 get_partial_portfolio('');
             } elseif ($value['section_selector'] == 'facts') {

@@ -64,6 +64,82 @@ function metabox_section_creator( $meta_boxes ) {
                      *  For individual content blocks at page level
                      */
 
+                    // Skills Section
+                    array(
+                        'name'          => 'Skills',
+                        'id'            => 'skills',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'skills' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'skills_title',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'skills_subtitle',
+                                'type'  => 'wysiwyg',
+                            ),
+                            array(
+                                'id'            => 'single_skill',
+                                'type'          => 'group',
+                                'group_title'   => 'Skill {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Skill Name',
+                                        'id'    => 'skill_name',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Skill value amount label',
+                                        'id'    => 'skill_label',
+                                        'type'  => 'text',
+                                
+                                    ),
+                                    array(
+                                        'name'  => 'Progress bar MIN value',
+                                        'id'    => 'skil_min',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Progress bar MAX value',
+                                        'id'    => 'skill_max',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Progress bar CURRENT value',
+                                        'id'    => 'skill_current',
+                                        'desc'  => 'Should match the value amount label.  No symbols, numbers only.',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Progress bar COLOR',
+                                        'id'    => 'skill_color',
+                                        'type'  => 'color',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+
                     // Team Member Section
                     array(
                         'name'          => 'Team Members',
