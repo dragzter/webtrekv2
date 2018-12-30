@@ -41,6 +41,7 @@ function metabox_section_creator( $meta_boxes ) {
                         'type' => 'select',
                         'options' => array(
                             'cta' => 'CTA Section',
+                            'accordion' => 'Accordion Section',
                             'content' => 'WP Content Section',
                             'clients' => 'Clients Section',
                             'about' => 'About Section',
@@ -107,6 +108,65 @@ function metabox_section_creator( $meta_boxes ) {
                                 'name'  => 'Address',
                                 'id'    => 'contact_address',
                                 'type'  => 'text',
+                            ),
+                        ),
+                    ),
+
+                    // Accordion Section
+                    array(
+                        'name'          => 'Accordion Section',
+                        'id'            => 'accordion',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'accordion' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'accordion_title',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'accordion_subtitle',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'id'            => 'single_accordion',
+                                'type'          => 'group',
+                                'group_title'   => 'Accordion Collapse {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Title',
+                                        'id'    => 'collapse_title',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Content',
+                                        'id'    => 'collapse_content',
+                                        'type'  => 'textarea',
+                                    ),
+                                    array(
+                                        'name'  => 'Icon Class',
+                                        'id'    => 'collapse_icon',
+                                        'type'  => 'text',
+                                    ),
+                                ),
                             ),
                         ),
                     ),

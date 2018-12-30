@@ -45,6 +45,8 @@ get_header(); ?>
                 get_partial_services($value['services']);
             } elseif ($value['section_selector'] == 'contact') {
                 get_partial_contact($value['contact']);
+            } elseif ($value['section_selector'] == 'accordion') {
+                get_partial_accordion($value['accordion']);
 
             // Low Priority / not dynamic
             } elseif ($value['section_selector'] == 'skills') {
@@ -60,6 +62,8 @@ get_header(); ?>
             }   
         }
     }
+
+
 ?>
 </main><?php 
 get_footer();

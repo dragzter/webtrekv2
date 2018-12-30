@@ -183,6 +183,7 @@ require get_template_directory() . '/partials/partial-team.php';
 require get_template_directory() . '/partials/partial-testimonials.php';
 require get_template_directory() . '/partials/partial-content.php';
 require get_template_directory() . '/partials/partial-post.php';
+require get_template_directory() . '/partials/partial-accordion.php';
 
 /**
  * Remove Admin Bar

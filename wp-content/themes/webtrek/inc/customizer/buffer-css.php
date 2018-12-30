@@ -127,6 +127,10 @@ a:focus {
     color: <?php echo $brand; ?>;
 }
 
+#accordion .head-link:hover .title {
+    color: <?php echo $brand; ?>;
+}
+
 #contact .contact-info i {
     color: <?php echo $brand; ?>;
 }

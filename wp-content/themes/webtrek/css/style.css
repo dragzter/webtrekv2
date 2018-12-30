@@ -658,6 +658,51 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: left;
   transition: .9s; }
 
+/* Accordion Section
+  --------------------------------*/
+#accordion {
+  background: #fff;
+  background-size: cover;
+  padding: 60px 0 40px 0; }
+
+#accordion .card-header {
+  background: transparent;
+  border-bottom: none; }
+
+#accordion .title {
+  color: #111;
+  font-weight: 700;
+  font-size: 18px;
+  transition: 0.6s; }
+
+#accordion .title i {
+  font-size: 36px;
+  line-height: 1;
+  transition: 0.5s;
+  margin-right: 10px; }
+
+#accordion .head-link {
+  background: #f7f7f7; }
+
+#accordion .accordion-content {
+  padding-top: 45px; }
+
+#accordion .head-link.collapsed {
+  background: #fff; }
+
+#accordion .head-link:hover {
+  background: #f7f7f7; }
+
+#accordion .card {
+  border-radius: 0;
+  margin-bottom: 5px; }
+
+#accordion .card:last-child {
+  margin-bottom: 20px; }
+
+#accordion .btn.focus, #accordion .btn:focus {
+  box-shadow: none; }
+
 /* Facts Section
   --------------------------------*/
 #facts {
@@ -1489,6 +1534,10 @@ pre {
     width: 10%; }
   .search-index .blog-search-bar .widget_search .search-form .search-field {
     width: 60%; } }
+
+@media (max-width: 991px) {
+  #accordion .head-link {
+    padding: 0; } }
 
 @media (max-width: 500px) {
   .search-index .blog-search-bar .widget_search .search-form .search-submit {
