@@ -47,14 +47,15 @@ get_header(); ?>
                 get_partial_contact($value['contact']);
             } elseif ($value['section_selector'] == 'accordion') {
                 get_partial_accordion($value['accordion']);
+            } elseif ($value['section_selector'] == 'team') {
+                get_partial_team($value['team']);
+            
 
             // Low Priority / not dynamic
             } elseif ($value['section_selector'] == 'skills') {
                 get_partial_skills('');
             } elseif ($value['section_selector'] == 'portfolio') {
                 get_partial_portfolio('');
-            } elseif ($value['section_selector'] == 'team') {
-                get_partial_team('');
             } elseif ($value['section_selector'] == 'facts') {
                 get_partial_facts('');
             } else {

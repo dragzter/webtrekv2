@@ -43,24 +43,29 @@ get_header(); ?>
                 get_partial_hero($value['hero']);
             } elseif ($value['section_selector'] == 'testimonials') {
                 get_partial_testimonials($value['testimonials']);
+            } elseif ($value['section_selector'] == 'content') {
+                get_partial_content('');
             } elseif ($value['section_selector'] == 'services') {
                 get_partial_services($value['services']);
             } elseif ($value['section_selector'] == 'contact') {
                 get_partial_contact($value['contact']);
+            } elseif ($value['section_selector'] == 'accordion') {
+                get_partial_accordion($value['accordion']);
+            } elseif ($value['section_selector'] == 'team') {
+                get_partial_team($value['team']);
+            
 
             // Low Priority / not dynamic
             } elseif ($value['section_selector'] == 'skills') {
                 get_partial_skills('');
             } elseif ($value['section_selector'] == 'portfolio') {
                 get_partial_portfolio('');
-            } elseif ($value['section_selector'] == 'team') {
-                get_partial_team('');
             } elseif ($value['section_selector'] == 'facts') {
                 get_partial_facts('');
             } else {
-                echo 'Nothing here';
-            }
-        } 
+                echo '';
+            }   
+        }
     }  
     
     // Always show page content

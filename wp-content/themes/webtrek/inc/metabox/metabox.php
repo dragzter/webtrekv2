@@ -64,6 +64,88 @@ function metabox_section_creator( $meta_boxes ) {
                      *  For individual content blocks at page level
                      */
 
+                    // Team Member Section
+                    array(
+                        'name'          => 'Team Members',
+                        'id'            => 'team',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'team' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'team_title',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'team_subtitle',
+                                'type'  => 'textarea',
+                            ),
+                            array(
+                                'id'            => 'team_member',
+                                'type'          => 'group',
+                                'group_title'   => 'Team Member {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Name',
+                                        'id'    => 'team_member_name',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Title',
+                                        'id'    => 'team_member_title',
+                                        'type'  => 'text',
+                                
+                                    ),
+                                    array(
+                                        'name'  => 'Image',
+                                        'id'    => 'team_member_image',
+                                        'type'  => 'url',
+                                    ),
+                                    array(
+                                        'id'            => 'team_member_social',
+                                        'type'          => 'group',
+                                        'group_title'   => 'Social Media Item {#}',
+                                        'clone'         => true,
+                                        'sort_clone'    => true,
+                                        'save_state'    => true,
+                                        'collapsible'   => true,
+                                        'fields'        => array(
+                                            array(
+                                                'name'  => 'Social Icon',
+                                                'desc'  => 'Icon CSS class from Ion Icons v2',
+                                                'id'    => 'social_icon_class',
+                                                'type'  => 'text',
+                                            ),
+                                            array(
+                                                'name'  => 'Social URL',
+                                                'id'    => 'social_url',
+                                                'type'  => 'url',
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+
                     // Contact Form Section
                     array(
                         'name'          => 'Contact Form Section',
@@ -114,7 +196,7 @@ function metabox_section_creator( $meta_boxes ) {
 
                     // Accordion Section
                     array(
-                        'name'          => 'Accordion Section',
+                        'name'          => 'Accordion Items',
                         'id'            => 'accordion',
                         'type'          => 'group',
                         'collapsible'   => true,
@@ -140,7 +222,7 @@ function metabox_section_creator( $meta_boxes ) {
                             array(
                                 'name'  => 'Subtitle',
                                 'id'    => 'accordion_subtitle',
-                                'type'  => 'text',
+                                'type'  => 'textarea',
                             ),
                             array(
                                 'id'            => 'single_accordion',
@@ -159,7 +241,8 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'name'  => 'Content',
                                         'id'    => 'collapse_content',
-                                        'type'  => 'textarea',
+                                        'type'  => 'wysiwyg',
+                                
                                     ),
                                     array(
                                         'name'  => 'Icon Class',
@@ -173,7 +256,7 @@ function metabox_section_creator( $meta_boxes ) {
 
                     // Services Section
                     array(
-                        'name'          => 'Services Section',
+                        'name'          => 'Individual Services',
                         'id'            => 'services',
                         'type'          => 'group',
                         'collapsible'   => true,
@@ -297,7 +380,7 @@ function metabox_section_creator( $meta_boxes ) {
 
                     // Featured Services Section
                     array(
-                        'name'          => 'About Section',
+                        'name'          => 'Services to Feature',
                         'id'            => 'featured_services',
                         'type'          => 'group',
                         'collapsible'   => true,
@@ -363,7 +446,7 @@ function metabox_section_creator( $meta_boxes ) {
                     ),
                     // About Section
                     array(
-                        'name'          => 'About Section',
+                        'name'          => 'About Section Universal Settings and Cards',
                         'id'            => 'about',
                         'type'          => 'group',
                         'collapsible'   => true,
@@ -449,7 +532,7 @@ function metabox_section_creator( $meta_boxes ) {
 
                     // CTA Section array
                     array(
-                        'name' => 'CTA Section',
+                        'name' => 'CTA Settings',
                         'id' => 'cta',
                         'type' => 'group',
                         'collapsible'   => true,
@@ -556,6 +639,7 @@ function metabox_section_creator( $meta_boxes ) {
                     ),
                     // Hero section array
                     array(
+                        'name'          => 'Hero Slides',
                         'id'            => 'hero',
                         'type'          => 'group',
                         'group_title'   => 'Settings',

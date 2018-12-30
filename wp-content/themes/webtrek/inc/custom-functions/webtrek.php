@@ -22,9 +22,9 @@ class Webtrek {
                 $a = "<{$tag} {$c}";
                 $b = " />";
                 if (array_key_exists($key, $mb) && $mb[$key] !== '') { 
-                    return "{$a} src='{$mb[$key]}' {$b}";
+                    return "{$a} src='{$mb[$key]}' alt='{$key}' {$b}";
                 } else {
-                    return "{$a} src='https://via.placeholder.com/750x550' {$b}";
+                    return "{$a} src='https://via.placeholder.com/750x550' alt='Place Holder Image' {$b}";
                 }
             } else {
                 $a = "<{$tag} {$c}>";
