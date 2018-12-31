@@ -1342,9 +1342,6 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 18px;
     padding-bottom: 0; }
 
-.section-bg {
-  position: fixed; }
-
 video {
   position: fixed;
   top: 50%;

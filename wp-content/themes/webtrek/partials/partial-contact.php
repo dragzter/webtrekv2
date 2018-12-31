@@ -19,6 +19,8 @@ function get_partial_contact($mb) {
     <section id="contact" class="section-bg wow fadeInUp">
       <div class="container"><?php
 
+        
+
           echo "<div class='section-header'>";
           echo $title;
           echo $subtitle;
@@ -86,5 +88,5 @@ function get_partial_contact($mb) {
       </div>
     </section><!-- #contact -->
     <?php  
-    endif;
+   endif;
   }
