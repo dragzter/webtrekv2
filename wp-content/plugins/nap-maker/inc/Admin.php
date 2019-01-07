@@ -4,12 +4,15 @@
  * @package NapMaker
  */
 
-class Admin
+require_once plugin_dir_path( __FILE__ ) . 'CustomSettingsController.php';
+
+class Admin extends CustomSettingsController
 {
     
     public function register()
     {
         add_action( 'admin_menu', array( $this, 'addMenuPage' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueueNapScripts' ) );
     }
 
     public function adminPageCallback()
@@ -31,7 +34,7 @@ class Admin
             'manage_options', //Required. The required capability of users to access this menu item.
             
             // Page or slug
-            'nap_schema',
+            $this->admin_page,
             
             // Callback for the content of the page associated with this menu item
             array( $this, 'adminPageCallback'), 
@@ -42,5 +45,11 @@ class Admin
             // Position
             100 
         );
+    }
+
+    public function enqueueNapScripts()
+    {
+        wp_enqueue_style( 'nap-styles', plugins_url( 'assets/nap-style.css', __FILE__ )  );
+        wp_enqueue_script( 'nap-script', plugins_url( 'assets/nap-scripts.js', __FILE__ ) );
     }
  }

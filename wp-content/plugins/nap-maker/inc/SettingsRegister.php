@@ -11,9 +11,10 @@ class SettingsRegister extends CustomSettingsController
 {
 
     public $fields = array();
-    public $sections = array();
     public $settings = array();
+    public $sections = array();
     public $callbacks;
+
 
     public function register()
     {
@@ -21,17 +22,12 @@ class SettingsRegister extends CustomSettingsController
         add_action( 'wp_print_scripts', array( $this, 'createJson' ) );
     }
 
-    public function registerSettings( $sections, $settings, $fields )
+    public function registerSettings( $settings, $fields )
     {
 
 		// register setting
 		foreach ( $settings as $setting ) {
 			register_setting( $setting["option_group"], $setting["option_name"], ( isset( $setting["callback"] ) ? $setting["callback"] : '' ) );
-		}
-
-		// add settings section
-		foreach ( $sections as $section ) {
-			add_settings_section( $section["id"], $section["title"], ( isset( $section["callback"] ) ? $section["callback"] : '' ), $section["page"] );
 		}
 
 		// add settings field
@@ -41,19 +37,87 @@ class SettingsRegister extends CustomSettingsController
 
     }
 
+    public function setSections( $sections )
+    {
+        // add settings section
+        if ( isset( $sections ) ) {
+            foreach ( $sections as $section ) {
+                add_settings_section( $section["id"], $section["title"], ( isset( $section["callback"] ) ? $section["callback"] : '' ), $section["page"] );
+            }
+        }
+    }
+
     public function setSettings()
     {
+        // Instantiate callbacks
         $this->callbacks = new SettingsCallbacks();
+
+        /**
+         * ============================
+         * Sections
+         * ============================
+         */
 
         $this->sections = array(
             array(
                 'id'        => 'nap_section_1',
-                'title'     => 'SCHEMA Data Settings',
-                'callback'  => array( $this->callbacks, 'sectionCallback' ),
-                'page'      => 'nap_schema'
+                'title'     => 'Data For SCHEMA',
+                'callback'  => array($this->callbacks, 'sectionCallback'),
+                'page'      => $this->admin_page
+            ),
+            array(
+                'id'        => 'nap_section_2',
+                'title'     => 'Social Data',
+                'callback'  => array($this->callbacks, 'socialSectionCallback'),
+                'page'      => $this->admin_page
+            ),
+        );
+        
+
+        $this->setSections( $this->sections );
+
+
+        /**
+         * ============================
+         * Select style input settings
+         * ============================
+         */
+
+        $select_field = array();
+        $select_setting = array();
+
+        $select_setting = array(
+            array(
+                'option_group' => 'nap_schema_settings',
+                'option_name'  => 'site_type',
+            )
+        );  
+
+        $select_field = array(
+            array(
+                'id'        => 'site_type',
+                'title'     => 'Business Type',
+                'callback'  => array( $this->callbacks, 'selectionField' ),
+                'page'      => $this->admin_page,
+                'section'   => 'nap_section_1',
+                'args'      => array(
+                    'option_name' => 'site_type',
+                    'label_for'   => 'site_type', 
+                    'class'       => 'select-field'
+                )
             )
         );
 
+        $this->registerSettings($select_setting, $select_field );
+
+        /**
+         * ============================
+         * Standard input fields
+         * ============================
+         */
+
+
+        // Loop through $custom_settings array and create  a setting for each index
         foreach ( $this->custom_fields as $key => $value ) {
             $this->settings[] = array(
                 'option_group' => 'nap_schema_settings',
@@ -61,12 +125,15 @@ class SettingsRegister extends CustomSettingsController
             );           
         };
 
+
+
+        // Add a field for each setting by looping through the $custom_settings array
         foreach ( $this->custom_fields as $key => $value ) {
             $this->fields[] = array(
                 'id'        => $key,
                 'title'     => $value,
                 'callback'  => array( $this->callbacks, 'inputField' ),
-                'page'      => 'nap_schema',
+                'page'      => $this->admin_page,
                 'section'   => 'nap_section_1',
                 'args'      => array(
                     'option_name' => $key,
@@ -76,58 +143,93 @@ class SettingsRegister extends CustomSettingsController
             );
         };
 
-        $this->registerSettings($this->sections, $this->settings, $this->fields );
+        $this->registerSettings( $this->settings, $this->fields );
 
+
+        /**
+         * ============================
+         * Social networks input fields
+         * ============================
+         */
+
+        $social_settings = array();
+        $social_fields = array();
+
+        foreach ( $this->social as $key => $value ) {
+            $social_settings[] = array(
+                'option_group' => 'nap_schema_settings',
+                'option_name'  => $key,
+            );           
+        };
+
+        foreach ( $this->social as $key => $value ) {
+            $social_fields[] = array(
+                'id'        => $key,
+                'title'     => $value,
+                'callback'  => array( $this->callbacks, 'inputField' ),
+                'page'      => $this->admin_page,
+                'section'   => 'nap_section_2',
+                'args'      => array(
+                    'option_name' => $key,
+                    'label_for'   => $key, 
+                    'class'       => 'social-input-field'
+                )
+            );
+        };
+
+        $this->registerSettings( $social_settings, $social_fields );
     }
 
     public function createJson()
     { 
-        echo '<script type="application/ld+json">
+        $social_array[] = get_option('facebook');
+        $social_array[] = get_option('twitter');
+        $social_array[] = get_option('google');
+        $social_array[] = get_option('linkedin');
+        $social_array[] = get_option('youtube');
+        $social_array[] = get_option('instagram');
+        $social_array[] = get_option('pinterest');
+        $social_array[] = get_option('tumblr');
+
+        $full_array = [];
+
+        foreach ( $social_array as $social ) {
+            if (!empty($social)) {
+                $full_array[] = '"'.$social.'"';
+            }
+        }
+        ?>
+        <script type="application/ld+json">
         {
           "@context": "http://schema.org",
-          "@type": "ProfessionalService",
-          "name": "WebTrek Web Development",
-          "image": "http://gowebtrek.com/wp-content/uploads/2018/12/Original-on-Transparent.png",
-          "@id": "",
-          "url": "'.get_option('url').'",
-          "telephone": "'.get_option('name').'",
+          "@type": "<?php echo get_option('site_type'); ?>",
+          "name": "<?php echo get_option('name'); ?>",
+          "image": "<?php echo get_option('image'); ?>",
+          "url": "<?php echo get_option('url'); ?>",
+          "telephone": "<?php echo get_option('telephone'); ?>",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "'.get_option('address').'",
-            "addressLocality": "Manchester",
-            "addressRegion": "NH",
-            "postalCode": "'.get_option('name').'",
-            "addressCountry": "US"
+            "streetAddress": "<?php echo get_option('street_address'); ?>",
+            "addressLocality": "<?php echo get_option('address_locality'); ?>",
+            "addressRegion": "<?php echo get_option('address_region'); ?>",
+            "postalCode": "<?php echo get_option('postal_code'); ?>",
+            "addressCountry": "<?php echo get_option('country'); ?>"
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 42.975052,
-            "longitude": -71.447385
+            "latitude": <?php echo get_option('lat'); ?>,
+            "longitude": <?php echo get_option('long'); ?>
           },
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-              "Sunday"
-            ],
-            "opens": "00:00",
-            "closes": "23:59"
-          },
-          "sameAs": [
-            "https://facebook.com",
-            "https://twitter.com",
-            "https://facebook.com",
-            "https://facebook.com",
-            "https://facebook.com",
-            "https://facebook.com",
-            "https://facebook.com"
-          ]
+          "openingHours": "<?php echo get_option('opening_hours'); ?>",
+          "sameAs": [ <?php
+          for ($i = 0; $i < count($full_array); $i++ ) {
+            echo $full_array[$i];
+            if ( end($full_array) != $full_array[$i] ) {
+                echo ',';
+            }
+          }
+          ?> ]
         }
-        </script>';
+        </script><?php
     }
 }

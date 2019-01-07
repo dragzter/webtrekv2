@@ -1,0 +1,33 @@
+.nap-content h2 {
+    color: #ff27cd;
+    font-size: 2em;
+    font-weight: 700;
+    border-bottom: 2px solid #f3f3f3;
+    padding-bottom: 10px;
+}
+
+.nap-content em {
+    color: #d949f9;
+}
+
+.nap-content p {
+    font-weight: 600;
+    color: #598aff;
+}
+
+.nap-content select {
+    color: #506cbf;
+    font-weight: 600;
+}
+
+.nap-content input[type=text],
+.nap-content input[type=url] {
+    color: #506cbf;
+    font-weight: 500;
+}
+
+.nap-content {
+    background: #fdfdfd;
+    padding: 10px;
+    box-shadow: 0 2px -4px rgba(0,0,0,0.2);
+}
