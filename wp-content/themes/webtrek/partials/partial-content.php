@@ -9,7 +9,7 @@
  * 
  */
 
-function get_partial_content($mb) { ?>
+function get_partial_content() { ?>
 
 <section id="primary-content" class="content-page">
     <div class="site-main container">

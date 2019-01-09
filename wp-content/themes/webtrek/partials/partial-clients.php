@@ -12,8 +12,7 @@ function get_partial_clients($mb) {
 <section id="clients" class=" clients">
   <div class="container"><?php
     echo "<header class='section-header {$d}'>{$heading}</header>";
-    echo $text; 
-
+    
     if (isset($mb['client_image'])) {
       echo '<div class="wow fadeInUp owl-carousel clients-carousel">';
       foreach( $mb['client_image'] as $img ) { 

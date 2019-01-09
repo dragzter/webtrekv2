@@ -10,16 +10,19 @@
     }
   });
 
+
+
   // Accordion Collapse color change
   var acc = document.getElementsByClassName('head-link');
-  var accArr = [...acc]
-  
-  accArr.forEach(function(cur,index) {
+  var accArr = [...acc];
+
+  accArr.forEach((cur,index) => {
     if (!cur.nextElementSibling.classList.contains('show')) {
       cur.classList.add('collapsed');
     }
-  })
+  });
   
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {

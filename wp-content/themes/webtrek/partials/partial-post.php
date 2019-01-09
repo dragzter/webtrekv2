@@ -10,11 +10,9 @@
 
 function get_post_partial() { 
     
-
 $author = get_the_author();
 $date = get_the_date();
-$time = get_the_time();
-?>
+$time = get_the_time(); ?>
 
 <section id="primary-content" class="single-post-view">
     <div class="site-main container">

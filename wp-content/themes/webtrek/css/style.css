@@ -660,47 +660,47 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Accordion Section
   --------------------------------*/
-#accordion {
+.accordion {
   background: #fff;
   background-size: cover;
   padding: 60px 0 40px 0; }
 
-#accordion .card-header {
+.accordion .card-header {
   background: transparent;
   border-bottom: none; }
 
-#accordion .title {
+.accordion .title {
   color: #111;
   font-weight: 700;
   font-size: 18px;
   transition: 0.6s; }
 
-#accordion .title i {
+.accordion .title i {
   font-size: 36px;
   line-height: 1;
   transition: 0.5s;
   margin-right: 10px; }
 
-#accordion .head-link {
+.accordion .head-link {
   background: #f7f7f7; }
 
-#accordion .accordion-content {
+.accordion .accordion-content {
   padding-top: 45px; }
 
-#accordion .head-link.collapsed {
+.accordion .head-link.collapsed {
   background: #fff; }
 
-#accordion .head-link:hover {
+.accordion .head-link:hover {
   background: #f7f7f7; }
 
-#accordion .card {
+.accordion .card {
   border-radius: 0;
   margin-bottom: 5px; }
 
-#accordion .card:last-child {
+.accordion .card:last-child {
   margin-bottom: 20px; }
 
-#accordion .btn.focus, #accordion .btn:focus {
+.accordion .btn.focus, .accordion .btn:focus {
   box-shadow: none; }
 
 /* Facts Section
@@ -1401,10 +1401,7 @@ video {
   #blog-sidebar ul li, .blog-search-bar ul li {
     position: relative;
     margin-bottom: 10px; }
-    #blog-sidebar ul li:hover a, .blog-search-bar ul li:hover a {
-      color: #fe2600; }
     #blog-sidebar ul li:hover:before, .blog-search-bar ul li:hover:before {
-      background-color: #fe2600;
       transform: rotate(360deg);
       top: 0.55em;
       height: 0.25em;
@@ -1477,8 +1474,6 @@ pre {
 
 .blog-index .entry-title a {
   color: #111; }
-  .blog-index .entry-title a:hover {
-    color: #fe2600; }
 
 .blog-index article:hover .overlay-container .overlay {
   width: 100%; }
@@ -1496,7 +1491,7 @@ pre {
     right: 0;
     background-color: #111;
     overflow: hidden;
-    opacity: 0.6;
+    opacity: 0.75;
     width: 0;
     height: 100%;
     transition: .3s ease; }
@@ -1517,14 +1512,11 @@ pre {
         border: 2px solid transparent;
         padding: 7px 20px;
         border-radius: 30px; }
-        .blog-index article .overlay-container .overlay .overlay-text a:hover {
-          border-color: #fe2600;
-          color: #fe2600; }
 
 #contact .form button[type="submit"] {
-  background: #fe2600; }
+  font-weight: 900; }
   #contact .form button[type="submit"]:hover {
-    background: #cb1e00; }
+    background-color: #111; }
 
 @media (max-width: 1200px) {
   .search-index .blog-search-bar .widget_search .search-form .search-submit {
@@ -1533,7 +1525,7 @@ pre {
     width: 60%; } }
 
 @media (max-width: 991px) {
-  #accordion .head-link {
+  .accordion .head-link {
     padding: 0; } }
 
 @media (max-width: 500px) {

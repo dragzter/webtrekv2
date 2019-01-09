@@ -144,6 +144,10 @@ a:focus {
     border: 1px solid <?php echo $brand; ?>;
 }
 
+#contact .form button[type="submit"] {
+    background-color: <?php echo $brand; ?>;
+}
+
 #footer .footer-top .footer-info h3 {
     border-left: 4px solid <?php echo $brand; ?>;
 }
@@ -185,4 +189,25 @@ a:focus {
 
 #footer .footer-top {
     background: <?php echo $b_footer; ?>;
+}
+
+/**
+ * Blog
+ */
+
+.blog-index article .overlay-container .overlay .overlay-text a:hover {
+    border-color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?>;
+}
+
+.blog-index .entry-title a:hover {
+    color: <?php echo $brand; ?>;
+}
+
+#blog-sidebar ul li:hover a {
+    color: <?php echo $brand; ?>;
+}
+
+#blog-sidebar ul li:hover:before {
+    background-color: <?php echo $brand; ?>;
 }

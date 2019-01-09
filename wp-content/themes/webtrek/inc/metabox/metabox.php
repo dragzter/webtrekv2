@@ -31,6 +31,7 @@ function metabox_section_creator( $meta_boxes ) {
                 'clone'         => true,
                 'sort_clone'    => true,
                 'collapsible'   => true,
+                'max_clone'     => 20,
                 'save_state'    => true,
                 
                 // Sub-fields
@@ -38,6 +39,7 @@ function metabox_section_creator( $meta_boxes ) {
                     array(
                         'name'  => 'Section Selected',
                         'id'=> 'section_selector',
+                        'desc' => 'Select section from dropdown, settings vary based on section selected.',
                         'type' => 'select',
                         'options' => array(
                             'cta' => 'CTA Section',
@@ -112,11 +114,11 @@ function metabox_section_creator( $meta_boxes ) {
                                         'name'  => 'Skill value amount label',
                                         'id'    => 'skill_label',
                                         'type'  => 'text',
-                                
+                                        'desc'  => 'EXAMPLE: $40, 20% etc.',
                                     ),
                                     array(
                                         'name'  => 'Progress bar MIN value',
-                                        'id'    => 'skil_min',
+                                        'id'    => 'skill_min',
                                         'type'  => 'text',
                                     ),
                                     array(
@@ -127,7 +129,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'name'  => 'Progress bar CURRENT value',
                                         'id'    => 'skill_current',
-                                        'desc'  => 'Should match the value amount label.  No symbols, numbers only.',
+                                        'desc'  => 'Represent as a percentage of the value amount label ( Max 100 ). No symbols, numbers only.',
                                         'type'  => 'text',
                                     ),
                                     array(
@@ -689,11 +691,6 @@ function metabox_section_creator( $meta_boxes ) {
                                 'name'      => 'Heading',
                                 'id'        => 'client_heading',
                                 'type'      => 'text',
-                            ),
-                            array(
-                                'name'      => 'Sub Text',
-                                'id'        => 'client_subtext',
-                                'type'      => 'textarea',
                             ),
                             array(
                                 'id'            => 'client_image',
