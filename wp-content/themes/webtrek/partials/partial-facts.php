@@ -1,46 +1,46 @@
 <?php  
-function get_partial_facts($mb) { ?>
- <!--==========================
-      Facts Section
-    ============================-->
+function get_partial_facts($mb) { 
+  
+  $display_section = Webtrek::if_exists($mb, 'show_hide');
+  if ($display_section == "yes") :
+
+    $heading = Webtrek::if_exists($mb, 'fact_title', 'h3');
+    $text = Webtrek::if_exists($mb, 'fact_subtitle', 'p');
+    $image = Webtrek::if_exists($mb, 'fact_img', 'img', 'img-fluid test'); ?>
+    
+    <!-- Facts Section -->
     <section id="facts"  class="wow fadeIn">
-      <div class="container">
+      <div class="container"><?php
 
-        <header class="section-header">
-          <h3>Facts</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </header>
+      echo "<header class='section-header'>{$heading}{$text}</header>"; 
 
-        <div class="row counters">
+        echo "<div class='row counters justify-content-center'>";
+          
+          if (isset($mb['fact_counter'])) {
 
-  				<div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">274</span>
-            <p>Clients</p>
-  				</div>
+            foreach ($mb['fact_counter'] as $counter) {
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">421</span>
-            <p>Projects</p>
-  				</div>
+              $label = Webtrek::if_exists($counter, 'fact_label', 'p');
+              $count_to = Webtrek::if_exists($counter, 'fact_count_to');
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,364</span>
-            <p>Hours Of Support</p>
-  				</div>
+              $output = "<div class='col-lg-3 col-6 text-center'>";
+              $output .= "<span data-toggle='counter-up'>{$count_to}</span>";
+              $output .= $label;
+              $output .= "</div>";
+              
+              echo $output;
+            }
+          } 
 
-          <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">18</span>
-            <p>Hard Workers</p>
-  				</div>
+        echo "</div>";
 
-  			</div>
-
-        <div class="facts-img">
-          <img src="<?php echo get_template_directory_uri() . '/img/facts-img.png' ?>" alt="" class="img-fluid">
-        </div>
-
+        $output_2 = "<div class='facts-img'>";
+        $output_2 .= $image;
+        $output_2 .= "</div>";
+        
+        echo $output_2; ?>
       </div>
     </section><!-- #facts -->
-
 <?php 
+endif;
 }

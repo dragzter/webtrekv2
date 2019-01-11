@@ -66,6 +66,67 @@ function metabox_section_creator( $meta_boxes ) {
                      *  For individual content blocks at page level
                      */
 
+                    // Facts Section
+                    array(
+                        'name'          => 'Facts Section',
+                        'id'            => 'facts',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'facts' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'fact_title',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'fact_subtitle',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Section Image',
+                                'id'    => 'fact_img',
+                                'type'  => 'url',
+                            ),
+                            array(
+                                'id'            => 'fact_counter',
+                                'type'          => 'group',
+                                'group_title'   => 'Counter Group {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Label',
+                                        'desc'  => 'Label for the counter',
+                                        'id'    => 'fact_label',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Number to count up to',
+                                        'desc' => 'This is what the counter script will count up to.  The count starts at 0 and ends at this value.',
+                                        'id'    => 'fact_count_to',
+                                        'type'  => 'text',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+
                     // Skills Section
                     array(
                         'name'          => 'Skills',

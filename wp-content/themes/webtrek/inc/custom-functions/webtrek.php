@@ -97,12 +97,13 @@ class Webtrek {
             
             } elseif ($value['section_selector'] == 'skills') {
                 $rendered[] = get_partial_skills($value['skills']);
-    
-            } elseif ($value['section_selector'] == 'portfolio') {
-                $rendered[] = get_partial_portfolio('');
             
             } elseif ($value['section_selector'] == 'facts') {
-                $rendered[] = get_partial_facts('');
+                $rendered[] = get_partial_facts($value['facts']);
+            
+            // TO DO    
+            } elseif ($value['section_selector'] == 'portfolio') {
+                $rendered[] = get_partial_portfolio('');
             
             } else {
                 return;
