@@ -103,7 +103,7 @@ class Webtrek {
             
             // TO DO    
             } elseif ($value['section_selector'] == 'portfolio') {
-                $rendered[] = get_partial_portfolio('');
+                $rendered[] = get_partial_portfolio($value['portfolio']);
             
             } else {
                 return;

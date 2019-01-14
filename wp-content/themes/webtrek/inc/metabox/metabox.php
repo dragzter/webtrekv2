@@ -127,6 +127,103 @@ function metabox_section_creator( $meta_boxes ) {
                         ),
                     ),
 
+                    // Portfolio Section
+                    array(
+                        'name'          => 'Portfolio Section',
+                        'id'            => 'portfolio',
+                        'type'          => 'group',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'portfolio' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'section_title',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'section_subtitle',
+                                'type'  => 'textarea',
+                            ),
+                            array(
+                                'id'            => 'filter_links',
+                                'type'          => 'group',
+                                'group_title'   => 'Filter Link {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Filter Label',
+                                        'id'    => 'filter_label',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Filter ID',
+                                        'id'    => 'filter_id',
+                                        'type'  => 'text',
+                                        'desc'  => 'Will be used to filter portfolio items.  Example: a filter id of "web" will show only portfolio items with the filter id of "web".',
+                                    ),                                    
+                                ),
+                            ),
+                            array(
+                                'id'            => 'portfolio_items',
+                                'type'          => 'group',
+                                'group_title'   => 'Portfolio Item {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Filter ID',
+                                        'id'    => 'portfolio_filter_id',
+                                        'type'  => 'text',
+                                        'desc'  => 'Must have a corresponding filter link so filtering and sorting can work.',
+                                    ),
+                                    array(
+                                        'name'  => 'Portfolio Image',
+                                        'id'    => 'portfolio_image',
+                                        'type'  => 'url',
+                                    ),
+                                    array(
+                                        'name'  => 'Portfolio Title',
+                                        'id'    => 'portfolio_title',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Portfolio Subtext',
+                                        'id'    => 'portfolio_subtext',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Portfolio Link',
+                                        'id'    => 'portfolio_link',
+                                        'type'  => 'url',
+                                    ),
+                                    array(
+                                        'name'  => 'Open link in new Tab?',
+                                        'id'    => 'link_in_new',
+                                        'type'  => 'checkbox',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+
                     // Skills Section
                     array(
                         'name'          => 'Skills',

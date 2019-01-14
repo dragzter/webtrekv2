@@ -1,167 +1,70 @@
 <?php 
-function get_partial_portfolio($mb) { ?>
- <!--==========================
-      Portfolio Section
-    ============================-->
-    <section id="portfolio"  class="section-bg" >
-      <div class="container">
+function get_partial_portfolio($mb) { 
+  
+  $display_section = Webtrek::if_exists($mb, 'show_hide');
+  if ($display_section == "yes") :
 
-        <header class="section-header">
-          <h3 class="section-title">Our Portfolio</h3>
-        </header>
+  $heading = Webtrek::if_exists($mb, 'section_title', 'h3');
+  $subtitle = Webtrek::if_exists($mb, 'section_subtitle', 'p'); ?>
+ <!-- Portfolio Section -->
 
+    <section id="portfolio" class="section-bg">
+      <div class="container"><?php
+
+      echo "<header class='section-header'>{$heading}{$subtitle}</header>"; ?>
+        
         <div class="row">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Lorem</li>
-              <li data-filter=".filter-card">Ipsum</li>
-              <li data-filter=".filter-web">Set</li>
+              <li data-filter="*" class="filter-active">All</li><?php
+
+              if (isset($mb['filter_links'])) {
+                foreach ($mb['filter_links'] as $filter_link) {
+
+                  $label = Webtrek::if_exists($filter_link, 'filter_label');
+                  $filter_id = Webtrek::if_exists($filter_link, 'filter_id');
+                 
+                  echo "<li data-filter='.{$filter_id}'>{$label}</li>";
+
+                }
+              } ?>
+
             </ul>
           </div>
         </div>
+        <div class="row portfolio-container"><?php
 
-        <div class="row portfolio-container">
+              if ( isset( $mb['portfolio_items'] ) ) {
+                foreach( $mb['portfolio_items'] as $portfolio ) {
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/app1.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/app1.jpg' ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
+                  $_blank = (isset($portfolio['link_in_new'])) ? 'target="_blank"' : null;
 
-              <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
+                  $portfolio_id = Webtrek::if_exists($portfolio, 'portfolio_filter_id');
+                  $portfolio_img = Webtrek::if_exists($portfolio, 'portfolio_image');
+                  $portfolio_title = Webtrek::if_exists($portfolio, 'portfolio_title');
+                  $portfolio_subtext = Webtrek::if_exists($portfolio, 'portfolio_subtext');
+                  $portfolio_link = Webtrek::if_exists($portfolio, 'portfolio_link'); ?>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/web3.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/web3.jpg' ?>" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
+                      <div class="col-lg-4 col-md-6 portfolio-item <?php echo $portfolio_id; ?> wow fadeInUp">
+                        <div class="portfolio-wrap">
+                          <figure>
+                            <img src="<?php echo $portfolio_img; ?>" class="img-fluid" alt="">
+                            <a href="<?php echo $portfolio_img; ?>" data-lightbox="portfolio" data-title="<?php echo $portfolio_title; ?>" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                            <a <?php echo $_blank; ?> href="<?php echo $portfolio_link; ?>" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                          </figure>
 
-              <div class="portfolio-info">
-                <h4><a href="#">Lorem Ipsum</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/app2.jpg' ?>" class="img-fluid" alt="">
-                <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Praesent</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/card2.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/card2.jpg' ?>" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Integer</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/web2.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/web2.jpg' ?>" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Morbi vitae</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/app3.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/app3.jpg' ?>" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Lorem 2</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/card1.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/card1.jpg' ?>" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Integer 2</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/card3.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/card3.jpg' ?>" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Lorem 3</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="<?php echo get_template_directory_uri() . '/img/portfolio/web1.jpg' ?>" class="img-fluid" alt="">
-                <a href="<?php echo get_template_directory_uri() . '/img/portfolio/web1.jpg' ?>" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Web 1</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
+                          <div class="portfolio-info">
+                            <h4><a <?php echo $_blank; ?> href="<?php echo $portfolio_link; ?>"><?php echo $portfolio_title; ?></a></h4>
+                            <p><?php echo $portfolio_subtext; ?></p>
+                          </div>
+                        </div>
+                      </div>
+                  <?php
+                }
+              } ?>
         </div>
-
       </div>
     </section><!-- #portfolio -->
-
     <?php
+    endif;
 }
