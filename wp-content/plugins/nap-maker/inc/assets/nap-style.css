@@ -1,5 +1,5 @@
 .nap-content h2 {
-    color: #ff27cd;
+    color: rgba(17, 98, 228, 0.8);
     font-size: 2em;
     font-weight: 700;
     border-bottom: 2px solid #f3f3f3;
@@ -7,22 +7,22 @@
 }
 
 .nap-content em {
-    color: #d949f9;
+    color: #5b9dd9;
 }
 
 .nap-content p {
     font-weight: 600;
-    color: #598aff;
+    color: #23282d;
 }
 
 .nap-content select {
-    color: #506cbf;
+    color: #0B5A3A;
     font-weight: 600;
 }
 
 .nap-content input[type=text],
 .nap-content input[type=url] {
-    color: #506cbf;
+    color: #006799;
     font-weight: 500;
 }
 
@@ -30,4 +30,8 @@
     background: #fdfdfd;
     padding: 10px;
     box-shadow: 0 2px -4px rgba(0,0,0,0.2);
+}
+
+.nap-content .form-table th {
+    color: #2d4850;
 }

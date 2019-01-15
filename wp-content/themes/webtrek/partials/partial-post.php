@@ -31,6 +31,8 @@ $time = get_the_time(); ?>
                             the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
                         endif;
 
+
+
                         if ( 'post' === get_post_type() ) : ?>
                             <div class="entry-meta"><?php 
                             echo "<p><span>WebTrek</span> / Published: <span>{$date}</span></p>"; ?>
@@ -43,6 +45,14 @@ $time = get_the_time(); ?>
                     </div><!-- .entry-content -->
 
                 </article><!-- #post-<?php the_ID(); ?> -->
+                <div class="comment-section">
+                    <?php
+                    // If comments are open or we have at least one comment, load up the comment template.
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                    ?>
+                </div>
             </div>
 
 			<div class="col-md-3">

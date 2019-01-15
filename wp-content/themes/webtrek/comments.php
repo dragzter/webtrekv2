@@ -32,13 +32,13 @@ if ( post_password_required() ) {
 			if ( '1' === $webtrek_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'webtrek' ),
+					esc_html__( 'Comment on &ldquo;%1$s&rdquo;', 'webtrek' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $webtrek_comment_count, 'comments title', 'webtrek' ) ),
+					esc_html( _nx( '%1$s comments on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $webtrek_comment_count, 'comments title', 'webtrek' ) ),
 					number_format_i18n( $webtrek_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -48,14 +48,14 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
+				'style'      => 'ul',
 				'short_ping' => true,
 			) );
 			?>
-		</ol><!-- .comment-list -->
+		</ul><!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();

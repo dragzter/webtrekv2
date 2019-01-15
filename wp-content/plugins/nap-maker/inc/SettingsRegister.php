@@ -61,7 +61,7 @@ class SettingsRegister extends CustomSettingsController
         $this->sections = array(
             array(
                 'id'        => 'nap_section_1',
-                'title'     => 'Data For SCHEMA',
+                'title'     => 'Structured Data Information',
                 'callback'  => array($this->callbacks, 'sectionCallback'),
                 'page'      => $this->admin_page
             ),

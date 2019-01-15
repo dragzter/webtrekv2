@@ -44,6 +44,6 @@ class SettingsCallbacks extends CustomSettingsController
 
     public function socialSectionCallback()
     {
-      echo '<p>Enter all releveant Social Networks URL\'s</p>';
+      echo '<p>Enter all releveant Social Network URL\'s</p>';
     }
 }
