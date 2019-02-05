@@ -205,5 +205,13 @@
     items: 1
   });
 
+
+  // WebFont.load({
+  //   custom: {
+  //     families: ['Montserrat'],
+  //     urls: ['../wp-content/themes/webtrek/css/style.css']
+  //   }
+  // });
+
 })(jQuery);
 

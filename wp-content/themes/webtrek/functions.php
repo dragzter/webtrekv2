@@ -126,6 +126,7 @@ function webtrek_scripts() {
 	wp_enqueue_style( 'wt-custom-ob-css', get_template_directory_uri() . '/css/clean-css.css', array(), filemtime( $ob_style_path ), false );
 
 	wp_enqueue_script( 'wt-jquery-migrate', get_template_directory_uri() . '/lib/jquery/jquery-migrate.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'wt-webfonts', get_template_directory_uri() . '/js/webfonts.js', array(), '20151215', true );
 	wp_enqueue_script( 'bs-bundle', get_template_directory_uri() . '/lib/bootstrap/js/bootstrap.bundle.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-easing', get_template_directory_uri() . '/lib/easing/easing.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-hover-intent', get_template_directory_uri() . '/lib/superfish/hoverIntent.js', array(), '20151215', true );
