@@ -546,6 +546,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: .5s;
   margin-top: 10px; }
 
+#fifty-fifty-section .w-img-column {
+  overflow: hidden; }
+  #fifty-fifty-section .w-img-column img {
+    transition: 1s; }
+  #fifty-fifty-section .w-img-column:hover img {
+    transform: scale(1.05); }
+
 /* About Us Section
   --------------------------------*/
 #about {

@@ -226,6 +226,6 @@ a:focus {
 
 #fifty-fifty-section .cta-btn:hover {
     background-color: <?php echo $brand; ?>;
-    color: #fff;
+    color: #fff !important;
     border-color: <?php echo $brand; ?> !important;
 }
