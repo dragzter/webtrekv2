@@ -22,7 +22,7 @@ get_header(); ?>
      */
 
     Webtrek::render_panels( rwmb_meta('section_control') );
-    
+
 ?>
 </main><?php 
 get_footer();

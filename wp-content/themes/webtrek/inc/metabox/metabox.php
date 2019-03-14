@@ -47,6 +47,7 @@ function metabox_section_creator( $meta_boxes ) {
                             'content' => 'WP Content Section',
                             'clients' => 'Clients Section',
                             'about' => 'About Section',
+                            'fifty' => '50/50 Section',
                             'contact' => 'Contact Section',
                             'facts' => 'Facts Section',
                             'featured_services' => 'Featured Services Section',
@@ -868,6 +869,80 @@ function metabox_section_creator( $meta_boxes ) {
                             ),
                         ),
                     ),
+
+                    // Fifty Fifty Array
+                    array(
+                        'name'          => '50/50 Section',
+                        'id'            => 'fifty',
+                        'type'          => 'group',
+                        'group_title'   => 'Settings',
+                        'collapsible'   => true,
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'fifty' ),
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'      => 'Section Background',
+                                'id'        => 'fifty_bcg_color',
+                                'type'      => 'color',
+                            ),
+                            array(
+                                'name'      => 'Text Color',
+                                'id'        => 'fifty_text_color',
+                                'type'      => 'color',
+                            ),
+                            array(
+                                'name'      => 'Heading',
+                                'id'        => 'fifty_heading',
+                                'type'      => 'text',
+                            ),
+                            array(
+                                'name'      => 'Text',
+                                'id'        => 'fifty_text',
+                                'type'      => 'textarea',
+                            ),
+                            array(
+                                'name'      => 'Button Text',
+                                'id'        => 'fifty_button_text',
+                                'type'      => 'text',
+                            ),
+                            array(
+                                'name'      => 'Button Url',
+                                'id'        => 'fifty_button_url',
+                                'type'      => 'url',
+                            ),
+                            array(
+                                'name'      => 'Button Color',
+                                'id'        => 'fifty_btn_color',
+                                'type'      => 'color',
+                            ),
+                            array(       
+                                'name'      => 'Image',
+                                'id'        => 'fifty_image',
+                                'type'      => 'url',          
+                            ),
+                            array(      
+                                'name'      => 'Image Orientation',
+                                'id'        => 'img_orientation',
+                                'type'      => 'select',  
+                                'options'   => array(
+                                    'left'       => 'Image Left',
+                                    'right'        => 'Image Right',
+                                ),
+                                'placeholder'   => 'Select Image Orientation',      
+                            ),
+                        ),
+                    ),
+                
                     // Hero section array
                     array(
                         'name'          => 'Hero Slides',

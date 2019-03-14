@@ -100,8 +100,10 @@ class Webtrek {
             
             } elseif ($value['section_selector'] == 'facts') {
                 $rendered[] = get_partial_facts($value['facts']);
+              
+            } elseif ($value['section_selector'] == 'fifty') {
+                $rendered[] = get_partial_fifty_fifty($value['fifty']);
             
-            // TO DO    
             } elseif ($value['section_selector'] == 'portfolio') {
                 $rendered[] = get_partial_portfolio($value['portfolio']);
             

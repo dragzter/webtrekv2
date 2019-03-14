@@ -522,6 +522,30 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
   margin-bottom: 0; }
 
+/* Helpers
+  --------------------------------*/
+.fit-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%; }
+
+/* Fifty Fifty Section
+  --------------------------------*/
+#fifty-fifty-section .section-header {
+  padding: 18%; }
+
+#fifty-fifty-section .cta-btn {
+  font-family: "Montserrat",sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 25px;
+  transition: .5s;
+  margin-top: 10px; }
+
 /* About Us Section
   --------------------------------*/
 #about {
@@ -1305,6 +1329,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 /*--------------------------------------------------------------
   # Responsive Media Queries
   --------------------------------------------------------------*/
+@media (max-width: 991px) {
+  #fifty-fifty-section .section-header {
+    padding: 12%; } }
+
+@media (max-width: 500px) {
+  #fifty-fifty-section .section-header {
+    padding: 16% 8%; } }
+
 @media (min-width: 768px) {
   #contact .contact-address,
   #contact .contact-phone,

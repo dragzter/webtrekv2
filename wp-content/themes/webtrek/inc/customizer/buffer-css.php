@@ -211,3 +211,21 @@ a:focus {
 #blog-sidebar ul li:hover:before {
     background-color: <?php echo $brand; ?>;
 }
+
+/**
+ * Fifty Fifty Section
+ */
+
+/* Fifty Fifty Section
+  --------------------------------*/
+
+#fifty-fifty-section .cta-btn {
+    border: 2px solid <?php echo $brand; ?>;
+    color: <?php echo $brand; ?>;
+}
+
+#fifty-fifty-section .cta-btn:hover {
+    background-color: <?php echo $brand; ?>;
+    color: #fff;
+    border-color: <?php echo $brand; ?> !important;
+}

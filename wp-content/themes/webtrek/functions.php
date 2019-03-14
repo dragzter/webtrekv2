@@ -200,6 +200,7 @@ require get_template_directory() . '/partials/partial-testimonials.php';
 require get_template_directory() . '/partials/partial-content.php';
 require get_template_directory() . '/partials/partial-post.php';
 require get_template_directory() . '/partials/partial-accordion.php';
+require get_template_directory() . '/partials/partial-fifty-fifty.php';
 
 /**
  * Remove Admin Bar
