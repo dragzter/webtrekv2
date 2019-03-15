@@ -27,7 +27,7 @@ function metabox_section_creator( $meta_boxes ) {
             array(
                 'id'            => 'section_control',
                 'type'          => 'group',
-                'group_title'   => array('field' => 'section_selector'),
+                'group_title'   => array('field' => 'Section {#} - {section_selector}'),
                 'clone'         => true,
                 'sort_clone'    => true,
                 'collapsible'   => true,
