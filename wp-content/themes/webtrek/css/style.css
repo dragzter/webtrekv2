@@ -1086,11 +1086,14 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Contact Section
   --------------------------------*/
-#contact {
-  padding: 60px 0; }
+#contact .contact-form-inner-wrap {
+  padding: 10%; }
+
+#contact .contact-info-inner-wrap {
+  height: 100%;
+  padding: 10% 0; }
 
 #contact .contact-info {
-  margin-bottom: 20px;
   text-align: center; }
 
 #contact .contact-info i {
@@ -1098,25 +1101,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: inline-block;
   margin-bottom: 10px; }
 
-#contact .contact-info address,
-#contact .contact-info p {
-  margin-bottom: 0;
-  color: #000; }
-
 #contact .contact-info h3 {
   font-size: 18px;
   margin-bottom: 15px;
   font-weight: bold;
-  text-transform: uppercase;
-  color: #999; }
-
-#contact .contact-info a {
-  color: #000; }
-
-#contact .contact-address,
-#contact .contact-phone,
-#contact .contact-email {
-  margin-bottom: 20px; }
+  text-transform: uppercase; }
 
 #contact .form #sendmessage {
   display: none;
@@ -1155,10 +1144,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #contact .form button[type="submit"] {
   border: 0;
-  padding: 10px 30px;
+  padding: 15px 30px;
   color: #fff;
   transition: 0.4s;
-  cursor: pointer; }
+  cursor: pointer;
+  width: 100%; }
 
 /*--------------------------------------------------------------
   # Footer
@@ -1348,10 +1338,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   #contact .contact-address,
   #contact .contact-phone,
   #contact .contact-email {
-    padding: 20px 0; }
-  #contact .contact-phone {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd; } }
+    padding: 10px 0; } }
 
 @media (min-width: 992px) {
   #testimonials .testimonial-item p {

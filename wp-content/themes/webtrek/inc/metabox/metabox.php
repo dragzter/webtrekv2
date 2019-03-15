@@ -31,7 +31,7 @@ function metabox_section_creator( $meta_boxes ) {
                 'clone'         => true,
                 'sort_clone'    => true,
                 'collapsible'   => true,
-                'max_clone'     => 20,
+                'max_clone'     => 30,
                 'save_state'    => true,
                 
                 // Sub-fields

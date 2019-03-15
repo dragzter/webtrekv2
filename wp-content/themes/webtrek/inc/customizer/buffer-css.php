@@ -229,3 +229,25 @@ a:focus {
     color: #fff !important;
     border-color: <?php echo $brand; ?> !important;
 }
+
+/* Custom Color Options
+-----------------------------------*/
+
+.contact-info-inner-wrap {
+    background-image: linear-gradient(to left, #4c0000, #002244);
+}
+
+#contact {
+    background-color: #f7f7f7;
+}
+
+#contact .contact-info address, 
+#contact .contact-info p, #contact .contact-info a {
+    color: white;
+}
+
+#contact .contact-info h3 {
+    color: #fff;
+}
+
+
