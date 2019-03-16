@@ -1140,7 +1140,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 10px 14px;
   border-radius: 0;
   box-shadow: none;
-  font-size: 15px; }
+  font-size: 15px;
+  border: none;
+  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.1); }
+
+#contact .form input:focus,
+#contact .form textarea:focus {
+  box-shadow: -3px 3px 0px rgba(0, 0, 0, 0.8); }
 
 #contact .form button[type="submit"] {
   border: 0;

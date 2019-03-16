@@ -60,7 +60,7 @@ function get_partial_contact($mb) {
 				</div>
 			</div>
 
-			<div class="col-12 col-lg-6 p-0 d-flex align-items-center w-100">
+			<div class="col-12 col-lg-6 p-0 d-flex align-items-center w-100 order-first order-lg-last">
 				<div class="contact-info-inner-wrap d-flex align-self-center justify-content-center w-100">
 					<div class="row contact-info">
 						<div class="col-md-12 align-self-center <?php echo $a_display; ?>">

@@ -233,12 +233,39 @@ a:focus {
 /* Custom Color Options
 -----------------------------------*/
 
+<?php
+    
+
+    $info_color_1 = get_theme_mod('section_contact_info_color_1_background');
+    $info_color_2 = get_theme_mod('section_contact_info_color_2_background');
+
+    $form_color_1 = get_theme_mod('section_contact_form_color_1_background');
+    $form_color_2 = get_theme_mod('section_contact_form_color_2_background');
+
+    $form_background_image = get_theme_mod('section_contact_form_image_background');
+    $info_background_image = get_theme_mod('section_contact_info_image_background');
+
+
+    if (get_theme_mod('section_contact_form_background_type') == 'color') {
+        $form_background = "background-image: linear-gradient(to left, $form_color_1, $form_color_2);";
+    } else {
+        $form_background = "background-image: url($form_background_image)";
+    }
+
+    if (get_theme_mod('section_contact_info_background_type') == 'color') {
+        $info_background = "background-image: linear-gradient(to left, $info_color_1, $info_color_2);";
+    } else {
+        $info_background = "background-image: url($info_background_image)";
+    }
+
+?>
+
 .contact-info-inner-wrap {
-    background-image: linear-gradient(to left, #4c0000, #002244);
+    <?php echo $info_background; ?>;
 }
 
 #contact {
-    background-color: #f7f7f7;
+    <?php echo $form_background; ?>
 }
 
 #contact .contact-info address, 

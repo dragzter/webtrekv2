@@ -28,6 +28,21 @@ function brand_customizations($wp_customize) {
 
     // ---------------------------------------
 
+    $setting = $section.'_secondary_color';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#fe2600'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting.'_control', array(
+        'label' => 'Secondary/Accent Color',
+        'description' => 'Sets accent color for certain elements.',
+        'section' => $section,
+        'settings' => $setting,
+        'priority' => 11
+    )));
+
+    // ---------------------------------------
+
     // Alpha Color Picker setting.
     $setting = $section.'_nav_color';    
 	$wp_customize->add_setting( 'brand_nav_color', array(
