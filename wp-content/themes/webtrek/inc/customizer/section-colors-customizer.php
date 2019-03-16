@@ -77,10 +77,16 @@ function section_colors_customizations($wp_customize) {
         'show_opacity'  => true,
         'palette'	=> array(
             '#fe2600', 
-            'rgba(108,130,255,0.77)',
-            '#007bff',
-            '#00b74d',
-            'rgba(0,0,0,0.9)'
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
         )
     )));
 
@@ -99,10 +105,16 @@ function section_colors_customizations($wp_customize) {
         'show_opacity'  => true,
         'palette'	=> array(
             '#fe2600', 
-            'rgba(108,130,255,0.77)',
-            '#007bff',
-            '#00b74d',
-            'rgba(0,0,0,0.9)'
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
         )
     )));
 
@@ -133,10 +145,16 @@ function section_colors_customizations($wp_customize) {
         'show_opacity'  => true,
         'palette'	=> array(
             '#fe2600', 
-            'rgba(108,130,255,0.77)',
-            '#007bff',
-            '#00b74d',
-            'rgba(0,0,0,0.9)'
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
         )
     )));
 
@@ -155,10 +173,16 @@ function section_colors_customizations($wp_customize) {
         'show_opacity'  => true,
         'palette'	=> array(
             '#fe2600', 
-            'rgba(108,130,255,0.77)',
-            '#007bff',
-            '#00b74d',
-            'rgba(0,0,0,0.9)'
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
         )
     )));
 
@@ -176,11 +200,111 @@ function section_colors_customizations($wp_customize) {
 
     /* ---------------------------- */
     
+    $setting = $section.'_info_text_color';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#fefefe'
+    ));
 
+	$wp_customize->add_control( new Customize_Alpha_Color_Control( $wp_customize, $setting.'_control', array(
+        'label'         => 'Info Text Color',
+        'section'       => $section,
+        'settings'      => $setting,
+        'priority'      => 90,
+        'show_opacity'  => true,
+        'palette'	=> array(
+            '#fe2600', 
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
+        )
+    )));
 
+    /* ---------------------------- */
 
+    $setting = $section.'_form_text_color';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#fefefe'
+    ));
 
+    $wp_customize->add_control( new Customize_Alpha_Color_Control( $wp_customize, $setting.'_control', array(
+        'label'         => 'Form Text Color',
+        'section'       => $section,
+        'settings'      => $setting,
+        'priority'      => 100,
+        'show_opacity'  => true,
+        'palette'	=> array(
+            '#fe2600', 
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
+        )
+    )));
 
+    /* ---------------------------- */
+
+    $setting = $section.'_info_overlay';
+    $wp_customize->add_setting($setting);
+
+    $wp_customize->add_control( new Customize_Alpha_Color_Control( $wp_customize, $setting.'_control', array(
+        'label'         => 'Info Overlay',
+        'section'       => $section,
+        'settings'      => $setting,
+        'priority'      => 110,
+        'show_opacity'  => true,
+        'palette'	=> array(
+            '#fe2600', 
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
+        )
+    )));
+
+    /* ---------------------------- */
+
+    $setting = $section.'_form_overlay';
+    $wp_customize->add_setting($setting);
+
+    $wp_customize->add_control( new Customize_Alpha_Color_Control( $wp_customize, $setting.'_control', array(
+        'label'         => 'Form Overlay',
+        'section'       => $section,
+        'settings'      => $setting,
+        'priority'      => 120,
+        'show_opacity'  => true,
+        'palette'	=> array(
+            '#fe2600', 
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
+        )
+    )));
 
 
 

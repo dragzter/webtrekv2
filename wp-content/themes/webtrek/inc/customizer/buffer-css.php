@@ -270,11 +270,24 @@ a:focus {
 
 #contact .contact-info address, 
 #contact .contact-info p, #contact .contact-info a {
-    color: white;
+    color: <?php echo get_theme_mod('section_contact_info_text_color'); ?>;
 }
 
 #contact .contact-info h3 {
-    color: #fff;
+    color: <?php echo get_theme_mod('section_contact_info_text_color'); ?>;
+}
+
+.contact-form-inner-wrap .section-header p, 
+.contact-form-inner-wrap .section-header h3 {
+    color: <?php echo get_theme_mod('section_contact_form_text_color'); ?>;
+}
+
+.contact-form-inner-wrap .overlay {
+    background:<?php echo get_theme_mod('section_contact_form_overlay') ?>;
+}
+
+.contact-info-inner-wrap .overlay {
+    background:<?php echo get_theme_mod('section_contact_info_overlay') ?>;
 }
 
 
