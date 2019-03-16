@@ -793,6 +793,20 @@ function metabox_section_creator( $meta_boxes ) {
                                 'type' => 'text',
                             ),
                             array(
+                                'name' => 'Background Image',
+                                'id' => 'cta_background',
+                                'type' => 'url',
+                            ),
+                            array(
+                                'name' => 'Overlay Style',
+                                'id' => 'cta_overlay',
+                                'type' => 'color',
+                                'alpha_channel' => true,
+                                'js_options'    => array(
+                                    'palettes' => array( '#fff', '#333', '#000', '#125', '#459', '#78b', '#ab0', '#de3', '#f0f' )
+                                ),
+                            ),
+                            array(
                                 'name' => 'Text',
                                 'id' => 'cta_text',
                                 'type' => 'textarea',

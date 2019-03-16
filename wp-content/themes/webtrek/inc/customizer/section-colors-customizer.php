@@ -306,25 +306,46 @@ function section_colors_customizations($wp_customize) {
         )
     )));
 
-
-
-
-
-
-
-    $section = 'section_cta';
-    $wp_customize->add_section($section, array(
-        'title' => 'Section Contact Form',
-        'panel' => $panel,
-        'priority' => 20
-    ));
+    // Section Featured Services >>>-------**|>
 
     $section = 'section_feat_serv';
     $wp_customize->add_section($section, array(
-        'title' => 'Section Contact Form',
+        'title' => 'Section Featured Services',
         'panel' => $panel,
         'priority' => 30
     ));
+
+    // Settings for Featured Services >>>-------**|>
+
+    $setting = $section.'_background';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#000'
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Background Color',
+        'section'  => $section,
+        'settings' => $setting,
+        'priority' => 10,
+    )));
+
+    /* ---------------------------- */
+
+    $setting = $section.'_text';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#fff'
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Text Color',
+        'section'  => $section,
+        'settings' => $setting,
+        'priority' => 20,
+    )));
+
+
+
+
 
     $section = 'section_testimonial';
     $wp_customize->add_section($section, array(
@@ -352,8 +373,6 @@ function section_colors_customizations($wp_customize) {
 
 
 
-    // Settings for CTA >>>-------**|>
-    // Settings for Featured Services >>>-------**|>
     // Settings for Testimonials >>>-------**|>
     // Settings for Clients >>>-------**|>
     // Settings for Facts >>>-------**|>
