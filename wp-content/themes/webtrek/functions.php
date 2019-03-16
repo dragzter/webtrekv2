@@ -202,6 +202,7 @@ require get_template_directory() . '/partials/partial-content.php';
 require get_template_directory() . '/partials/partial-post.php';
 require get_template_directory() . '/partials/partial-accordion.php';
 require get_template_directory() . '/partials/partial-fifty-fifty.php';
+require get_template_directory() . '/partials/fixed-cta.php';
 
 /**
  * Remove Admin Bar

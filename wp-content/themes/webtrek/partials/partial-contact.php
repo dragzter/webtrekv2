@@ -65,24 +65,24 @@ function get_partial_contact($mb) {
 				<div class="contact-info-inner-wrap d-flex align-self-center justify-content-center w-100 position-relative z-one">
 					<div class="overlay"></div>
 					<div class="row contact-info">
-						<div class="col-md-12 align-self-center <?php echo $a_display; ?>">
-							<div class="contact-address">
+						<div class="col-md-12 align-self-center wow zoomInRight p-0 <?php echo $a_display; ?>">
+							<div class="contact-address section-header">
 							<i class="ion-ios-location-outline"></i>
 							<h3>Address</h3>
 							<address><?php echo $address; ?></address>
 							</div>
 						</div>
 
-						<div class="col-md-12 align-self-center <?php echo $p_display; ?>">
-							<div class="contact-phone">
+						<div class="col-md-12 align-self-center wow zoomInRight p-0 <?php echo $p_display; ?>">
+							<div class="contact-phone section-header">
 							<i class="ion-ios-telephone-outline"></i>
 							<h3>Phone Number</h3>
 							<p><a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a></p>
 							</div>
 						</div>
 
-						<div class="col-md-12 align-self-center <?php echo $e_display; ?>">
-							<div class="contact-email">
+						<div class="col-md-12 align-self-center wow zoomInRight p-0 <?php echo $e_display; ?>">
+							<div class="contact-email section-header">
 							<i class="ion-ios-email-outline"></i>
 							<h3>Email</h3>
 							<p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>

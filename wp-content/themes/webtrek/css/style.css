@@ -1095,18 +1095,25 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 10% 0; }
 
 #contact .contact-info {
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
 
 #contact .contact-info i {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px; }
 
+#contact .contact-info address,
+#contact .contact-info p,
+#contact .contact-info a {
+  font-size: 24px; }
+
 #contact .contact-info h3 {
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 15px;
-  font-weight: bold;
-  text-transform: uppercase; }
+  font-weight: 600;
+  text-transform: capitalize;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1); }
 
 #contact .form #sendmessage {
   display: none;
@@ -1616,6 +1623,32 @@ pre {
   h6 {
     font-size: 16px !important;
     padding-bottom: 0; } }
+
+.fixed-cta {
+  position: fixed;
+  color: #fff;
+  width: auto;
+  text-emphasis: none;
+  text-decoration: none;
+  padding: 12px 30px;
+  height: auto;
+  text-align: center;
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 30px;
+  left: -55px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+  transition: 0.8s;
+  padding-left: 75px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.5); }
+  .fixed-cta:hover {
+    color: #fff;
+    transform: scale(1.1); }
+  .fixed-cta:focus {
+    color: #fff; }
 
 .comment-section {
   margin-top: 70px; }
