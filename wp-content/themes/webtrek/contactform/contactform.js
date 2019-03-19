@@ -110,6 +110,7 @@ jQuery(document).ready(function($) {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
+          $(".contactForm").css('display', 'none');
         } else {
           $("#sendmessage").removeClass("show");
           $("#errormessage").addClass("show");

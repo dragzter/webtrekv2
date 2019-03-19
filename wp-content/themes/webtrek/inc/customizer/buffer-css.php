@@ -139,11 +139,6 @@ a:focus {
     color: <?php echo $brand; ?> !important;
 }
 
-#contact .form #sendmessage {
-    color: <?php echo $brand; ?>;
-    border: 1px solid <?php echo $brand; ?>;
-}
-
 #contact .form button[type="submit"] {
     background-color: <?php echo $brand; ?>;
 }
@@ -249,13 +244,13 @@ a:focus {
     if (get_theme_mod('section_contact_form_background_type') == 'color') {
         $form_background = "background-image: linear-gradient(to left, $form_color_1, $form_color_2);";
     } else {
-        $form_background = "background-image: url($form_background_image)";
+        $form_background = "background-image: url($form_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
     }
 
     if (get_theme_mod('section_contact_info_background_type') == 'color') {
         $info_background = "background-image: linear-gradient(to left, $info_color_1, $info_color_2);";
     } else {
-        $info_background = "background-image: url($info_background_image)";
+        $info_background = "background-image: url($info_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
     }
 
 ?>

@@ -3,13 +3,36 @@
 function brand_customizations($wp_customize) {
 
     // Inlcude the Alpha Color Picker control file.
-	require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
+    require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
+    
+    $section = 'contact_settings';
+    $wp_customize->add_section($section, array(
+        'title' => 'Contact Form Settings',
+        'priority' => 0
+    ));
+
+    $setting = $section.'_email';
+    $wp_customize->add_setting($setting, array(
+        'default' => 'email@example.com'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label' => 'Contact Form Email',
+        'description' => 'Sets recipient e-mail of the contact form.',
+        'section' => $section,
+        'settings' => $setting,
+        'type'     => 'url',
+        'priority' => 10
+    )));
+
+    // ---------------------------------------
 
     $section = 'brand';
     $wp_customize->add_section($section, array(
         'title' => 'Brand Settings',
         'priority' => 2
     ));
+
 
     // ---------------------------------------
 

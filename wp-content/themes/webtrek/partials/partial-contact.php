@@ -29,7 +29,7 @@ function get_partial_contact($mb) {
 				echo "</div>"; ?>
 
 					<div class="form">
-						<div id="sendmessage">Thank you for your submission!</div>
+						<div id="sendmessage">Thank you for your submission!<br>We will get back to you shortly.</div>
 						<div id="errormessage"></div>
 						<form action="<?php echo htmlspecialchars(get_template_directory_uri() . '/contactform/contactform.php'); ?>" method="post" role="form" class="contactForm">
 							<div class="form-row">

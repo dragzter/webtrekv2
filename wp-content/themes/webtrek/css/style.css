@@ -1333,7 +1333,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 #contact .contact-info address,
 #contact .contact-info p,
 #contact .contact-info a {
-  font-size: 24px; }
+  font-size: 24px;
+  padding: 0 15px; }
 
 #contact .contact-info h3 {
   font-size: 22px;
@@ -1348,6 +1349,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 15px;
   font-weight: 600;
   margin-bottom: 15px; }
+
+#contact .form #sendmessage {
+  color: #2e9e04;
+  border: 1px solid #2e9e04; }
 
 #contact .form #errormessage {
   color: red;

@@ -10,10 +10,10 @@ require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 /***************** Configuration *****************/
 
   // Replace with your real receiving email address
-  $contact_email_to = "vladimir.mujakovic@gmail.com";
+  $contact_email_to = get_theme_mod('contact_settings_email');
 
   // Title prefixes
-  $subject_title = "WebTrek Website";
+  $subject_title = "Subject:";
   $name_title = "Name:";
   $email_title = "Email:";
   $message_title = "Message:";
@@ -63,13 +63,14 @@ require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
     }
 
     $headers[] = 'From: ' . $name . ' <' . $contact_email_from . '>' . PHP_EOL;
-    $headers[] = 'Reply-To: ' . $email . PHP_EOL;
+    $headers[] = 'Reply-To: ' . $contact_email_to . PHP_EOL;
     $headers[] = 'MIME-Version: 1.0' . PHP_EOL;
     $headers[] = 'Content-Type: text/html; charset=UTF-8' . PHP_EOL;
     $headers[] = 'X-Mailer: PHP/' . phpversion();
 
     $message_content = '<strong>' . $name_title . '</strong> ' . $name . '<br>';
     $message_content .= '<strong>' . $email_title . '</strong> ' . $email . '<br>';
+    $message_content .= '<strong>' . $subject_title . '</strong> ' . $subject . '<br>';
     $message_content .= '<strong>' . $message_title . '</strong> ' . nl2br($message);
 
     $sendemail = wp_mail($contact_email_to, $subject_title . ' ' . $subject, $message_content, $headers);
