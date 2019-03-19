@@ -25,7 +25,7 @@ function get_partial_fifty_fifty($mb) {
             $text_col = 'order-0 order-lg-0';
         } ?>
 
-    <section id="fifty-fifty-section" style="background-color: <?php echo $bcg_color; ?>;">
+    <section class="fifty-fifty-section" id="fifty-fifty-section" style="background-color: <?php echo $bcg_color; ?>;">
         <!-- <?php echo $mb['img_orientation']; ?> -->
         <div class="container-fluid">
             <div class="row"><?php
@@ -34,6 +34,7 @@ function get_partial_fifty_fifty($mb) {
                 
                 $column_text = '<div class="col-lg-6 col-md-12 d-flex align-items-center w-text-column '.$text_col.'">';
                 $column_text .=     '<div class="section-header wow zoomIn">';
+                $column_text .=         "<div class='icon-wrap text-center'><i class='ion-android-compass'></i></div>";
                 $column_text .=         "<h3 style='color: {$text_color};'>{$heading}</h3>";
                 $column_text .=         "<p style='color: {$text_color};'>{$text}</p>";
                 $column_text .=         '<div class="text-center">';

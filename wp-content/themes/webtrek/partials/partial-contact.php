@@ -21,7 +21,7 @@ function get_partial_contact($mb) {
         <div class="row">
 			<div class="col-12 col-lg-6 align-items-center p-0">
 				<div class="contact-form-inner-wrap position-relative z-one">
-					<div class="overlay"></div><?php
+					<div class="background-overlay"></div><?php
 
 				echo "<div class='section-header'>";
 				echo $title;
@@ -63,7 +63,7 @@ function get_partial_contact($mb) {
 
 			<div class="col-12 col-lg-6 p-0 d-flex align-items-center w-100 order-first order-lg-last">
 				<div class="contact-info-inner-wrap d-flex align-self-center justify-content-center w-100 position-relative z-one">
-					<div class="overlay"></div>
+					<div class="background-overlay"></div>
 					<div class="row contact-info">
 						<div class="col-md-12 align-self-center wow zoomInRight p-0 <?php echo $a_display; ?>">
 							<div class="contact-address section-header">

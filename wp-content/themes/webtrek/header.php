@@ -27,9 +27,6 @@
 	<link href="img/favicon.png" rel="icon">
 	<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	<!-- Google Fonts -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet"> -->
-
 	<?php wp_head(); ?>
 
 </head>
@@ -42,9 +39,9 @@
     <div class="row align-items-center appender">
       <div class="col">
       
-      <div id="logo" class="pull-left">
-        <?php the_custom_logo(); ?>
-	    </div>
+        <div id="logo" class="pull-left">
+          <?php the_custom_logo(); ?>
+        </div>
       </div>
       <div class="col">
         <nav id="nav-menu-container" role="navigation">

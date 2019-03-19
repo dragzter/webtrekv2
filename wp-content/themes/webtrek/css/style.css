@@ -1,12 +1,3 @@
-/*
-  Theme Name: BizPage
-  Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 @font-face {
   font-family: 'Montserrat';
   font-display: swap;
@@ -33,14 +24,254 @@
   /* IE9 Compat Modes */
   src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/montserrat-v12-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v12-latin-700.woff2") format("woff2"), url("../fonts/montserrat-v12-latin-700.woff") format("woff"), url("../fonts/montserrat-v12-latin-700.ttf") format("truetype"); }
 
+/* dosis-200 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url("../fonts/dosis-v8-latin-200.eot");
+  /* IE9 Compat Modes */
+  src: local("Dosis ExtraLight"), local("Dosis-ExtraLight"), url("../fonts/dosis-v8-latin-200.eot?#iefix") format("embedded-opentype"), url("../fonts/dosis-v8-latin-200.woff2") format("woff2"), url("../fonts/dosis-v8-latin-200.woff") format("woff"), url("../fonts/dosis-v8-latin-200.ttf") format("truetype"), url("../fonts/dosis-v8-latin-200.svg#Dosis") format("svg");
+  /* Legacy iOS */ }
+
+/* dosis-regular - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../fonts/dosis-v8-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Dosis Regular"), local("Dosis-Regular"), url("../fonts/dosis-v8-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/dosis-v8-latin-regular.woff2") format("woff2"), url("../fonts/dosis-v8-latin-regular.woff") format("woff"), url("../fonts/dosis-v8-latin-regular.ttf") format("truetype"), url("../fonts/dosis-v8-latin-regular.svg#Dosis") format("svg");
+  /* Legacy iOS */ }
+
+/* dosis-600 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("../fonts/dosis-v8-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local("Dosis SemiBold"), local("Dosis-SemiBold"), url("../fonts/dosis-v8-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/dosis-v8-latin-600.woff2") format("woff2"), url("../fonts/dosis-v8-latin-600.woff") format("woff"), url("../fonts/dosis-v8-latin-600.ttf") format("truetype"), url("../fonts/dosis-v8-latin-600.svg#Dosis") format("svg");
+  /* Legacy iOS */ }
+
+/* dosis-800 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url("../fonts/dosis-v8-latin-800.eot");
+  /* IE9 Compat Modes */
+  src: local("Dosis ExtraBold"), local("Dosis-ExtraBold"), url("../fonts/dosis-v8-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/dosis-v8-latin-800.woff2") format("woff2"), url("../fonts/dosis-v8-latin-800.woff") format("woff"), url("../fonts/dosis-v8-latin-800.ttf") format("truetype"), url("../fonts/dosis-v8-latin-800.svg#Dosis") format("svg");
+  /* Legacy iOS */ }
+
+/* merriweather-300 - latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url("../fonts/merriweather-v20-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Merriweather Light"), local("Merriweather-Light"), url("../fonts/merriweather-v20-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-v20-latin-300.woff2") format("woff2"), url("../fonts/merriweather-v20-latin-300.woff") format("woff"), url("../fonts/merriweather-v20-latin-300.ttf") format("truetype"), url("../fonts/merriweather-v20-latin-300.svg#Merriweather") format("svg");
+  /* Legacy iOS */ }
+
+/* merriweather-regular - latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../fonts/merriweather-v20-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Merriweather Regular"), local("Merriweather-Regular"), url("../fonts/merriweather-v20-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-v20-latin-regular.woff2") format("woff2"), url("../fonts/merriweather-v20-latin-regular.woff") format("woff"), url("../fonts/merriweather-v20-latin-regular.ttf") format("truetype"), url("../fonts/merriweather-v20-latin-regular.svg#Merriweather") format("svg");
+  /* Legacy iOS */ }
+
+/* merriweather-900 - latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url("../fonts/merriweather-v20-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Merriweather Black"), local("Merriweather-Black"), url("../fonts/merriweather-v20-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-v20-latin-900.woff2") format("woff2"), url("../fonts/merriweather-v20-latin-900.woff") format("woff"), url("../fonts/merriweather-v20-latin-900.ttf") format("truetype"), url("../fonts/merriweather-v20-latin-900.svg#Merriweather") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-300 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url("../fonts/lato-v14-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Light"), local("Lato-Light"), url("../fonts/lato-v14-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-v14-latin-300.woff2") format("woff2"), url("../fonts/lato-v14-latin-300.woff") format("woff"), url("../fonts/lato-v14-latin-300.ttf") format("truetype"), url("../fonts/lato-v14-latin-300.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../fonts/lato-v14-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Regular"), local("Lato-Regular"), url("../fonts/lato-v14-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-v14-latin-regular.woff2") format("woff2"), url("../fonts/lato-v14-latin-regular.woff") format("woff"), url("../fonts/lato-v14-latin-regular.ttf") format("truetype"), url("../fonts/lato-v14-latin-regular.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("../fonts/lato-v14-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Bold"), local("Lato-Bold"), url("../fonts/lato-v14-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-v14-latin-700.woff2") format("woff2"), url("../fonts/lato-v14-latin-700.woff") format("woff"), url("../fonts/lato-v14-latin-700.ttf") format("truetype"), url("../fonts/lato-v14-latin-700.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* lato-900 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url("../fonts/lato-v14-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Lato Black"), local("Lato-Black"), url("../fonts/lato-v14-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-v14-latin-900.woff2") format("woff2"), url("../fonts/lato-v14-latin-900.woff") format("woff"), url("../fonts/lato-v14-latin-900.ttf") format("truetype"), url("../fonts/lato-v14-latin-900.svg#Lato") format("svg");
+  /* Legacy iOS */ }
+
+/* source-sans-pro-200 - latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url("../fonts/source-sans-pro-v11-latin-200.eot");
+  /* IE9 Compat Modes */
+  src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url("../fonts/source-sans-pro-v11-latin-200.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans-pro-v11-latin-200.woff2") format("woff2"), url("../fonts/source-sans-pro-v11-latin-200.woff") format("woff"), url("../fonts/source-sans-pro-v11-latin-200.ttf") format("truetype"), url("../fonts/source-sans-pro-v11-latin-200.svg#SourceSansPro") format("svg");
+  /* Legacy iOS */ }
+
+/* source-sans-pro-regular - latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../fonts/source-sans-pro-v11-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url("../fonts/source-sans-pro-v11-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans-pro-v11-latin-regular.woff2") format("woff2"), url("../fonts/source-sans-pro-v11-latin-regular.woff") format("woff"), url("../fonts/source-sans-pro-v11-latin-regular.ttf") format("truetype"), url("../fonts/source-sans-pro-v11-latin-regular.svg#SourceSansPro") format("svg");
+  /* Legacy iOS */ }
+
+/* source-sans-pro-600 - latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("../fonts/source-sans-pro-v11-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local("Source Sans Pro SemiBold"), local("SourceSansPro-SemiBold"), url("../fonts/source-sans-pro-v11-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans-pro-v11-latin-600.woff2") format("woff2"), url("../fonts/source-sans-pro-v11-latin-600.woff") format("woff"), url("../fonts/source-sans-pro-v11-latin-600.ttf") format("truetype"), url("../fonts/source-sans-pro-v11-latin-600.svg#SourceSansPro") format("svg");
+  /* Legacy iOS */ }
+
+/* source-sans-pro-900 - latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url("../fonts/source-sans-pro-v11-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Source Sans Pro Black"), local("SourceSansPro-Black"), url("../fonts/source-sans-pro-v11-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/source-sans-pro-v11-latin-900.woff2") format("woff2"), url("../fonts/source-sans-pro-v11-latin-900.woff") format("woff"), url("../fonts/source-sans-pro-v11-latin-900.ttf") format("truetype"), url("../fonts/source-sans-pro-v11-latin-900.svg#SourceSansPro") format("svg");
+  /* Legacy iOS */ }
+
+/* poppins-200 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url("../fonts/poppins-v6-latin-200.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins ExtraLight"), local("Poppins-ExtraLight"), url("../fonts/poppins-v6-latin-200.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins-v6-latin-200.woff2") format("woff2"), url("../fonts/poppins-v6-latin-200.woff") format("woff"), url("../fonts/poppins-v6-latin-200.ttf") format("truetype"), url("../fonts/poppins-v6-latin-200.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../fonts/poppins-v6-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Regular"), local("Poppins-Regular"), url("../fonts/poppins-v6-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins-v6-latin-regular.woff2") format("woff2"), url("../fonts/poppins-v6-latin-regular.woff") format("woff"), url("../fonts/poppins-v6-latin-regular.ttf") format("truetype"), url("../fonts/poppins-v6-latin-regular.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+
+/* poppins-600 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("../fonts/poppins-v6-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins SemiBold"), local("Poppins-SemiBold"), url("../fonts/poppins-v6-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins-v6-latin-600.woff2") format("woff2"), url("../fonts/poppins-v6-latin-600.woff") format("woff"), url("../fonts/poppins-v6-latin-600.ttf") format("truetype"), url("../fonts/poppins-v6-latin-600.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+
+/* poppins-800 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url("../fonts/poppins-v6-latin-800.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins ExtraBold"), local("Poppins-ExtraBold"), url("../fonts/poppins-v6-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins-v6-latin-800.woff2") format("woff2"), url("../fonts/poppins-v6-latin-800.woff") format("woff"), url("../fonts/poppins-v6-latin-800.ttf") format("truetype"), url("../fonts/poppins-v6-latin-800.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+
+/* poppins-900 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url("../fonts/poppins-v6-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Black"), local("Poppins-Black"), url("../fonts/poppins-v6-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins-v6-latin-900.woff2") format("woff2"), url("../fonts/poppins-v6-latin-900.woff") format("woff"), url("../fonts/poppins-v6-latin-900.ttf") format("truetype"), url("../fonts/poppins-v6-latin-900.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+
+/*
+  Theme Name: Webtrek
+*/
+/*--------------------------------------------------------------
+# General
+
+Avaliable Fonts:
+
+# Montserrat
+# Dosis
+# Merriweather
+# Lato
+# Source Sans Pro
+# Poppins
+--------------------------------------------------------------*/
 body {
   background: #fff;
   color: #666666;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Source Sans Pro", sans-serif; }
+
+a {
+  font-family: 'Source Sans Pro', sans-serif; }
 
 p {
   padding: 0;
-  margin: 0 0 30px 0; }
+  margin: 0 0 30px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px; }
 
 h1,
 h2,
@@ -48,7 +279,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0; }
@@ -133,7 +364,6 @@ h6 {
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 3px; }
 
@@ -248,7 +478,6 @@ h6 {
   cursor: pointer; }
 
 #intro .btn-get-started {
-  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
@@ -323,7 +552,6 @@ h6 {
   text-decoration: none;
   display: inline-block;
   color: #fff;
-  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
@@ -409,8 +637,7 @@ h6 {
   width: 100%;
   display: block;
   outline: none;
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif; }
+  font-weight: 700; }
 
 #mobile-nav ul li a:hover {
   color: #fff; }
@@ -494,16 +721,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Featured Services Section
   --------------------------------*/
-#featured-services {
-  background: #000; }
-
 #featured-services .box {
   padding: 30px 20px; }
 
 #featured-services .box-bg {
   background-image: linear-gradient(0deg, #000000 0%, #242323 50%, #000000 100%); }
 
-#featured-services i {
+#featured-services i:not(.inherit-parent) {
   font-size: 48px;
   display: inline-block;
   line-height: 1; }
@@ -513,13 +737,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 15px 0;
   font-size: 18px; }
 
-#featured-services h4 a {
-  color: #fff; }
-
 #featured-services p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
-  color: #fff;
   margin-bottom: 0; }
 
 /* Helpers
@@ -531,11 +751,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Fifty Fifty Section
   --------------------------------*/
-#fifty-fifty-section .section-header {
+.fifty-fifty-section .section-header {
   padding: 18%; }
 
-#fifty-fifty-section .cta-btn {
-  font-family: "Montserrat",sans-serif;
+.fifty-fifty-section .cta-btn {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
@@ -546,12 +765,24 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: .5s;
   margin-top: 10px; }
 
-#fifty-fifty-section .w-img-column {
+.fifty-fifty-section .w-img-column {
   overflow: hidden; }
-  #fifty-fifty-section .w-img-column img {
+  .fifty-fifty-section .w-img-column img {
     transition: 1s; }
-  #fifty-fifty-section .w-img-column:hover img {
+  .fifty-fifty-section .w-img-column:hover img {
     transform: scale(1.05); }
+
+.fifty-fifty-section i {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 66px;
+  display: inline-block;
+  line-height: 1;
+  transition: 0.6s;
+  vertical-align: middle; }
+  .fifty-fifty-section i:hover {
+    filter: brightness(1.1);
+    transform: rotate(180deg) scale(1.2); }
 
 /* About Us Section
   --------------------------------*/
@@ -676,7 +907,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff; }
 
 #call-to-action .cta-btn {
-  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
@@ -699,7 +929,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 10px; }
 
 #skills .progress .skill {
-  font-family: "Open Sans", sans-serif;
   line-height: 35px;
   padding: 0;
   margin: 0 0 0 20px;
@@ -783,7 +1012,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   z-index: 10; }
 
 #facts .counters span {
-  font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 48px;
   display: block; }
@@ -791,7 +1019,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 #facts .counters p {
   padding: 0;
   margin: 0 0 20px 0;
-  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   color: #111; }
 
@@ -1183,7 +1410,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 0 0 20px 0;
   padding: 2px 0 2px 10px;
   line-height: 1;
-  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 3px; }
 
@@ -1191,7 +1417,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Montserrat", sans-serif;
   color: #eee; }
 
 #footer .footer-top .social-links a {
@@ -1341,11 +1566,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   # Responsive Media Queries
   --------------------------------------------------------------*/
 @media (max-width: 991px) {
-  #fifty-fifty-section .section-header {
+  .fifty-fifty-section .section-header {
     padding: 12%; } }
 
 @media (max-width: 500px) {
-  #fifty-fifty-section .section-header {
+  .fifty-fifty-section .section-header {
     padding: 16% 8%; } }
 
 @media (min-width: 768px) {
@@ -1370,6 +1595,8 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-right: 60px; } }
 
 @media (max-width: 768px) {
+  p {
+    font-size: 16px; }
   .back-to-top {
     bottom: 15px; }
   #header #logo h1 {
@@ -1419,7 +1646,7 @@ video {
   z-index: -100;
   transform: translate(-50%, -50%); }
 
-.overlay {
+.background-overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -1518,6 +1745,7 @@ video {
         border-color: #111; }
 
 .blog-header {
+  z-index: 0;
   width: 100%;
   height: 350px;
   background-size: cover;
@@ -1626,29 +1854,47 @@ pre {
 
 .fixed-cta {
   position: fixed;
-  color: #fff;
   width: auto;
-  text-emphasis: none;
-  text-decoration: none;
-  padding: 12px 30px;
   height: auto;
-  text-align: center;
-  line-height: 1;
-  font-size: 24px;
-  font-weight: 600;
-  border-radius: 30px;
-  left: -55px;
+  border-radius: 4px;
+  left: 15px;
   bottom: 15px;
-  transition: background 0.5s;
   z-index: 11;
   transition: 0.8s;
-  padding-left: 75px;
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.5); }
-  .fixed-cta:hover {
+  .fixed-cta p {
+    margin: 0;
+    padding: 0 30px 3px 30px;
+    text-align: right;
     color: #fff;
+    margin-top: -20px; }
+  .fixed-cta a {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    transition: 0.8s;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 30px; }
+    .fixed-cta a:focus {
+      color: #fff; }
+  .fixed-cta:hover {
     transform: scale(1.1); }
-  .fixed-cta:focus {
-    color: #fff; }
+    .fixed-cta:hover a {
+      color: #fff; }
+  .fixed-cta .cta-phone i {
+    font-size: 42px;
+    margin-right: 7px;
+    border: 2px solid #fff;
+    padding: 0 7px;
+    border-radius: 30px; }
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(359deg); } }
 
 .comment-section {
   margin-top: 70px; }

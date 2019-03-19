@@ -34,7 +34,7 @@ function blog_background($choice) {
 } ?>
 
 <div class="blog-header" style="<?php echo blog_background($bckg); ?>">
-	<div class="overlay" style="<?php echo $o_color; echo $o_opacity; ?>"></div>
+	<div class="background-overlay" style="<?php echo $o_color; echo $o_opacity; ?>"></div>
 	<div class="blog-header-inner d-flex justify-content-center">
 		<h1 class="align-self-center d-flex text-center" style="color:<?php echo $title_color; ?>;"><?php echo get_theme_mod('blog_settings_blog_heading'); ?></h1>
 	</div>

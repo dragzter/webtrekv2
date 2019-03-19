@@ -647,6 +647,17 @@ function metabox_section_creator( $meta_boxes ) {
                                 ),
                             ),
                             array(
+                                'name'  => 'Section Background Color',
+                                'id'    => 'feat_box_background',
+                                'type'  => 'color',
+                                'alpha_channel' => true,
+                            ),
+                            array(
+                                'name'  => 'Section Text Color',
+                                'id'    => 'feat_box_text_color',
+                                'type'  => 'color'
+                            ),
+                            array(
                                 'id'            => 'featured_box',
                                 'type'          => 'group',
                                 'group_title'   => 'Box {#}',

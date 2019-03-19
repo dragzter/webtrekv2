@@ -26,7 +26,7 @@ function get_partial_cta($mb) {
 
 <!-- Call To Action Section -->
 <section id="call-to-action" class="call-to-action wow fadeIn z-one position-relative" <?php echo $bci; ?> >
-<div class="overlay" <?php echo $overlay ?>></div>
+<div class="background-overlay" <?php echo $overlay ?>></div>
   <div class="container <?php echo $text_align; ?>"><?php
     echo $heading;
     echo $text; 

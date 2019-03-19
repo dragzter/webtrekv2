@@ -19,7 +19,7 @@ a:active,
 a:focus {
   color: <?php echo $brand; ?>;
   outline: none;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .back-to-top  {
@@ -64,12 +64,12 @@ a:focus {
     background: <?php echo $brand; ?>;
 }
 
-#featured-services i {
+#featured-services i:not(.inherit-parent), .fifty-fifty-section i {
     color: <?php echo $brand; ?>;
 }
 
 #featured-services h4 a:hover {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 #about .about-col .icon {
@@ -81,7 +81,7 @@ a:focus {
 }
 
 #about .about-col h2 a:hover {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 #services .icon i {
@@ -89,12 +89,12 @@ a:focus {
 }
 
 #services .box:hover .title a {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 #call-to-action .cta-btn:hover {
-    background: <?php echo $brand; ?>;
-    border: 2px solid <?php echo $brand; ?>;
+    background: <?php echo $brand; ?> !important;
+    border: 2px solid <?php echo $brand; ?> !important;
 }
 
 #facts .counters span {
@@ -108,11 +108,11 @@ a:focus {
 
 #portfolio .portfolio-item figure .link-preview:hover,
 #portfolio .portfolio-item figure .link-details:hover {
-    background: <?php echo $brand; ?>;
+    background: <?php echo $brand; ?> !important;
 }
 
 #portfolio .portfolio-item .portfolio-info h4 a:hover {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 .clients .owl-dot.active {
@@ -136,7 +136,7 @@ a:focus {
 }
 
 #contact .contact-info a:hover {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 #contact .form #sendmessage {
@@ -153,7 +153,7 @@ a:focus {
 }
 
 #footer .footer-top .social-links a:hover {
-    background: <?php echo $brand; ?>;
+    background: <?php echo $brand; ?> !important;
 }
 
 #footer .footer-top h4::after {
@@ -161,7 +161,7 @@ a:focus {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"] {
@@ -196,16 +196,16 @@ a:focus {
  */
 
 .blog-index article .overlay-container .overlay .overlay-text a:hover {
-    border-color: <?php echo $brand; ?>;
-    color: <?php echo $brand; ?>;
+    border-color: <?php echo $brand; ?> !important;
+    color: <?php echo $brand; ?> !important;
 }
 
 .blog-index .entry-title a:hover {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 #blog-sidebar ul li:hover a {
-    color: <?php echo $brand; ?>;
+    color: <?php echo $brand; ?> !important;
 }
 
 #blog-sidebar ul li:hover:before {
@@ -219,13 +219,13 @@ a:focus {
 /* Fifty Fifty Section
   --------------------------------*/
 
-#fifty-fifty-section .cta-btn {
+.fifty-fifty-section .cta-btn {
     border: 2px solid <?php echo $brand; ?>;
     color: <?php echo $brand; ?>;
 }
 
-#fifty-fifty-section .cta-btn:hover {
-    background-color: <?php echo $brand; ?>;
+.fifty-fifty-section .cta-btn:hover {
+    background-color: <?php echo $brand; ?> !important;
     color: #fff !important;
     border-color: <?php echo $brand; ?> !important;
 }
@@ -282,11 +282,11 @@ a:focus {
     color: <?php echo get_theme_mod('section_contact_form_text_color'); ?>;
 }
 
-.contact-form-inner-wrap .overlay {
+.contact-form-inner-wrap .background-overlay {
     background:<?php echo get_theme_mod('section_contact_form_overlay') ?>;
 }
 
-.contact-info-inner-wrap .overlay {
+.contact-info-inner-wrap .background-overlay {
     background:<?php echo get_theme_mod('section_contact_info_overlay') ?>;
 }
 
