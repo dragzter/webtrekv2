@@ -60,6 +60,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 
     if(!isset($contact_email_from)) {
       $contact_email_from = "contactform@" . @preg_replace('/^www\./','', $_SERVER['SERVER_NAME']);
+      //$contact_email_from = $contact_email_to;
     }
 
     $headers[] = 'From: ' . $name . ' <' . $contact_email_from . '>' . PHP_EOL;
