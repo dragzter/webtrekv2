@@ -240,27 +240,28 @@ a:focus {
     $form_background_image = get_theme_mod('section_contact_form_image_background');
     $info_background_image = get_theme_mod('section_contact_info_image_background');
 
-
-    if (get_theme_mod('section_contact_form_background_type') == 'color') {
-        $form_background = "background-image: linear-gradient(to left, $form_color_1, $form_color_2);";
-    } else {
-        $form_background = "background-image: url($form_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
-    }
-
-    if (get_theme_mod('section_contact_info_background_type') == 'color') {
-        $info_background = "background-image: linear-gradient(to left, $info_color_1, $info_color_2);";
-    } else {
-        $info_background = "background-image: url($info_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
-    }
-
+    $form_background_color_css = "background-image: linear-gradient(to left, $form_color_1, $form_color_2);";
+    $form_background_image_css = "background-image: url($form_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
+    
+    $info_background_color_css = "background-image: linear-gradient(to left, $info_color_1, $info_color_2);";
+    $info_background_image_css = "background-image: url($info_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
+    
 ?>
 
 .contact-info-inner-wrap {
-    <?php echo $info_background; ?>;
+    <?php echo $info_background_image_css; ?>;
 }
 
 #contact {
-    <?php echo $form_background; ?>
+    <?php echo $form_background_image_css; ?>
+}
+
+.contact-form-inner-wrap .background-overlay {
+    <?php echo $form_background_color_css; ?>;
+}
+
+.contact-info-inner-wrap .background-overlay {
+    <?php echo $info_background_color_css; ?>;
 }
 
 #contact .contact-info address, 
@@ -277,12 +278,6 @@ a:focus {
     color: <?php echo get_theme_mod('section_contact_form_text_color'); ?>;
 }
 
-.contact-form-inner-wrap .background-overlay {
-    background:<?php echo get_theme_mod('section_contact_form_overlay') ?>;
-}
 
-.contact-info-inner-wrap .background-overlay {
-    background:<?php echo get_theme_mod('section_contact_info_overlay') ?>;
-}
 
 
