@@ -877,6 +877,17 @@ function metabox_section_creator( $meta_boxes ) {
                                 'type'      => 'text',
                             ),
                             array(
+                                'name'      => 'Heading Color',
+                                'id'        => 'client_heading_color',
+                                'type'      => 'color',
+                            ),
+                            array(
+                                'name'      => 'Background',
+                                'id'        => 'client_background',
+                                'type'      => 'color',
+                                'alpha_channel' => true
+                            ),
+                            array(
                                 'id'            => 'client_image',
                                 'type'          => 'group',
                                 'group_title'   => 'Image {#}',
@@ -993,6 +1004,12 @@ function metabox_section_creator( $meta_boxes ) {
                                 'name'      => 'Hero Height',
                                 'id'        => 'section_height',
                                 'type'      => 'text',         
+                            ),
+                            array(      
+                                'name'      => 'Hero Overlay Color',
+                                'id'        => 'section_overlay',
+                                'type'      => 'color', 
+                                'alpha_channel' => true,        
                             ),
                             array(      
                                 'name'      => 'Add Slides?',

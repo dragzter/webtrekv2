@@ -392,17 +392,6 @@ h6 {
   background-position: center;
   background-repeat: no-repeat; }
 
-#intro .carousel-item::before {
-  content: '';
-  background-color: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0; }
-
 #intro .carousel-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1151,16 +1140,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 .clients {
   padding: 60px 0;
   position: relative; }
-
-.clients::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: #fff;
-  z-index: 0; }
 
 .clients img {
   max-width: 100%;

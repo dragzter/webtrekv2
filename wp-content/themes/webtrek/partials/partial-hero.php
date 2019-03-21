@@ -3,9 +3,26 @@ function get_partial_hero($mb) {
     $display_section = Webtrek::if_exists($mb, 'show_hide');
     if ($display_section == "yes") :
 
-    $height = (isset($mb['section_height'])) ? 'height:'.$mb['section_height'].';': 'height: 100vh;'; ?>
- 
+    $height = (isset($mb['section_height'])) ? 'height:'.$mb['section_height'].';': 'height: 100vh;';
+    $overlay_color = Webtrek::if_exists($mb, 'section_overlay' ); 
+
+    $css = '<style tyle="text/css">';
+    $css .= '#intro .carousel-item::before {';
+    $css .=     'content: "";';
+    $css .=     'background-color:'.$overlay_color.';';
+    $css .=     'position: absolute;';
+    $css .=     'height: 100%;';
+    $css .=     'width: 100%;';
+    $css .=     'top: 0;';
+    $css .=     'right: 0;';
+    $css .=     'left: 0;';
+    $css .=     'bottom: 0;';
+    $css .= '}';
+    $css .= '</style>';
+
+    ?>
     <!-- Hero Section Partial -->
+    <?php echo $css; ?>
     <section id="intro" style="<?php echo $height; ?>">
         <div class="intro-container">
             <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
@@ -37,9 +54,10 @@ function get_partial_hero($mb) {
                         } else { 
 
                             $video_url = Webtrek::if_exists($slide, 'slide_video_url');
-                            $video_poster = Webtrek::if_exists($slide, 'slide_video_poster'); ?>
+                            $video_poster = Webtrek::if_exists($slide, 'slide_video_poster');
 
-                            <!-- <div class="carousel-background"><img src="" alt=""></div> -->
+                            ?>
+
                             <video autoplay muted loop id="hero-video" poster="<?php echo $video_poster ?>">
                                     <source src="<?php echo $video_url ?>" type="video/mp4">
                             </video><?php  
@@ -61,9 +79,8 @@ function get_partial_hero($mb) {
                 </div> 
 
 
-
                 <?php  
-                if ( $slide_count >= 2 ) { ?>
+                if ( $slide_count > 1 ) { ?>
                 <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
