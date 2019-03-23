@@ -61,7 +61,7 @@
 
 	<div class="container">
 		<div class="copyright">
-			&copy; Copyright <strong>WebTrek Web Development</strong>. All Rights Reserved
+			&copy; <?php echo date("Y"); ?> <strong>WebTrek Web Development</strong>. All Rights Reserved
 		</div>
 	</div>
 </footer><!-- #footer -->

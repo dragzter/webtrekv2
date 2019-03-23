@@ -100,7 +100,7 @@ function metabox_section_creator( $meta_boxes ) {
                             array(
                                 'name'  => 'Section Image',
                                 'id'    => 'fact_img',
-                                'type'  => 'url',
+                                'type'  => 'file_input',
                             ),
                             array(
                                 'id'            => 'fact_counter',
@@ -198,7 +198,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'name'  => 'Portfolio Image',
                                         'id'    => 'portfolio_image',
-                                        'type'  => 'url',
+                                        'type'  => 'file_input',
                                     ),
                                     array(
                                         'name'  => 'Portfolio Title',
@@ -354,7 +354,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'name'  => 'Image',
                                         'id'    => 'team_member_image',
-                                        'type'  => 'url',
+                                        'type'  => 'file_input',
                                     ),
                                     array(
                                         'id'            => 'team_member_social',
@@ -582,6 +582,48 @@ function metabox_section_creator( $meta_boxes ) {
                                 'type'  => 'text',
                             ),
                             array(
+                                'name'  => 'Section Background',
+                                'id'    => 'testimonial_background',
+                                'type'  => 'color',
+                                'alpha_channel' => true
+                            ),
+                            array(
+                                'name'  => 'Section Background Image',
+                                'id'    => 'testimonial_background_image',
+                                'type'  => 'file_input',
+                            ),
+                            array(
+                                'name'  => 'Section Title Color',
+                                'id'    => 'testimonial_title_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Testimonial Name ',
+                                'id'    => 'testimonial_name_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Testimonial Subtitle',
+                                'id'    => 'testimonial_subtitle_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Testimonial',
+                                'id'    => 'testimonial_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Reviewer Image Border',
+                                'id'    => 'testimonial_img_border',
+                                'type'  => 'select',
+                                'options' => array (
+                                    'round' => 'Round',
+                                    'square' => 'Square',
+                                    'soft' => 'Softened',
+                                ),
+                                'placeholder'     => 'Select an Item',
+                            ),
+                            array(
                                 'id'            => 'single_testimonial',
                                 'type'          => 'group',
                                 'group_title'   => 'Testimonial {#}',
@@ -593,7 +635,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'name'  => 'Image',
                                         'id'    => 'reviewer_img',
-                                        'type'  => 'url',
+                                        'type'  => 'file_input',
                                     ),
                                     array(
                                         'name'  => 'Title / Name',
@@ -718,9 +760,30 @@ function metabox_section_creator( $meta_boxes ) {
                                 'type'      => 'text',
                             ),
                             array(
+                                'name'      => 'Heading Color',
+                                'id'        => 'about_heading_color',
+                                'type'      => 'color',
+                            ),
+                            array(
                                 'name'      => 'Text',
                                 'id'        => 'about_text',
                                 'type'      => 'textarea',
+                            ),
+                            array(
+                                'name'      => 'Text Color',
+                                'id'        => 'about_text_color',
+                                'type'      => 'color',
+                            ),
+                            array(
+                                'name'      => 'Background Image',
+                                'id'        => 'about_background',
+                                'type'      => 'file_input',
+                            ),
+                            array(
+                                'name'      => 'Overlay Color',
+                                'id'        => 'about_overlay_color',
+                                'type'      => 'color',
+                                'alpha_channel' => true
                             ),
                             array(
                                 'name' => 'Text Alignment',
@@ -766,7 +829,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'name'      => 'Card Image',
                                         'id'        => 'about_card_img',
-                                        'type'      => 'url',
+                                        'type'      => 'file_input',
                                     ),
                                     array(
                                         'name'      => 'Open in new tab?',
@@ -806,7 +869,7 @@ function metabox_section_creator( $meta_boxes ) {
                             array(
                                 'name' => 'Background Image',
                                 'id' => 'cta_background',
-                                'type' => 'url',
+                                'type' => 'file_input',
                             ),
                             array(
                                 'name' => 'Overlay Style',
@@ -899,7 +962,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(       
                                         'name'      => 'Image Slide',
                                         'id'        => 'image',
-                                        'type'      => 'url',          
+                                        'type'      => 'file_input',          
                                     ),
                                 ),
                             ),
@@ -964,7 +1027,13 @@ function metabox_section_creator( $meta_boxes ) {
                             array(       
                                 'name'      => 'Image',
                                 'id'        => 'fifty_image',
-                                'type'      => 'url',          
+                                'type'      => 'file_input',          
+                            ),
+                            array(       
+                                'name'      => 'Icon Class (Ion Icons v2)',
+                                'id'        => 'fifty_icon_class',
+                                'desc'      => 'https://ionicons.com/v2/',
+                                'type'      => 'text',          
                             ),
                             array(      
                                 'name'      => 'Image Orientation',
@@ -1060,7 +1129,7 @@ function metabox_section_creator( $meta_boxes ) {
                                         'name'      => 'Image URL',
                                         'id'        => 'slide_image',
                                         'visible'       => array( 'slide_media_choice', '=', 'image' ),
-                                        'type'      => 'url',
+                                        'type'      => 'file_input',
                                     ),
                                     array(
                                         'name'      => 'Video URL',
@@ -1072,7 +1141,7 @@ function metabox_section_creator( $meta_boxes ) {
                                         'name'      => 'Video Poster',
                                         'id'        => 'slide_video_poster',
                                         'visible'       => array( 'slide_media_choice', '=', 'video' ),
-                                        'type'      => 'url',
+                                        'type'      => 'file_input',
                                     ),
                                     array(
                                         'name'      => 'Button Text',

@@ -4,13 +4,35 @@ function get_partial_about($mb) {
     $display_section = Webtrek::if_exists($mb, 'show_hide');
     if ($display_section == "yes") :
 
+    // Content settings
     $heading = Webtrek::if_exists($mb, 'about_heading', 'h3');
     $text = Webtrek::if_exists($mb, 'about_text', 'p'); 
     $check_header = array($heading, $text);
-    $d = Webtrek::display($check_header); ?>
+    $d = Webtrek::display($check_header); 
+
+    // Style settings
+    $p = Webtrek::if_exists($mb, 'about_text_color');
+    $h3 = Webtrek::if_exists($mb, 'about_heading_color');
+    $section_p = ($p) ? '#about .section-header p {color:'.$p.'}' : '';
+    $section_h3 = ($h3) ? '#about .section-header h3 {color:'.$h3.'}' : '';
+    $bcgnd = Webtrek::if_exists($mb, 'about_background');
+    $ovrly = Webtrek::if_exists($mb, 'about_overlay_color');
+    $background = ($bcgnd) ? '#about{background:url("'.$bcgnd.'") center top no-repeat fixed;}' : '';
+    $overlay = ($ovrly) ? '#about::before{background:'.$ovrly.';}' : '';
+
+    // Produce a style tag only if settings are used
+    if (isset($p) || isset($h3) || isset($bcgnd) || isset($ovrly)) {
+        $style_tag = ['<style type="text/css">', '</style>'];
+    } else {
+        $style_tag = '';
+    }
+    
+    // Custom css settings done at page level
+    $css = $style_tag[0] . $background . $overlay . $section_h3 . $section_p . $style_tag[1]; ?>
 
     <!-- About Us Section -->
-    <section id="about" class="">
+    <?php echo $css; ?>
+    <section id="about" class="about">
         <div class="container">
             <header class="section-header <?php echo $d; ?>"><?php
                 echo $heading;

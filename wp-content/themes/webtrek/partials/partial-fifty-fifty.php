@@ -15,7 +15,11 @@ function get_partial_fifty_fifty($mb) {
         $bcg_color = Webtrek::if_exists($mb, 'fifty_bcg_color');
         $text_color = Webtrek::if_exists($mb, 'fifty_text_color');
         
-        $tooltip_text = Webtrek::if_exists($mb, 'fifty_tooltip_text');
+        $tt = Webtrek::if_exists($mb, 'fifty_tooltip_text');
+        $tooltip_text = ($tt) ? '<div class="w-tooltip"><p>'.$tt.'</p></div>' : '';
+
+        $icon_class = Webtrek::if_exists($mb, 'fifty_icon_class');
+        $icon = ($icon_class) ? '<div class="icon-wrap text-center"><i class="'.$icon_class.'"></i></div>' : '';
         
         $image_orientation = Webtrek::if_exists($mb, 'img_orientation'); 
        
@@ -32,11 +36,11 @@ function get_partial_fifty_fifty($mb) {
         <div class="container-fluid">
             <div class="row"><?php
 
-                $column_img = '<div class="col-lg-6 col-md-12 p-0 d-flex align-items-center w-img-column '.$img_col.'">'.$image.'<div class="w-tooltip"><p>'.$tooltip_text.'</p></div></div>';
+                $column_img = '<div class="col-lg-6 col-md-12 p-0 d-flex align-items-center w-img-column '.$img_col.'">'.$image . $tooltip_text . '</div>';
                 
                 $column_text = '<div class="col-lg-6 col-md-12 d-flex align-items-center w-text-column '.$text_col.'">';
                 $column_text .=     '<div class="section-header wow zoomIn">';
-                $column_text .=         "<div class='icon-wrap text-center'><i class='ion-android-compass'></i></div>";
+                $column_text .=         $icon;
                 $column_text .=         "<h3 style='color: {$text_color};'>{$heading}</h3>";
                 $column_text .=         "<p style='color: {$text_color};'>{$text}</p>";
                 $column_text .=         '<div class="text-center">';

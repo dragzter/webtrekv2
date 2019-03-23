@@ -174,6 +174,7 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 require get_template_directory() . '/inc/customizer/blog-customizer-settings.php';
 require get_template_directory() . '/inc/customizer/brand-customizations.php';
 require get_template_directory() . '/inc/customizer/section-colors-customizer.php';
+require get_template_directory() . '/inc/customizer/fixed-cta-customizer.php';
 
 /**
  * Custom Functions and Includes

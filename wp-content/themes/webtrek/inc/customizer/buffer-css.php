@@ -186,6 +186,16 @@ a:focus {
     background: <?php echo $b_footer; ?>;
 }
 
+.mobile-fixed-cta .cta-inner a {
+    background: <?php echo $brand; ?>;
+}
+
+.mobile-fixed-cta .cta-inner a:active {
+    color: <?php echo $brand; ?>;
+    background: #fff;
+}
+
+
 /**
  * Blog
  */
@@ -250,7 +260,7 @@ a:focus {
     $info_background_image = get_theme_mod('section_contact_info_image_background');
 
     $form_background_color_css = "background-image: linear-gradient(to left, $form_color_1, $form_color_2);";
-    $form_background_image_css = "background-image: url($form_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
+    $form_background_image_css = "background-image: url($form_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;margin-bottom: -1px;";
     
     $info_background_color_css = "background-image: linear-gradient(to left, $info_color_1, $info_color_2);";
     $info_background_image_css = "background-image: url($info_background_image);background-repeat: no-repeat;background-size: cover;background-position: center;";
