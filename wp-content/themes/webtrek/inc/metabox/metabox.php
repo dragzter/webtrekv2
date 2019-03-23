@@ -976,6 +976,11 @@ function metabox_section_creator( $meta_boxes ) {
                                 ),
                                 'placeholder'   => 'Select Image Orientation',      
                             ),
+                            array(
+                                'name'      => 'Tooltip Text',
+                                'id'        => 'fifty_tooltip_text',
+                                'type'      => 'textarea',
+                            ),
                         ),
                     ),
                 

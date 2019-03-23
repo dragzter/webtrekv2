@@ -15,6 +15,8 @@ function get_partial_fifty_fifty($mb) {
         $bcg_color = Webtrek::if_exists($mb, 'fifty_bcg_color');
         $text_color = Webtrek::if_exists($mb, 'fifty_text_color');
         
+        $tooltip_text = Webtrek::if_exists($mb, 'fifty_tooltip_text');
+        
         $image_orientation = Webtrek::if_exists($mb, 'img_orientation'); 
        
         if ($image_orientation == 'left') {
@@ -30,7 +32,7 @@ function get_partial_fifty_fifty($mb) {
         <div class="container-fluid">
             <div class="row"><?php
 
-                $column_img = '<div class="col-lg-6 col-md-12 p-0 d-flex align-items-center w-img-column '.$img_col.'">'.$image.'</div>';
+                $column_img = '<div class="col-lg-6 col-md-12 p-0 d-flex align-items-center w-img-column '.$img_col.'">'.$image.'<div class="w-tooltip"><p>'.$tooltip_text.'</p></div></div>';
                 
                 $column_text = '<div class="col-lg-6 col-md-12 d-flex align-items-center w-text-column '.$text_col.'">';
                 $column_text .=     '<div class="section-header wow zoomIn">';

@@ -13,7 +13,7 @@ function get_partial_hero($mb) {
     $css .=     'position: absolute;';
     $css .=     'height: 100%;';
     $css .=     'width: 100%;';
-    $css .=     'top: 0;';
+    $css .=     'top: 0;';  
     $css .=     'right: 0;';
     $css .=     'left: 0;';
     $css .=     'bottom: 0;';

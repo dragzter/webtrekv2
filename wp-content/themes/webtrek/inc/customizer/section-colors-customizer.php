@@ -254,40 +254,73 @@ function section_colors_customizations($wp_customize) {
     )));
 
 
+    // Section Fifty Fifty >>>-------**|>
 
-
-
-    $section = 'section_testimonial';
+    $section = 'section_fifty';
     $wp_customize->add_section($section, array(
-        'title' => 'Section Contact Form',
+        'title' => 'Section Fifty Fifty',
         'panel' => $panel,
         'priority' => 40
     ));
 
-    $section = 'section_clients';
-    $wp_customize->add_section($section, array(
-        'title' => 'Section Contact Form',
-        'panel' => $panel,
-        'priority' => 50
-    ));
-
-    $section = 'section_facts';
-    $wp_customize->add_section($section, array(
-        'title' => 'Section Contact Form',
-        'panel' => $panel,
-        'priority' => 60
-    ));
-
+    // Settings for Fifty Fifty >>>-------**|>
     
-
-
-
-
-    // Settings for Testimonials >>>-------**|>
-    // Settings for Clients >>>-------**|>
-    // Settings for Facts >>>-------**|>
-
+    $setting = $section.'_overlay_color';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#000'
+    ));
     
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Overlay Color',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 10,
+    )));
+
+    /* ---------------------------- */
+
+    $setting = $section.'_tooltip_color';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#000'
+    ));
+    
+    $wp_customize->add_control( new Customize_Alpha_Color_Control( $wp_customize, $setting.'_control', array(
+        'label'         => 'Tooltip Color',
+        'section'       => $section,
+        'settings'      => $setting,
+        'priority'      => 20,
+        'show_opacity'  => true,
+        'palette'	=> array(
+            '#fe2600', 
+            '#333333',
+            '#111111',
+            '#ffffff',
+            '#ff6600',
+            '#33DAFF',
+            '#00D62A',
+            '#FFFC1E',
+            '#1E8BFF',
+            '#AD1EFF',
+            '#FF1E66'
+        )
+    )));
+
+    /* ---------------------------- */
+
+    $setting = $section.'_tooltip_text_color';
+    $wp_customize->add_setting($setting, array(
+        'default' => '#000'
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Tooltip Text Color',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 30,
+    )));
+
+
+
 
 }
 

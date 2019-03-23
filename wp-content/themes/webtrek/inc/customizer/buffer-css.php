@@ -225,6 +225,15 @@ a:focus {
     border-color: <?php echo $brand; ?> !important;
 }
 
+.w-tooltip  {
+    background: <?php echo get_theme_mod('section_fifty_tooltip_color', '#000') ?>;
+	color: <?php echo get_theme_mod('section_fifty_tooltip_text_color', '#fff') ?>;
+}
+
+.w-img-column:before {
+    background: <?php echo get_theme_mod('section_fifty_overlay_color', '#111') ?>;
+}
+
 /* Custom Color Options
 -----------------------------------*/
 
