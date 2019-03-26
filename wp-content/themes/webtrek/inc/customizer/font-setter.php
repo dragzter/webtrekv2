@@ -20,17 +20,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 5,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -45,17 +45,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 10,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -70,17 +70,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 20,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -95,17 +95,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 30,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -120,17 +120,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 40,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -145,17 +145,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 50,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -170,17 +170,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 60,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -196,17 +196,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 70,
         'type' => 'select',
         'choices'      => array(
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 
@@ -221,18 +221,17 @@ function custom_font_settings($wp_customize) {
         'priority' => 80,
         'type' => 'select',
         'choices'      => array(
-            'default' => 'Select One',
-            'montserrat' => 'Montserrat, sans-serif',
-            'dosis' => 'Dosis, sans-serif',
-            'merriweather' => 'Merriweather, serif',
-            'lato' => 'Lato, sans-serif',
-            'sourcesanspro' => 'Source Sans Pro, sans-serif',
-            'poppins' => 'Poppins, sans-serif',
-            'librefranklin' => 'Libre Franklin, sans-serif',
-            'oldstandardtt' => 'Old Standard TT, serif',
-            'roboto' => 'Roboto, sans-serif',
-            'worksans' => 'Work Sans, sans-serif',
-            'playfair' => 'Playfair, serif'
+            'Montserrat' => 'Montserrat, sans-serif',
+            'Dosis' => 'Dosis, sans-serif',
+            'Merriweather' => 'Merriweather, serif',
+            'Lato' => 'Lato, sans-serif',
+            'Source Sans Pro' => 'Source Sans Pro, sans-serif',
+            'Poppins' => 'Poppins, sans-serif',
+            'Libre Franklin' => 'Libre Franklin, sans-serif',
+            'Old Standard TT' => 'Old Standard TT, serif',
+            'Roboto' => 'Roboto, sans-serif',
+            'Work Sans' => 'Work Sans, sans-serif',
+            'Playfair Display' => 'Playfair, serif'
         )
     )));
 

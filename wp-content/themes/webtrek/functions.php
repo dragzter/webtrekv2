@@ -236,10 +236,6 @@ require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
 /**
  * Run Custom css through output buffer
  */
-
-
-
-
 function generate_fonts() {
 	
 	$body_font = get_theme_mod('font_family_body');
@@ -252,7 +248,7 @@ function generate_fonts() {
 	$h5_font = get_theme_mod('font_family_h5');
 	$h6_font = get_theme_mod('font_family_h6');
 	
-	$css = '<style type="text/css">';
+	$css = '<style id="font-custom" type="text/css">';
 	$css .= 'body {font-family:'.$body_font.';}';
 	$css .= 'p {font-family:'.$p_font.';}';
 	$css .= 'a {font-family:'.$a_font.';}';
@@ -263,6 +259,8 @@ function generate_fonts() {
 	$css .= 'h5 {font-family:'.$h5_font.';}';
 	$css .= 'h6 {font-family:'.$h6_font.';}';
 	$css .= '</style>';
+
+	echo $css;
 
 }
 add_action('wp_head', 'generate_fonts');
