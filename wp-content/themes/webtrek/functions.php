@@ -175,6 +175,7 @@ require get_template_directory() . '/inc/customizer/blog-customizer-settings.php
 require get_template_directory() . '/inc/customizer/brand-customizations.php';
 require get_template_directory() . '/inc/customizer/section-colors-customizer.php';
 require get_template_directory() . '/inc/customizer/fixed-cta-customizer.php';
+require get_template_directory() . '/inc/customizer/font-setter.php';
 
 /**
  * Custom Functions and Includes
@@ -235,4 +236,35 @@ require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
 /**
  * Run Custom css through output buffer
  */
+
+
+
+
+function generate_fonts() {
+	
+	$body_font = get_theme_mod('font_family_body');
+	$p_font = get_theme_mod('font_family_p');
+	$a_font = get_theme_mod('font_family_a');
+	$h1_font = get_theme_mod('font_family_h1');
+	$h2_font = get_theme_mod('font_family_h2');
+	$h3_font = get_theme_mod('font_family_h3');
+	$h4_font = get_theme_mod('font_family_h4');
+	$h5_font = get_theme_mod('font_family_h5');
+	$h6_font = get_theme_mod('font_family_h6');
+	
+	$css = '<style type="text/css">';
+	$css .= 'body {font-family:'.$body_font.';}';
+	$css .= 'p {font-family:'.$p_font.';}';
+	$css .= 'a {font-family:'.$a_font.';}';
+	$css .= 'h1 {font-family:'.$h1_font.';}';
+	$css .= 'h2 {font-family:'.$h2_font.';}';
+	$css .= 'h3 {font-family:'.$h3_font.';}';
+	$css .= 'h4 {font-family:'.$h4_font.';}';
+	$css .= 'h5 {font-family:'.$h5_font.';}';
+	$css .= 'h6 {font-family:'.$h6_font.';}';
+	$css .= '</style>';
+
+}
+add_action('wp_head', 'generate_fonts');
+
 css_generate();

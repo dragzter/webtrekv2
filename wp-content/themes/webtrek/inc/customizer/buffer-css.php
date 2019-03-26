@@ -3,10 +3,11 @@
     $nav = (get_theme_mod('brand_nav_color')) ? get_theme_mod('brand_nav_color') : 'rgba(0,0,0,0.9)';
     $b_footer = (get_theme_mod('brand_bottom_footer_color')) ? get_theme_mod('brand_bottom_footer_color') : '#111';
     $t_footer = (get_theme_mod('brand_top_footer_color')) ? get_theme_mod('brand_top_footer_color') : '#111';
+
 ?>
 
 /**
-* Brand Color <?php echo $brand; ?>
+ * Brand Color <?php echo $brand; ?>
  */
 
 a {
