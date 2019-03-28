@@ -7,3 +7,9 @@
 .login label, #login .message {
     color: #fff;
 }
+
+#login #loginform #wp-submit.button {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+}
