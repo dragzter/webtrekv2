@@ -133,5 +133,24 @@ function brand_customizations($wp_customize) {
     //     'priority' => 40
     // )));
 
+    //custom_login_logo
+    $section = 'custom_login';
+    $wp_customize->add_section($section, array(
+        'title' => 'Custom Login',
+        'priority' => 0
+    ));
+
+    $setting = $section . '_logo';
+    $wp_customize->add_setting($setting);
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting.'_control', array(
+        'label' => 'Logo Upload',
+        'description' => 'Custom login screen Logo.',
+        'section' => $section,
+        'settings' => $setting,
+        'priority' => 10
+    )));
+
+
 }
 add_action( 'customize_register', 'brand_customizations' );

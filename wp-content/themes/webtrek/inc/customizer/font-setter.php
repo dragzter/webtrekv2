@@ -30,7 +30,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -55,7 +56,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -80,7 +82,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -105,7 +108,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -130,7 +134,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -155,7 +160,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -180,7 +186,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -206,7 +213,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 
@@ -231,7 +239,8 @@ function custom_font_settings($wp_customize) {
             'Old Standard TT' => 'Old Standard TT, serif',
             'Roboto' => 'Roboto, sans-serif',
             'Work Sans' => 'Work Sans, sans-serif',
-            'Playfair Display' => 'Playfair, serif'
+            'Playfair Display' => 'Playfair, serif',
+            'Vollkorn' => 'Vollkorn, serif'
         )
     )));
 

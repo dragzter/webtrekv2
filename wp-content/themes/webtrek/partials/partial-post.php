@@ -14,10 +14,18 @@ $author = get_the_author();
 $date = get_the_date();
 $time = get_the_time(); ?>
 
+<div id="blog-single-header" class="blog-single-header">
+    <div class="container">  
+        <?php echo the_title( '<h2 class="entry-title single-post-title">', '</h2>' ); ?>
+    </div>
+    <?php the_post_thumbnail( ); ?>
+</div>
+
 <section id="primary-content" class="single-post-view">
     <div class="site-main container">
         <div class="row">
             <div class="col-md-9">
+                
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>><?php
 
                 // Must include loop
@@ -25,13 +33,9 @@ $time = get_the_time(); ?>
                     
                     <header class="entry-header">
                         <?php
-                        if ( is_singular() ) :
-                            the_title( '<h2 class="entry-title">', '</h2>' );
-                        else :
+                        if ( !is_singular() ) :
                             the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
                         endif;
-
-
 
                         if ( 'post' === get_post_type() ) : ?>
                             <div class="entry-meta"><?php 

@@ -1,0 +1,9 @@
+/** Login Styles */
+
+.login form, .login #login_error, .login .message, .login .success {
+    background: #111;
+}
+
+.login label, #login .message {
+    color: #fff;
+}

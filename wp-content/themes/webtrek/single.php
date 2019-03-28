@@ -17,8 +17,6 @@ get_header(); ?>
      * @param array
      */
 
-    Webtrek::render_panels( rwmb_meta('section_control') );
-
 	// Always show the post partial
 	get_post_partial();
 ?>

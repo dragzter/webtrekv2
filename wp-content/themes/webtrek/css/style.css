@@ -475,6 +475,50 @@
   src: local("Playfair Display Black"), local("PlayfairDisplay-Black"), url("../fonts/playfair-display-v14-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/playfair-display-v14-latin-900.woff2") format("woff2"), url("../fonts/playfair-display-v14-latin-900.woff") format("woff"), url("../fonts/playfair-display-v14-latin-900.ttf") format("truetype"), url("../fonts/playfair-display-v14-latin-900.svg#PlayfairDisplay") format("svg");
   /* Legacy iOS */ }
 
+/* vollkorn-regular - latin */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../fonts/vollkorn-v9-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Vollkorn Regular"), local("Vollkorn-Regular"), url("../fonts/vollkorn-v9-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/vollkorn-v9-latin-regular.woff2") format("woff2"), url("../fonts/vollkorn-v9-latin-regular.woff") format("woff"), url("../fonts/vollkorn-v9-latin-regular.ttf") format("truetype"), url("../fonts/vollkorn-v9-latin-regular.svg#Vollkorn") format("svg");
+  /* Legacy iOS */ }
+
+/* vollkorn-600 - latin */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("../fonts/vollkorn-v9-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local("Vollkorn SemiBold"), local("Vollkorn-SemiBold"), url("../fonts/vollkorn-v9-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/vollkorn-v9-latin-600.woff2") format("woff2"), url("../fonts/vollkorn-v9-latin-600.woff") format("woff"), url("../fonts/vollkorn-v9-latin-600.ttf") format("truetype"), url("../fonts/vollkorn-v9-latin-600.svg#Vollkorn") format("svg");
+  /* Legacy iOS */ }
+
+/* vollkorn-700 - latin */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("../fonts/vollkorn-v9-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Vollkorn Bold"), local("Vollkorn-Bold"), url("../fonts/vollkorn-v9-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/vollkorn-v9-latin-700.woff2") format("woff2"), url("../fonts/vollkorn-v9-latin-700.woff") format("woff"), url("../fonts/vollkorn-v9-latin-700.ttf") format("truetype"), url("../fonts/vollkorn-v9-latin-700.svg#Vollkorn") format("svg");
+  /* Legacy iOS */ }
+
+/* vollkorn-900 - latin */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url("../fonts/vollkorn-v9-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Vollkorn Black"), local("Vollkorn-Black"), url("../fonts/vollkorn-v9-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/vollkorn-v9-latin-900.woff2") format("woff2"), url("../fonts/vollkorn-v9-latin-900.woff") format("woff"), url("../fonts/vollkorn-v9-latin-900.ttf") format("truetype"), url("../fonts/vollkorn-v9-latin-900.svg#Vollkorn") format("svg");
+  /* Legacy iOS */ }
+
 /*
   Theme Name: Webtrek
 */
@@ -1860,6 +1904,28 @@ body.mobile-nav-active #mobile-nav-toggle {
   #mobile-nav-toggle {
     display: inline; } }
 
+#blog-single-header {
+  position: relative; }
+  #blog-single-header .entry-title {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    z-index: 10;
+    text-transform: capitalize;
+    font-size: 3.5em; }
+  #blog-single-header:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75); }
+  #blog-single-header img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; }
+
 #primary-content {
   padding-top: 80px;
   padding-bottom: 40px;
@@ -1919,7 +1985,9 @@ video {
   width: 50%; }
 
 #primary-content.single-post-view article .entry-header {
-  margin-bottom: 40px; }
+  margin-bottom: 30px;
+  border-bottom: 3px solid rgba(158, 158, 158, 0.2);
+  padding-bottom: 20px; }
   #primary-content.single-post-view article .entry-header h2.entry-title {
     padding-bottom: 0; }
   #primary-content.single-post-view article .entry-header .entry-meta {

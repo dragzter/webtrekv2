@@ -320,6 +320,30 @@ function section_colors_customizations($wp_customize) {
     )));
 
 
+    // Header behavior
+    $section = 'header';
+    $wp_customize->add_section($section, array(
+        'title' => 'Header & Navigation',
+        'priority' => 100,
+        'panel' => $panel
+    ));
+
+    $setting = $section.'_scroll_behavior';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Header scroll behavior',
+        'section'   => $section,
+        'settings'  => $setting,
+        'description' => 'Scroll: Header will be transparent until page is scrolled.  Solid Color: Header will load Solid and not change on scroll.',
+        'priority'  => 10,
+        'type'      => 'select',
+        'choices'   => array(
+            'default' => 'Default',
+            'scroll' => 'Change On Scroll',
+            'no_scroll' => 'Solid Color'
+        )
+    )));
 
 
 }
