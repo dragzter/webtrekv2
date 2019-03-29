@@ -37,7 +37,7 @@
   <header id="header">
     <div class="container-fluid">
     <div class="row align-items-center appender">
-      <div class="col">
+      <div class="col-3">
       
         <div id="logo" class="pull-left">
           <?php the_custom_logo(); ?>
