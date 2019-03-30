@@ -7,7 +7,7 @@ function brand_customizations($wp_customize) {
     
     $section = 'contact_settings';
     $wp_customize->add_section($section, array(
-        'title' => 'Contact Form Settings',
+        'title' => 'Contact Forms Settings',
         'priority' => 0
     ));
 
@@ -23,6 +23,38 @@ function brand_customizations($wp_customize) {
         'settings' => $setting,
         'type'     => 'url',
         'priority' => 10
+    )));
+
+    $setting = $section.'_newsletter_email';
+    $wp_customize->add_setting($setting, array(
+        'default' => 'email@example.com'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label' => 'Newsletter signup Form Email',
+        'description' => 'Recipient e-mail for the Newsletter form.',
+        'section' => $section,
+        'settings' => $setting,
+        'type'     => 'url',
+        'priority' => 11
+    )));
+
+    $setting = $section.'_show_newsletter';
+    $wp_customize->add_setting($setting, array(
+        'default' => 'yes'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label' => 'Show Footer Newsletter Form?',
+        'description' => 'Show the newsletter signup form in footer (appears on the every page where footer is visible)',
+        'section' => $section,
+        'settings' => $setting,
+        'type'     => 'select',
+        'choices' => array(
+            'yes'   => 'Yes',
+            'no'    => 'No'
+        ),
+        'priority' => 20
     )));
 
     // ---------------------------------------
@@ -123,15 +155,15 @@ function brand_customizations($wp_customize) {
 
     // ---------------------------------------
 
-    // $setting = $section.'_footer_logo';
-    // $wp_customize->add_setting($setting);
+    $setting = $section.'_footer_logo';
+    $wp_customize->add_setting($setting);
 
-    // $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting.'_control', array(
-    //     'label' => 'Footer Logo',
-    //     'section' => $section,
-    //     'settings' => $setting,
-    //     'priority' => 40
-    // )));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting.'_control', array(
+        'label' => 'Footer Logo',
+        'section' => $section,
+        'settings' => $setting,
+        'priority' => 40
+    )));
 
     //custom_login_logo
     $section = 'custom_login';

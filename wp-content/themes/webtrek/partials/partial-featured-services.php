@@ -1,9 +1,6 @@
 <?php 
 function get_partial_featured_services($mb) {
 
-    
-    
-    
     $display_section = Webtrek::if_exists($mb, 'show_hide');
     if ($display_section == "yes") : 
     
@@ -13,8 +10,6 @@ function get_partial_featured_services($mb) {
         $text_color = ($mb_color) ? $mb_color : get_theme_mod( 'section_feat_serv_text', '#111' );
         $background_color = ($mb_back_color) ? $mb_back_color : get_theme_mod( 'section_feat_serv_background', '#fff' );
 
-       
-    
     ?>
 
    <!-- Featured Services Section -->

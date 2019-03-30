@@ -44,6 +44,7 @@ function webtrek_scripts() {
 	wp_enqueue_script( 'wt-lightbox', get_template_directory_uri() . '/lib/lightbox/js/lightbox.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-toushswipe', get_template_directory_uri() . '/lib/touchSwipe/jquery.touchSwipe.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-contactform', get_template_directory_uri() . '/contactform/contactform.js', array(), '20151215', true );
+	wp_enqueue_script( 'wt-newsletter', get_template_directory_uri() . '/contactform/newsletter.js', array(), '20151215', true );
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-main', get_template_directory_uri() . '/js/main.js', array(), filemtime( $script_path ), true );
 	wp_enqueue_script( 'webtrek-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -103,12 +104,17 @@ require get_template_directory() . '/partials/partial-post.php';
 require get_template_directory() . '/partials/partial-accordion.php';
 require get_template_directory() . '/partials/partial-fifty-fifty.php';
 require get_template_directory() . '/partials/fixed-cta.php';
+require get_template_directory() . '/partials/partial-newsletter-signup.php';
 
 /**
  * Bootstrap navwalker
  */
 require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
 
+function newsletter_form() {
+	return get_partial_newsletter();
+}
+add_shortcode( 'newsletter', 'newsletter_form' );
 /**
  * Run Custom css through output buffer
  */

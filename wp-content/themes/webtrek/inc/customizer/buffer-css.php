@@ -154,14 +154,16 @@ a:focus {
 
 #footer .footer-top h4::after {
     background: <?php echo $brand; ?>;
+
 }
 
 #footer .footer-top .footer-links ul a:hover {
     color: <?php echo $brand; ?> !important;
 }
 
-#footer .footer-top .footer-newsletter input[type="submit"] {
+.newsletter-form input[type="submit"]:hover {
     background: <?php echo $brand; ?>;
+    border: 1px solid <?php echo $brand; ?>;
 }
 
 /**

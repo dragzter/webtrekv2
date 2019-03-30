@@ -12,8 +12,8 @@
 	<div class="footer-top">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-6 footer-info"><?php 
-					the_custom_logo(); ?>
+				<div class="col-lg-3 col-md-6 footer-info">
+					<img class="img-fluid" src="<?php	echo get_theme_mod('brand_footer_logo') ?>" alt="Footer Logo">
 				</div>
 
 				<div class="col-lg-3 col-md-6 footer-links"><?php 
@@ -31,29 +31,11 @@
 				<div class="col-lg-3 col-md-6 footer-newsletter"><?php
 				    if ( is_active_sidebar( 'sidebar-footer-3' ) ) {
 						dynamic_sidebar( 'sidebar-footer-3' );
-					} ?>
-					<!-- <h4>Useful Links</h4>
-					<nav id="nav-menu-container" role="navigation">
-	
-						<?php
-						// wp_nav_menu( array(
-						// 	'theme_location'    => 'secondary',
-						// 	'depth'             => 2,
-						// 	'container'         => 'ul',
-						// 	'container_class'   => 'collapse navbar-collapse nav-menu',
-						// 	'container_id'      => 'nabvar-container',
-						// 	'menu_class'        => 'nav-menu',
-						// 	'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-						// 	'walker'            => new WP_Bootstrap_Navwalker(),
-						// ) );
-						?>
-					
-					</nav> -->
-					<!-- <h4>Our Newsletter</h4>
-					<p>Tamen  enim veniam  quem marada parida nodela caramase seza.</p>
-					<form action="" method="post">
-					<input type="email" name="email"><input type="submit"  value="Subscribe">
-					</form> -->
+					} 
+					// Include newsletter
+					echo get_partial_newsletter();
+					?>
+
 				</div>
 			</div>
 		</div>

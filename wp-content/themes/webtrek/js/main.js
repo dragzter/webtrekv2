@@ -90,6 +90,48 @@
     $("#mobile-nav, #mobile-nav-toggle").hide();
   }
 
+  var $menuChildren = $('#menu-main-menu').children().length;
+
+  if ($menuChildren >= 8 ) {
+    if ($(window).width() < 1400) {
+      $('#mobile-nav-toggle').show();
+      $('#nav-menu-container').hide();
+    }
+  
+    $(window).resize(function(){
+      var $ww = $(window).width();
+        if ($ww < 1400) {
+          $('#mobile-nav-toggle').show();
+          $('#nav-menu-container').hide();
+        } else {
+          $('#mobile-nav-toggle').hide();
+          $('#nav-menu-container').show();
+        }
+    });
+      
+  } else if ($menuChildren >= 6) {
+    
+    if ($(window).width() < 1200) {
+      $('#mobile-nav-toggle').show();
+      $('#nav-menu-container').hide();
+    }
+
+    $(window).resize(function(){
+      var $ww = $(window).width();
+        if ($ww < 1200) {
+          $('#mobile-nav-toggle').show();
+          $('#nav-menu-container').hide();
+        } else {
+          $('#mobile-nav-toggle').hide();
+          $('#nav-menu-container').show();
+        }
+    });
+  }
+
+
+
+  console.log($(window).width())
+
   // Smooth scroll for the menu and links with .scrollto classes
   $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
