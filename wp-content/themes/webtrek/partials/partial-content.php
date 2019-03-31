@@ -27,3 +27,4 @@ function get_partial_content() { ?>
 </section><!-- #primary-content -->
 <?php 
 }
+

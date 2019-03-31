@@ -85,6 +85,12 @@ require get_template_directory() . '/inc/ob-css.php';
 require get_template_directory() . '/inc/custom-functions/custom-functions.php';
 
 /**
+ * Custom Post Types
+ */
+require get_template_directory() . '/inc/custom-post-types/testimonial.php';
+
+
+/**
  * Partials
  */
 require get_template_directory() . '/partials/partial-cta.php';
@@ -105,6 +111,7 @@ require get_template_directory() . '/partials/partial-accordion.php';
 require get_template_directory() . '/partials/partial-fifty-fifty.php';
 require get_template_directory() . '/partials/fixed-cta.php';
 require get_template_directory() . '/partials/partial-newsletter-signup.php';
+require get_template_directory() . '/partials/partial-add-testimonial.php';
 
 /**
  * Bootstrap navwalker

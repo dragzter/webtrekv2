@@ -26,6 +26,7 @@ get_header(); ?>
  
     // Always show page content
     get_partial_content();
+    get_partial_add_testimonial();
 ?>
 </main><?php 
 get_footer();
