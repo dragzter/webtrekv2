@@ -144,6 +144,20 @@ a:focus {
     background-color: <?php echo $brand; ?>;
 }
 
+#input-details button[type="submit"] {
+    background-color: <?php echo $brand; ?>;
+}
+
+#input-details .rating:not(:hover) label input:checked ~ .icon,
+#input-details .rating:hover label:hover input ~ .icon {
+    color: <?php echo $brand; ?>;
+}
+	
+#input-details .rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: #000;
+    text-shadow: 0 0 5px <?php echo $brand; ?>;
+}
+
 #footer .footer-top .footer-info h3 {
     border-left: 4px solid <?php echo $brand; ?>;
 }

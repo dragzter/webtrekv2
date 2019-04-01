@@ -246,5 +246,28 @@
   //   }
   // });
 
+  $(document).ready(function(){
+    $('#input-details').submit(function(e){
+
+    e.preventDefault();
+    var url = $(this).attr('action');
+    var method = $(this).attr('method');
+    var data = $(this).serialize();
+
+      $.ajax({ 
+          url:url,
+          data: data,
+          type: method,
+          success: function(data){
+            if (data == 'OK') {
+              $('.vanish-on-sub').slideUp(300, false);
+              $('.form-helper').addClass('m-0').html('<i class="ion-thumbsup" style="color:#2AD624;"></i> Thank you, we look forward to reading your input.');
+            }
+          }
+      })
+
+    })
+})
+
 })(jQuery);
 

@@ -122,6 +122,11 @@ function newsletter_form() {
 	return get_partial_newsletter();
 }
 add_shortcode( 'newsletter', 'newsletter_form' );
+
+function testimonial_form_short_code() {
+	return get_partial_add_testimonial();
+}
+add_shortcode( 'testimonial-form', 'testimonial_form_short_code' );
 /**
  * Run Custom css through output buffer
  */

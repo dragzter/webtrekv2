@@ -1,30 +1,28 @@
 <?php
+require($_SERVER['DOCUMENT_ROOT'].'/wp-load.php');
 
-if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_post") {
+if(isset($_POST['new_post']) == '1') {
+    $post_title = $_POST['post_title'];
+    $post_content = $_POST['post_content'];
+    $post_rating = $_POST['rating'];
 
-    // Do some minor form validation to make sure there is content
-    if (isset ($_POST['title'])) {
-        $title =  $_POST['title'];
-    } else {
-        echo 'Please enter a  title';
-    }
-    if (isset ($_POST['description'])) {
-        $description = $_POST['description'];
-    } else {
-        echo 'Please enter the content';
-    }
-    $tags = $_POST['post_tags'];
-
-    // Add the content of the form to $post as an array
     $new_post = array(
-        'post_title'    => $title,
-        'post_content'  => $description,
-        'post_category' => array($_POST['cat']),  // Usable for custom taxonomies too
-        'tags_input'    => array($tags),
-        'post_status'   => 'preview',           // Choose: publish, preview, future, draft, etc.
-        'post_type' => 'testimonial'  //'post',page' or use a custom post type if you want to
+        'ID' => '',
+        'post_content' => $post_content, 
+        'post_title' => $post_title,
+        'post_status' => 'pending',
+        'post_type' => 'testimonial',
+        'post_excerpt' => $post_rating
     );
-    //save the new post
-    $pid = wp_insert_post($new_post); 
-    //insert taxonomies
-}
+
+    $post_id = wp_insert_post($new_post, true);
+
+    if( $post_id ) {
+        echo 'OK';
+    } else {
+        echo 'Could not insert post!';
+    }
+   
+    // update post meta
+
+} 

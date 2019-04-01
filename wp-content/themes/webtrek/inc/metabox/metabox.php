@@ -18,7 +18,7 @@ add_filter( 'rwmb_meta_boxes', 'metabox_section_creator' );
 function metabox_section_creator( $meta_boxes ) {
     $meta_boxes[] = array(
         'title'         => 'Content Sections',
-        'post_types'    => array('page'),
+        'post_types'    => array('page', 'testimonial'),
         // 'include'       => array(
         //     'template' => array('front-page.php', 'page.php', 'single.php', 'index.php'),
         // ),
