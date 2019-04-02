@@ -239,33 +239,31 @@
   });
 
 
-  // WebFont.load({
-  //   custom: {
-  //     families: ['Montserrat'],
-  //     urls: ['../wp-content/themes/webtrek/css/style.css']
-  //   }
-  // });
-
   $(document).ready(function(){
     $('#input-details').submit(function(e){
 
     e.preventDefault();
-    var url = $(this).attr('action');
     var method = $(this).attr('method');
-    var data = $(this).serialize();
+    var formData = $(this).serialize();
+    var ajaxurl = 'https://gowebtrek.com/wp-admin/admin-ajax.php'
 
-      $.ajax({ 
-          url:url,
-          data: data,
-          type: method,
-          success: function(data){
-            if (data == 'OK') {
-              $('.vanish-on-sub').slideUp(300, false);
-              $('.form-helper').addClass('m-0').html('<i class="ion-thumbsup" style="color:#2AD624;"></i> Thank you, we look forward to reading your input.');
-            }
+      $.ajax({
+        url: ajaxurl,
+        type: method,
+        data: formData,
+        success: function(data){
+          
+          if (data == 'OK') {
+            $('.vanish-on-sub').slideUp(300, false);
+            $('.form-helper').addClass('m-0').html('<i class="ion-thumbsup" style="color:#2AD624;"></i> Thank you, we look forward to reading your input.');
+          } else {
+            console.log('something is wrong!');
+            $('#review-name, #review').css({
+              "border":"2px solid #ff1818",
+            }).val('');
           }
+        }
       })
-
     })
 })
 

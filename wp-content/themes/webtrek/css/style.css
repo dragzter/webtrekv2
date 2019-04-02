@@ -1939,7 +1939,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   --------------------------------------------------------------*/
 @media (max-width: 991px) {
   .fifty-fifty-section .section-header {
-    padding: 12%; } }
+    padding: 12%; }
+  #input-details .rating {
+    margin: auto;
+    transform: none; } }
 
 @media (max-width: 500px) {
   .fifty-fifty-section .w-img-column .w-tooltip {

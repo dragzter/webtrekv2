@@ -85,6 +85,11 @@ require get_template_directory() . '/inc/ob-css.php';
 require get_template_directory() . '/inc/custom-functions/custom-functions.php';
 
 /**
+ * Ajax Handlers
+ */
+require get_template_directory() . '/contactform/insert-testimonial.php';
+
+/**
  * Custom Post Types
  */
 require get_template_directory() . '/inc/custom-post-types/testimonial.php';
@@ -112,6 +117,7 @@ require get_template_directory() . '/partials/partial-fifty-fifty.php';
 require get_template_directory() . '/partials/fixed-cta.php';
 require get_template_directory() . '/partials/partial-newsletter-signup.php';
 require get_template_directory() . '/partials/partial-add-testimonial.php';
+require get_template_directory() . '/partials/partial-display-testimonials.php';
 
 /**
  * Bootstrap navwalker
@@ -127,6 +133,8 @@ function testimonial_form_short_code() {
 	return get_partial_add_testimonial();
 }
 add_shortcode( 'testimonial-form', 'testimonial_form_short_code' );
+
+
 /**
  * Run Custom css through output buffer
  */
