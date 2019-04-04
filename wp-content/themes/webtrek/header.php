@@ -16,17 +16,11 @@
 <html lang="en">
 <head <?php language_attributes(); ?>>
 	<meta charset="utf-8">
-	<title><?php wp_title(); ?></title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
-	<!-- Favicons -->
-	<link href="img/favicon.png" rel="icon">
-	<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
 	<?php wp_head(); ?>
 
 </head>

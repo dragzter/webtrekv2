@@ -4,8 +4,8 @@ function get_partial_testimonials($mb) {
   $display_section = Webtrek::if_exists($mb, 'show_hide');
   if ($display_section == "yes") :
 
-  $quote_left = get_template_directory_uri() . '/img/quote-sign-left.png';
-  $quote_right = get_template_directory_uri() . '/img/quote-sign-right.png';
+  $quote_left = get_template_directory_uri() . '/assets/img/quote-sign-left.png';
+  $quote_right = get_template_directory_uri() . '/assets/img/quote-sign-right.png';
   $section_title = Webtrek::if_exists($mb, 'testimonial_title', 'h3');
 
   $tc = Webtrek::if_exists($mb, 'testimonial_title_color');

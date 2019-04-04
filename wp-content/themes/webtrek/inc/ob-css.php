@@ -9,6 +9,6 @@ function css_generate() {
 	$results = ob_get_contents();
 	ob_end_clean();
 
-	file_put_contents(get_template_directory() . '/css/clean-css.css', $results);
+	file_put_contents(get_template_directory() . '/assets/css/clean-css.css', $results);
 
 }

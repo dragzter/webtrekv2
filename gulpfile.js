@@ -1,11 +1,17 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const minifyCSS = require('gulp-csso');
+const minify = require('gulp-minify');
 
 var paths = {
   styles: {
-    src: 'scss/**/*.scss',
-    dest: 'wp-content/themes/webtrek/css/'
+    src: 'src/scss/**/*.scss',
+    dest: 'wp-content/themes/webtrek/assets/css/'
   },
+  scripts: {
+    src: 'src/js/**/*.js',
+    dest: 'wp-content/themes/webtrek/assets/js/'
+  }
 };
 
 /*
@@ -14,18 +20,25 @@ var paths = {
 function styles() {
   return gulp.src(paths.styles.src)
     .pipe(sass())
+    .pipe(minifyCSS())
     .pipe(gulp.dest(paths.styles.dest));
 }
 
+function js() {
+  return gulp.src(paths.scripts.src)
+    .pipe(minify())
+    .pipe(gulp.dest(paths.scripts.dest));
+}
+
 function watch() {
-  gulp.watch(paths.styles.src, styles);
+  gulp.watch([paths.styles.src, paths.scripts.src], gulp.parallel(styles, js));
 }
 
 /*
  * You can use CommonJS `exports` module notation to declare tasks
  */
-exports.styles = styles;
-exports.watch = watch;
+//exports.styles = styles;
+//exports.watch = watch;
 
 /*
  * Define default task that can be called by just running `gulp` from cli
