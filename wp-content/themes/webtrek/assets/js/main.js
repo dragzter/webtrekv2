@@ -128,6 +128,21 @@
       });
     }
   
+    $(document).ready(function(){
+      $('.testimonial-card-inner .open-review').click(function(){
+
+
+        if ($(this).parent().next().hasClass('opened')) {
+          $(this).parent().next().removeClass('opened').slideUp('fast');
+          $(this).html('<i class="ion-chevron-down"></i>');
+        } else {
+          $(this).parent().next().addClass('opened').slideDown('fast');
+          $(this).html('<i class="ion-chevron-up"></i>');
+        }
+        
+      });
+    })
+
 
   
     // Smooth scroll for the menu and links with .scrollto classes

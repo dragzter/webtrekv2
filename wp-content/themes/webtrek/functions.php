@@ -123,6 +123,14 @@ require get_template_directory() . '/partials/partial-display-testimonials.php';
  */
 require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
 
+
+/**
+ * Shortcodes
+ * 
+ * Newsletter signup [newsletter]
+ * Testimonial Form [testimonial-form]
+ * 
+ */
 function newsletter_form() {
 	return get_partial_newsletter();
 }
@@ -132,6 +140,11 @@ function testimonial_form_short_code() {
 	return get_partial_add_testimonial();
 }
 add_shortcode( 'testimonial-form', 'testimonial_form_short_code' );
+
+function testimonial_cards_short_code() {
+	return get_partial_display_testimonials();
+}
+add_shortcode( 'testimonial-cards', 'testimonial_cards_short_code' );
 
 
 /**
