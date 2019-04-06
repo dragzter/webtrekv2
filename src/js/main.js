@@ -131,16 +131,33 @@
     $(document).ready(function(){
       $('.testimonial-card-inner .open-review').click(function(){
 
+         if ($('.testimonial-card-content.opened').not($(this).parent().next()).length) {
+           console.log('true')
+          $('.testimonial-card-content.opened').not($(this).parent().next()).removeClass('opened').slideUp('fast');
+          $(".open-review").html('<i class="ion-chevron-down"></i>');
+         }
 
-        if ($(this).parent().next().hasClass('opened')) {
+         if ($(this).parent().next().hasClass('opened')) {
           $(this).parent().next().removeClass('opened').slideUp('fast');
           $(this).html('<i class="ion-chevron-down"></i>');
+          
         } else {
           $(this).parent().next().addClass('opened').slideDown('fast');
           $(this).html('<i class="ion-chevron-up"></i>');
-        }
-        
+        } 
+      
       });
+
+      $(document).click(function(e){
+
+        var content = $(".testimonial-card-content"),
+            currentTarget = e.target;
+        if (!currentTarget.closest("i, .testimonial-card-header, .testimonial-card-content")) {
+            $(".testimonial-card-content.opened").removeClass('opened').slideUp('fast');
+            $(".open-review").html('<i class="ion-chevron-down"></i>');
+        }
+
+      })
     })
 
 
