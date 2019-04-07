@@ -73,6 +73,10 @@ a:focus {
     color: <?php echo $brand; ?> !important;
 }
 
+.testimonial-card .testimonial-rating svg {
+    fill: <?php echo $brand; ?>;
+}
+
 #about .about-col .icon {
     background-color: <?php echo $brand; ?>;
 }
