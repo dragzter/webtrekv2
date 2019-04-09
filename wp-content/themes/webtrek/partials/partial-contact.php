@@ -34,16 +34,16 @@ function get_partial_contact($mb) {
 						<form action="<?php echo htmlspecialchars(get_template_directory_uri() . '/contactform/contactform.php'); ?>" method="post" role="form" class="contactForm">
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+									<input type="text" name="name" class="form-control" id="name" placeholder="Full Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
 									<div class="validation"></div>
 								</div>
 								<div class="form-group col-md-6">
-									<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+									<input type="email" class="form-control" name="email" id="email" placeholder="Valid Email" data-rule="email" data-msg="Please enter a valid email" />
 									<div class="validation"></div>
 								</div>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 4 characters for the subject" />
+								<input type="text" class="form-control" name="subject" id="subject" placeholder="What can we help you with?" data-rule="minlen:4" data-msg="Please enter at least 4 characters for the subject" />
 								<div class="validation"></div>
 							</div>
 							<div class="form-group">

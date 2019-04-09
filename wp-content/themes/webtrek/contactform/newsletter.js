@@ -4,7 +4,7 @@ $(document).ready(function(){
         var action = $(this).attr('action');
         var method = $(this).attr('method');
         var str = $(this).serialize();
-        console.log(action)
+       
     
         $.ajax({
             type: method,
@@ -13,8 +13,7 @@ $(document).ready(function(){
             success: function(data) {
       
                 $('.submit-success').removeClass('d-none');
-                $('.newsletter-form').remove();
-                
+                $('.newsletter-email').val('').attr('placeholder', 'Thanks for subscribing!');
                 setTimeout(function(){
                     $('.submit-success').fadeOut('slow')
                 }, 3000);
