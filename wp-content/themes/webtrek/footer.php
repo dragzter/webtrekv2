@@ -32,8 +32,6 @@
 				    if ( is_active_sidebar( 'sidebar-footer-3' ) ) {
 						dynamic_sidebar( 'sidebar-footer-3' );
 					} 
-					// Include newsletter
-					echo get_partial_newsletter();
 					?>
 
 				</div>

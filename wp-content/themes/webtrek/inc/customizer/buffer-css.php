@@ -15,6 +15,14 @@ a {
     transition: 0.4s;
 }
 
+.brand-color-main {
+    color: <?php echo $brand; ?>;
+}
+
+.brand-color-background {
+    background-color: <?php echo $brand; ?>;
+}
+
 a:hover,
 a:active,
 a:focus {

@@ -44,6 +44,7 @@ function webtrek_scripts() {
 	wp_enqueue_script( 'wt-toushswipe', get_template_directory_uri() . '/assets/lib/touchSwipe/jquery.touchSwipe.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-contactform', get_template_directory_uri() . '/contactform/contactform.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-newsletter', get_template_directory_uri() . '/contactform/newsletter.js', array(), '20151215', true );
+	wp_enqueue_script( 'wt-mailchimp', get_template_directory_uri() . '/contactform/mailchimp-submit.js', array(), '20758764', true );
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'wt-main', get_template_directory_uri() . '/assets/js/main-min.js', array(), filemtime( $script_path ), true );
 	wp_enqueue_script( 'webtrek-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -117,6 +118,7 @@ require get_template_directory() . '/partials/fixed-cta.php';
 require get_template_directory() . '/partials/partial-newsletter-signup.php';
 require get_template_directory() . '/partials/partial-add-testimonial.php';
 require get_template_directory() . '/partials/partial-display-testimonials.php';
+require get_template_directory() . '/partials/partial-mailchimp.php';
 
 /**
  * Bootstrap navwalker
@@ -129,6 +131,7 @@ require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
  * 
  * Newsletter signup [newsletter]
  * Testimonial Form [testimonial-form]
+ * Mailchimp Signup [mailchimp-signup]
  * 
  */
 function newsletter_form() {
@@ -146,6 +149,10 @@ function testimonial_cards_short_code() {
 }
 add_shortcode( 'testimonial-cards', 'testimonial_cards_short_code' );
 
+function mailchimp_signup_form() {
+	return get_partial_mailchimp();
+}
+add_shortcode( 'mailchimp-signup', 'mailchimp_signup_form' );
 
 /**
  * Run Custom css through output buffer

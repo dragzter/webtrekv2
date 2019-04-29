@@ -33,7 +33,7 @@ add_action( 'customize_register', 'webtrek_customize_register' );
  * Remove redundant/default WordPress sections in the Theme Customizer.
  * 
  * This removes unused customizer sections.
- * Conets out or remove this function to re-enabl them.
+ * Comment out or remove this function to re-enable them.
  * 
  */
 function remove_redundant_sections( $wp_customize ) {

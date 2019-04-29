@@ -32,29 +32,23 @@ function brand_customizations($wp_customize) {
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
         'label' => 'Newsletter signup Form Email',
-        'description' => 'Recipient e-mail for the Newsletter form.',
+        'description' => 'Recipient e-mail for the Newsletter form.  This is the basic news letter initiated via shortcode [newsletter]',
         'section' => $section,
         'settings' => $setting,
         'type'     => 'url',
         'priority' => 11
     )));
 
-    $setting = $section.'_show_newsletter';
-    $wp_customize->add_setting($setting, array(
-        'default' => 'yes'
-    ));
+    $setting = $section.'_mailchimp_html';
+    $wp_customize->add_setting($setting);
 
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
-        'label' => 'Show Footer Newsletter Form?',
-        'description' => 'Show the newsletter signup form in footer (appears on the every page where footer is visible)',
+        'label' => 'Mailchimp form HTML',
+        'description' => 'Add in generated html for mailchimp form.  This form can be added in via [mailchimp-signup] shortcode.',
         'section' => $section,
         'settings' => $setting,
-        'type'     => 'select',
-        'choices' => array(
-            'yes'   => 'Yes',
-            'no'    => 'No'
-        ),
-        'priority' => 20
+        'type'     => 'textarea',
+        'priority' => 30
     )));
 
     // ---------------------------------------
@@ -64,7 +58,6 @@ function brand_customizations($wp_customize) {
         'title' => 'Brand Settings',
         'priority' => 2
     ));
-
 
     // ---------------------------------------
 
