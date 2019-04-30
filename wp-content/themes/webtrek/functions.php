@@ -119,6 +119,7 @@ require get_template_directory() . '/partials/partial-newsletter-signup.php';
 require get_template_directory() . '/partials/partial-add-testimonial.php';
 require get_template_directory() . '/partials/partial-display-testimonials.php';
 require get_template_directory() . '/partials/partial-mailchimp.php';
+require get_template_directory() . '/partials/partial-menu.php';
 
 /**
  * Bootstrap navwalker

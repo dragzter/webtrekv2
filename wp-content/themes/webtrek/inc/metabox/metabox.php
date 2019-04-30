@@ -58,6 +58,7 @@ function metabox_section_creator( $meta_boxes ) {
                             'team' => 'Team Section',
                             'testimonials' => 'Testimonials Section',
                             'post_partial' => 'Posts',
+                            'menu' => 'Menu Section',
                         ),
                         'placeholder'     => 'Select an Item',
                     ),
@@ -67,12 +68,119 @@ function metabox_section_creator( $meta_boxes ) {
                      *  For individual content blocks at page level
                      */
 
+                    // Menu Section
+                    array(
+                        'name'          => 'Menu',
+                        'id'            => 'menu',
+                        'type'          => 'group',
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'menu' ),
+                        'group_title'   => 'Settings',
+                        'fields'        => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                            array(
+                                'name'  => 'Title',
+                                'id'    => 'menu_title',
+                                'type'  => 'text',
+                            ),
+                            array(
+                                'name'  => 'Subtitle',
+                                'id'    => 'menu_subtitle',
+                                'type'  => 'textarea',
+                            ),
+                            array(
+                                'name'          => 'Dropdown Menu Navigator',
+                                'id'            => 'menu_navigator',
+                                'type'          => 'group',
+                                'group_title'   => 'Navigation Item {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Link Label',
+                                        'id'    => 'menu_nav_item',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Link Target',
+                                        'id'    => 'menu_nav_item_link',
+                                        'desc'  => 'Menu navigation target ID (css id of menu section), include "#", e.g. #drinks-menu.',
+                                        'type'  => 'text',
+                                    ),
+                                ),
+                            ),
+                            array(
+                                'id'            => 'menu_section',
+                                'type'          => 'group',
+                                'group_title'   => 'Menu Section {#}',
+                                'clone'         => true,
+                                'sort_clone'    => true,
+                                'save_state'    => true,
+                                'collapsible'   => true,
+                                'fields'        => array(
+                                    array(
+                                        'name'  => 'Menu Heading (Title)',
+                                        'id'    => 'menu_heading',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'name'  => 'Menu Subtitle',
+                                        'id'    => 'menu_subtitle',
+                                        'type'  => 'textarea',
+                                    ),
+                                    array(
+                                        'name'  => 'Menu CSS Id',
+                                        'desc'  => 'Target for menu navigator e.g. drinks-menu (do not prefix with #).',
+                                        'id'    => 'menu_subtitle',
+                                        'type'  => 'text',
+                                    ),
+                                    array(
+                                        'id'            => 'menu_item',
+                                        'type'          => 'group',
+                                        'group_title'   => 'Menu Item {#}',
+                                        'clone'         => true,
+                                        'sort_clone'    => true,
+                                        'save_state'    => true,
+                                        'collapsible'   => true,
+                                        'fields'        => array(
+                                            array(
+                                                'name'  => 'Menu Item Name',
+                                                'id'    => 'menu_item_name',
+                                                'type'  => 'text',
+                                            ),
+                                            array(
+                                                'name'  => 'Menu Item Description',
+                                                'id'    => 'menu_item_description',
+                                                'type'  => 'textarea',
+                                            ),                                            
+                                            array(
+                                                'name'  => 'Menu Item Price',
+                                                'id'    => 'menu_item_price',
+                                                'type'  => 'text',
+                                            ),
+                                        ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+
                     // Facts Section
                     array(
                         'name'          => 'Facts Section',
                         'id'            => 'facts',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'facts' ),
                         'group_title'   => 'Settings',
@@ -133,7 +241,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Portfolio Section',
                         'id'            => 'portfolio',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'portfolio' ),
                         'group_title'   => 'Settings',
@@ -230,7 +337,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Skills',
                         'id'            => 'skills',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'skills' ),
                         'group_title'   => 'Settings',
@@ -306,7 +412,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Team Members',
                         'id'            => 'team',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'team' ),
                         'group_title'   => 'Settings',
@@ -388,7 +493,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Contact Form Section',
                         'id'            => 'contact',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'contact' ),
                         'group_title'   => 'Settings',
@@ -436,7 +540,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Accordion Items',
                         'id'            => 'accordion',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'accordion' ),
                         'group_title'   => 'Settings',
@@ -496,7 +599,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Individual Services',
                         'id'            => 'services',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'services' ),
                         'group_title'   => 'Settings',
@@ -561,7 +663,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Testimonials Section',
                         'id'            => 'testimonials',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'testimonials' ),
                         'group_title'   => 'Settings',
@@ -662,7 +763,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'Services to Feature',
                         'id'            => 'featured_services',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'featured_services' ),
                         'group_title'   => 'Settings',
@@ -739,7 +839,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name'          => 'About Section Universal Settings and Cards',
                         'id'            => 'about',
                         'type'          => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'about' ),
                         'group_title'   => 'Settings',
@@ -846,7 +945,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'name' => 'CTA Settings',
                         'id' => 'cta',
                         'type' => 'group',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'cta' ),
                         'group_title'   => 'Settings',
@@ -920,7 +1018,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'id'            => 'client',
                         'type'          => 'group',
                         'group_title'   => 'Settings',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'clients' ),
                         'fields'        => array(
@@ -975,7 +1072,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'id'            => 'fifty',
                         'type'          => 'group',
                         'group_title'   => 'Settings',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'fifty' ),
                         'fields'        => array(
@@ -1059,7 +1155,6 @@ function metabox_section_creator( $meta_boxes ) {
                         'id'            => 'hero',
                         'type'          => 'group',
                         'group_title'   => 'Settings',
-                        'collapsible'   => true,
                         'save_state'    => true,
                         'visible'       => array( 'section_selector', '=', 'hero' ), // Show if Hero selected
                         'fields'        => array(

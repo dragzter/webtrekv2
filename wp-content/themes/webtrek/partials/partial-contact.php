@@ -16,7 +16,7 @@ function get_partial_contact($mb) {
   $e_display = $email ? '' : 'd-none'; ?>
     
     <!-- Contact Section -->
-    <section id="contact" class="wow fadeInUp">
+    <section id="contact">
       <div class="container-fluid">
         <div class="row">
 			<div class="col-12 col-lg-6 align-items-center p-0">
@@ -28,7 +28,7 @@ function get_partial_contact($mb) {
 				echo $subtitle;
 				echo "</div>"; ?>
 
-					<div class="form">
+					<div class="form wow fadeInUp">
 						<div id="sendmessage">Thank you for your submission!<br>We will get back to you shortly.</div>
 						<div id="errormessage"></div>
 						<form action="<?php echo htmlspecialchars(get_template_directory_uri() . '/contactform/contactform.php'); ?>" method="post" role="form" class="contactForm">
