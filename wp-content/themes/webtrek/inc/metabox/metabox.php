@@ -98,9 +98,59 @@ function metabox_section_creator( $meta_boxes ) {
                                 'type'  => 'textarea',
                             ),
                             array(
-                                'name'          => 'Dropdown Menu Navigator',
+                                'name'  => 'Section Background',
+                                'id'    => 'menu_section_background',
+                                'alpha_channel' => true,
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Title Color',
+                                'id'    => 'menu_title_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Subitle Color',
+                                'id'    => 'menu_subtitle_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Menu Item Color (background)',
+                                'id'    => 'menu_item_color',
+                                'alpha_channel' => true,
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Menu Item Title Color ',
+                                'id'    => 'menu_item_title_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Menu Item Description Color ',
+                                'id'    => 'menu_item_description_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Menu Item Border Color',
+                                'id'    => 'menu_item_border_color',
+                                'alpha_channel' => true,
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Navigator Button Color',
+                                'id'    => 'navigator_btn_color',
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'  => 'Navigator Button Background Color',
+                                'id'    => 'navigator_btn_background_color',
+                                'alpha_channel' => true,                                
+                                'type'  => 'color',
+                            ),
+                            array(
+                                'name'          => 'Menu Navigator',
                                 'id'            => 'menu_navigator',
                                 'type'          => 'group',
+                                'desc'          => 'Smooth scroll to different menu secions.',
                                 'group_title'   => 'Navigation Item {#}',
                                 'clone'         => true,
                                 'sort_clone'    => true,
@@ -131,18 +181,18 @@ function metabox_section_creator( $meta_boxes ) {
                                 'fields'        => array(
                                     array(
                                         'name'  => 'Menu Heading (Title)',
-                                        'id'    => 'menu_heading',
+                                        'id'    => 'menu_section_heading',
                                         'type'  => 'text',
                                     ),
                                     array(
                                         'name'  => 'Menu Subtitle',
-                                        'id'    => 'menu_subtitle',
+                                        'id'    => 'menu_section_subtitle',
                                         'type'  => 'textarea',
                                     ),
                                     array(
                                         'name'  => 'Menu CSS Id',
                                         'desc'  => 'Target for menu navigator e.g. drinks-menu (do not prefix with #).',
-                                        'id'    => 'menu_subtitle',
+                                        'id'    => 'menu_css_id',
                                         'type'  => 'text',
                                     ),
                                     array(
