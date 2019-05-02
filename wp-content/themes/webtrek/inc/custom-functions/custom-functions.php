@@ -1,22 +1,14 @@
 <?php
 
 // Header scroll class
-function header_scroll_class() {
-    $header_behavior = get_theme_mod('header_scroll_behavior', 'scroll');
-
-    $solid_on_load = "<script class='header-scroll-function' type='text/javascript'>document.querySelector('#header').classList.add('header-scrolled');</script>";
-	$solid_on_scroll = "<script class='header-scroll-function' type='text/javascript'>window.onscroll = function(){if(document.documentElement.scrollTop >= 100){document.querySelector('#header').classList.add('header-scrolled');}else{document.querySelector('#header').classList.remove('header-scrolled');}}</script>";
-    
-    if ($header_behavior == 'scroll') {
-        echo $solid_on_scroll;
-    } elseif ($header_behavior == 'no_scroll') {
-        echo $solid_on_load;
-    } else {
-        // Do Nothing
-    }
+function header_scroll_class() { ?>
+    <script class='header-scroll-function' type='text/javascript'>
+        window.onload = function () {
+            document.querySelector('#header').classList.add('header-scrolled');
+        }
+    </script>
+<?php
 }
-add_action('wt_after_footer_scripts', 'header_scroll_class');
-
 
 function custom_login_stylesheet() {
 
