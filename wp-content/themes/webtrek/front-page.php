@@ -24,10 +24,6 @@ get_header(); ?>
     Webtrek::render_panels( rwmb_meta('section_control') );
 
 ?>
-</main>
-<div>
-    <?php get_partial_mailchimp(); ?>
-</div>
-<?php 
+</main><?php 
 
 get_footer();

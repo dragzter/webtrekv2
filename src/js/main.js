@@ -130,42 +130,6 @@
 		});
 	}
 
-	// Testimonial cards
-	$(document).ready(function () {
-
-		var chevronUp = '<i class="ion-chevron-up"></i>',
-			chevronDown = '<i class="ion-chevron-down"></i>';
-
-		$('.testimonial-card-header').click(function (e) {
-
-			var nextEl = $(this).next(),
-				openedCard = $('.testimonial-card-content.opened');
-
-			if (openedCard.not(nextEl).length) {
-				openedCard.not(nextEl).removeClass('opened').slideUp('fast');
-				$(".open-review").html(chevronDown);
-			}
-
-			if (nextEl.hasClass('opened')) {
-				nextEl.removeClass('opened').slideUp('fast');
-				$(this).find('.open-review').html(chevronDown);
-			} else {
-				nextEl.addClass('opened').slideDown('fast');
-				$(this).find('.open-review').html(chevronUp);
-			}
-		});
-
-		$(document).click(function (e) {
-			var n = $(this).find('.testimonial-card-header');
-			var target = $(e.target);
-			if (!e.target.closest("i, .testimonial-card-header, .testimonial-card-content")) {
-				$(".testimonial-card-content.opened").removeClass('opened').slideUp('fast');
-				$(".open-review").html(chevronDown);
-			}
-		})
-	});
-
-
 	// Smooth scroll for the menu and links with .scrollto classes
 	$('.nav-menu a, #mobile-nav a, .scrollto').on('click', function () {
 		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -278,40 +242,78 @@
 	});
 
 	// Testimonials carousel (uses the Owl Carousel library)
-	$(".testimonials-carousel").owlCarousel({
-		autoplay: true,
-		dots: true,
-		loop: true,
-		items: 1
-	});
+	if ($('.testimonials-carousel').length) {
+		$(".testimonials-carousel").owlCarousel({
+			autoplay: true,
+			dots: true,
+			loop: true,
+			items: 1
+		});
+	}
 
 	// Testimonial submission form handler
+	// Testimonial cards
 	$(document).ready(function () {
-		$('#input-details').submit(function (e) {
+		
+		if ($('.testimonial-roll').length) {
+			var chevronUp = '<i class="ion-chevron-up"></i>',
+			chevronDown = '<i class="ion-chevron-down"></i>';
 
-			e.preventDefault();
-			var method = $(this).attr('method');
-			var formData = $(this).serialize();
-			var ajaxurl = 'https://gowebtrek.com/wp-admin/admin-ajax.php'
+			$('.testimonial-card-header').click(function (e) {
 
-			$.ajax({
-				url: ajaxurl,
-				type: method,
-				data: formData,
-				success: function (data) {
+				var nextEl = $(this).next(),
+					openedCard = $('.testimonial-card-content.opened');
 
-					if (data == 'OK') {
-						$('.vanish-on-sub').slideUp(300, false);
-						$('.form-helper').addClass('m-0').html('<i class="ion-thumbsup" style="color:#2AD624;"></i> Thank you, we look forward to reading your input.');
-					} else {
-						console.log('something is wrong!');
-						$('#review-name, #review').css({
-							"border": "2px solid #ff1818",
-						}).val('');
-					}
+				if (openedCard.not(nextEl).length) {
+					openedCard.not(nextEl).removeClass('opened').slideUp('fast');
+					$(".open-review").html(chevronDown);
+				}
+
+				if (nextEl.hasClass('opened')) {
+					nextEl.removeClass('opened').slideUp('fast');
+					$(this).find('.open-review').html(chevronDown);
+				} else {
+					nextEl.addClass('opened').slideDown('fast');
+					$(this).find('.open-review').html(chevronUp);
+				}
+			});
+
+			$(document).click(function (e) {
+				var n = $(this).find('.testimonial-card-header');
+				var target = $(e.target);
+				if (!e.target.closest("i, .testimonial-card-header, .testimonial-card-content")) {
+					$(".testimonial-card-content.opened").removeClass('opened').slideUp('fast');
+					$(".open-review").html(chevronDown);
 				}
 			})
-		})
-	})
+		}
 
+		if ($('#input-details').length) {
+			$('#input-details').submit(function (e) {
+
+				e.preventDefault();
+				var method = $(this).attr('method');
+				var formData = $(this).serialize();
+				var ajaxurl = 'https://gowebtrek.com/wp-admin/admin-ajax.php'
+	
+				$.ajax({
+					url: ajaxurl,
+					type: method,
+					data: formData,
+					success: function (data) {
+	
+						if (data == 'OK') {
+							$('.vanish-on-sub').slideUp(300, false);
+							$('.form-helper').addClass('m-0').html('<i class="ion-thumbsup" style="color:#2AD624;"></i> Thank you, we look forward to reading your input.');
+						} else {
+							console.log('something is wrong!');
+							$('#review-name, #review').css({
+								"border": "2px solid #ff1818",
+							}).val('');
+						}
+					}
+				})
+			})
+		}
+	})
 })(jQuery);

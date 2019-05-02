@@ -50,6 +50,7 @@
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 <div id="preloader"></div><?php 
-wp_footer(); ?>
+wp_footer();
+do_action('wt_after_footer_scripts') ?>
 </body>
 </html>
