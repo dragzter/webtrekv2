@@ -379,7 +379,7 @@ function section_colors_customizations($wp_customize) {
     $wp_customize->add_setting($setting);
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
-        'label'     => 'Marker coordinates',
+        'label'     => 'Main marker coordinates',
         'description' => 'Main marker center coordinates. Use same value as map center to place marker at center of map.',
         'section'   => $section,
         'settings'  => $setting,
@@ -390,7 +390,7 @@ function section_colors_customizations($wp_customize) {
     $wp_customize->add_setting($setting);
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
-        'label'     => 'Map marker size (px)',
+        'label'     => 'Main map marker size (px)',
         'description' => 'Use square PNG for best results.',
         'section'   => $section,
         'settings'  => $setting,
@@ -417,11 +417,11 @@ function section_colors_customizations($wp_customize) {
 
     $setting = $section.'_marker_tooltip';
     $wp_customize->add_setting($setting, array(
-        'default' => 'Tooltip text Here'
+        'default' => 'Popup text Here'
     ));
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
-        'label'     => 'Main marker tooltip',
+        'label'     => 'Main marker popup text',
         'description' => 'Appears on marker mouseover, basic info text',
         'section'   => $section,
         'settings'  => $setting,
@@ -435,7 +435,7 @@ function section_colors_customizations($wp_customize) {
     ));
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
-        'label'     => 'Map Zoom Level',
+        'label'     => 'Map zoom Level',
         'description' => '4 -> 18 (maximum zoom)',
         'section'   => $section,
         'settings'  => $setting,
@@ -488,8 +488,8 @@ function section_colors_customizations($wp_customize) {
     $wp_customize->add_setting($setting);
     
     $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
-        'label'     => 'Map Marker Size for additional markers (px)',
-        'description' => 'Use square PNG for best results.',
+        'label'     => 'Additional markers size (px)',
+        'description' => 'Distinguish these secondary markers by making them a different size.  All sizes are meant for square PNG',
         'section'   => $section,
         'settings'  => $setting,
         'priority'  => 65,
