@@ -59,6 +59,7 @@ function metabox_section_creator( $meta_boxes ) {
                             'testimonials' => 'Testimonials Section',
                             'post_partial' => 'Posts',
                             'menu' => 'Menu Section',
+                            'geomap' => 'Map Section',
                         ),
                         'placeholder'     => 'Select an Item',
                     ),
@@ -67,6 +68,28 @@ function metabox_section_creator( $meta_boxes ) {
                      *  Section Arrays 
                      *  For individual content blocks at page level
                      */
+
+                    // Geomap Section
+                    array(
+                        'name'          => 'Map Section',
+                        'id'            => 'geomap',
+                        'type'          => 'group',
+                        'save_state'    => true,
+                        'visible'       => array( 'section_selector', '=', 'geomap' ),
+                        'group_title'   => 'Settings',
+                        'fields'         => array(
+                            array(
+                                'name'  => 'Show Section?',
+                                'id'    => 'show_hide',
+                                'type'  => 'radio',
+                                'options' => array(
+                                    'yes'   => 'Yes',
+                                    'no'    => 'No'
+                                ),
+                                'std' => 'yes',
+                            ),
+                        ),
+                    ),
 
                     // Menu Section
                     array(

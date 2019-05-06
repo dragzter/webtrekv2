@@ -16,7 +16,7 @@
 <html lang="en">
 <head <?php language_attributes(); ?>>
 
-  <?php do_action('wt_after_opening_head_tag') ?>
+    <?php do_action('wt_after_opening_head_tag') ?>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta name="description" content="<?php bloginfo('description'); ?>" />

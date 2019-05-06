@@ -49,7 +49,6 @@ function webtrek_scripts() {
 	wp_enqueue_script( 'wt-main', get_template_directory_uri() . '/assets/js/main-min.js', array(), filemtime( $script_path ), true );
 	wp_enqueue_script( 'webtrek-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-
 	$header_behavior = get_theme_mod('header_scroll_behavior', 'scroll');
 	
     if ($header_behavior == 'scroll') {
@@ -94,6 +93,7 @@ require get_template_directory() . '/inc/custom-functions/webtrek.php';
 require get_template_directory() . '/inc/custom-widgets.php';
 require get_template_directory() . '/inc/ob-css.php';
 require get_template_directory() . '/inc/custom-functions/custom-functions.php';
+require get_template_directory() . '/inc/custom-functions/geomap.php';
 
 /**
  * Ajax Handlers
@@ -131,6 +131,7 @@ require get_template_directory() . '/partials/partial-add-testimonial.php';
 require get_template_directory() . '/partials/partial-display-testimonials.php';
 require get_template_directory() . '/partials/partial-mailchimp.php';
 require get_template_directory() . '/partials/partial-menu.php';
+require get_template_directory() . '/partials/partial-geomap.php';
 
 /**
  * Bootstrap navwalker

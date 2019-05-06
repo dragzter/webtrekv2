@@ -345,6 +345,186 @@ function section_colors_customizations($wp_customize) {
         )
     )));
 
+    //  Map Settings
+    $section = 'geomap';
+    $wp_customize->add_section($section, array(
+        'title' => 'Map Settings',
+        'priority' => 110,
+        'panel' => $panel
+    ));
+
+    $setting = $section.'_marker';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Marker icon',
+        'description' => 'Use square PNG for best results.',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 10
+    )));
+
+    $setting = $section.'_center';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Map center coordinates',
+        'description' => 'The center point of map. ( Example: 51.5, -0.09 ), Latitude and Longitude, separate by single comma. Visit geojson.io to get exact coordinates.  If map does not work, try reversing the values.',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 20
+    )));
+
+    $setting = $section.'_marker_center';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Marker coordinates',
+        'description' => 'Main marker center coordinates. Use same value as map center to place marker at center of map.',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 30
+    )));
+
+    $setting = $section.'_marker_size';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Map marker size (px)',
+        'description' => 'Use square PNG for best results.',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 40,
+        'type'      => 'select',
+        'choices'   => array(
+            'default'    => 'Default',
+            '40,40'    => '2x Small (40x40 pixels)',
+            '60,60'    => '1x Small (60x60 pixels)',
+            '70,70'    => 'Small (70x70 pixels)',
+            '80,80'    => 'Medium (80x80 pixels)',
+            '90,90'    => 'Large (90x90 pixels)',
+            '100,100'    => '1X Large (100x100 pixels)',
+            '110,110'    => '2X Large (110x110 pixels)',
+            '120,120'    => '3X Large (120x120 pixels)',
+            '130,130'    => '4X Large (130x130 pixels)',
+            '140,140'    => '5X Large (140x140 pixels)',
+            '150,150'    => '6X Large (150x150 pixels)',
+            '160,160'    => '7X Large (160x160 pixels)',
+            '170,170'    => '8X Large (170x170 pixels)',
+            '180,180'    => '9X Large (180x180 pixels)',
+        )
+    )));
+
+    $setting = $section.'_marker_tooltip';
+    $wp_customize->add_setting($setting, array(
+        'default' => 'Tooltip text Here'
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Main marker tooltip',
+        'description' => 'Appears on marker mouseover, basic info text',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 45,
+        'type'      => 'textarea'
+    )));
+
+    $setting = $section.'_zoom';
+    $wp_customize->add_setting($setting, array(
+        'default' => '10'
+    ));
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Map Zoom Level',
+        'description' => '4 -> 18 (maximum zoom)',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 50,
+        'type'      => 'select',
+        'choices'   => array(
+            '4'    => 'Level 4',
+            '5'    => 'Level 5',
+            '6'    => 'Level 6',
+            '7'    => 'Level 7',
+            '8'    => 'Level 8',
+            '9'    => 'Level 9',
+            '10'    => 'Level 10 (Recommended)',
+            '11'    => 'Level 11',
+            '12'    => 'Level 12',
+            '13'    => 'Level 13',
+            '14'    => 'Level 14',
+            '15'    => 'Level 15',
+            '16'    => 'Level 16',
+            '17'    => 'Level 17',
+            '18'    => 'Level 18',
+        )
+    )));
+
+    $setting = $section.'_additional_markers';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Additional map markers',
+        'description' => 'Coordinate sets separated by :: ( double colon), every set of coordinates will produce a marker on the map. Example: 51.5,-0.09::50.5,-0.09::71.75,-56.24',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 60,
+        'type'      => 'textarea'
+    )));
+
+    $setting = $section.'_additional_markers_tooltips';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Popups for additional map markers',
+        'description' => 'First popup text gets matched to first addidional marker set, second to second, etc.  Separate by :: (double colon).',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 64,
+        'type'      => 'textarea'
+    )));
+
+    $setting = $section.'_alt_marker_size';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Map Marker Size for additional markers (px)',
+        'description' => 'Use square PNG for best results.',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 65,
+        'type'      => 'select',
+        'choices'   => array(
+            'default'    => 'Default',
+            '40,40'    => '2x Small (40x40 pixels)',
+            '60,60'    => '1x Small (60x60 pixels)',
+            '70,70'    => 'Small (70x70 pixels)',
+            '80,80'    => 'Medium (80x80 pixels)',
+            '90,90'    => 'Large (90x90 pixels)',
+            '100,100'    => '1X Large (100x100 pixels)',
+            '110,110'    => '2X Large (110x110 pixels)',
+            '120,120'    => '3X Large (120x120 pixels)',
+            '130,130'    => '4X Large (130x130 pixels)',
+            '140,140'    => '5X Large (140x140 pixels)',
+            '150,150'    => '6X Large (150x150 pixels)',
+            '160,160'    => '7X Large (160x160 pixels)',
+            '170,170'    => '8X Large (170x170 pixels)',
+            '180,180'    => '9X Large (180x180 pixels)',
+        )
+    )));
+
+    $setting = $section.'_additional_icon';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Icon for Additional markers',
+        'description' => 'If blank, this will default to main marker Icon, is main marker icon is not set it will default to base icon.',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 70
+    )));
+
+
 
 }
 

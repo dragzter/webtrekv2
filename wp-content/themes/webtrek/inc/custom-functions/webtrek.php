@@ -110,6 +110,9 @@ class Webtrek {
             } elseif ($value['section_selector'] == 'menu') {
                 $rendered[] = get_partial_menu($value['menu']);
             
+            } elseif ($value['section_selector'] == 'geomap') {
+                $rendered[] = get_partial_geomap($value['geomap']);
+            
             } else {
                 return;
             }  
