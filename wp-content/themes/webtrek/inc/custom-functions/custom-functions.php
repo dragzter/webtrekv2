@@ -44,7 +44,7 @@ function generate_fonts() {
 	
 	$css = '<style id="font-custom" type="text/css">';
 	$css .= 'body {font-family:'.$body_font.';}';
-	$css .= 'p {font-family:'.$p_font.';}';
+	$css .= 'p, span, div, td {font-family:'.$p_font.';}';
 	$css .= 'a {font-family:'.$a_font.';}';
 	$css .= 'h1 {font-family:'.$h1_font.';}';
 	$css .= 'h2 {font-family:'.$h2_font.';}';

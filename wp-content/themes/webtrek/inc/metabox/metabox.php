@@ -196,7 +196,7 @@ function metabox_section_creator( $meta_boxes ) {
                             array(
                                 'id'            => 'menu_section',
                                 'type'          => 'group',
-                                'group_title'   => 'Menu Section {#}',
+                                'group_title'   => array( 'field' => 'menu_section_heading' ),
                                 'clone'         => true,
                                 'sort_clone'    => true,
                                 'save_state'    => true,
@@ -221,7 +221,7 @@ function metabox_section_creator( $meta_boxes ) {
                                     array(
                                         'id'            => 'menu_item',
                                         'type'          => 'group',
-                                        'group_title'   => 'Menu Item {#}',
+                                        'group_title'   => array( 'field' => 'menu_item_name' ),
                                         'clone'         => true,
                                         'sort_clone'    => true,
                                         'save_state'    => true,

@@ -90,13 +90,12 @@ function get_partial_menu($mb) {
                 $css_id = isset($menu['menu_css_id']) ? $menu['menu_css_id'] : ''; ?>
 
                 <div id="<?php echo $css_id; ?>" class="menu-row">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="menu-section-heading">
-                                <h3><?php echo $menu_section_title; ?></h3>
-                                <?php echo $menu_section_subtitle; ?>
-                            </div>
-                        </div><?php
+                    <div class="menu-section-heading">
+                        <h3><?php echo $menu_section_title; ?></h3>
+                        <?php echo $menu_section_subtitle; ?>
+                    </div>
+
+                    <div class="menu-layout-wrapper"><?php
 
                         foreach($menu['menu_item'] as $item) {
 
@@ -105,7 +104,7 @@ function get_partial_menu($mb) {
                             $item_price = isset($item['menu_item_price']) ? $item['menu_item_price'] : '$10.00';
 
 
-                            $menu_item = '<div class="col-md-6 menu-item-outer">';
+                            $menu_item = '<div class="menu-item-outer">';
                             $menu_item .=   '<div class="menu-item-single">';
                             $menu_item .=       '<div class="menu-item-single-head">';
                             $menu_item .=           '<h3>'.$item_title.'</h3>';
