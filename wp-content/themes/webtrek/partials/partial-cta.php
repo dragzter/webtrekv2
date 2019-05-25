@@ -15,7 +15,7 @@ function get_partial_cta($mb) {
   $blank = (isset($mb['cta_blank'])) ? 'target="_blank"' : ''; 
   
   if (isset($background_image)) {
-    $bci = 'style="background:url('.$background_image.') fixed center center"';
+    $bci = 'style="background:url('.$background_image.') center center no-repeat;background-size: cover;"';
   }
 
   if (isset($overlay_style)) {

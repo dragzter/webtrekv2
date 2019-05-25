@@ -42,24 +42,24 @@ function metabox_section_creator( $meta_boxes ) {
                         'desc' => 'Select section from dropdown, settings vary based on section selected.',
                         'type' => 'select',
                         'options' => array(
-                            'cta' => 'CTA Section',
-                            'accordion' => 'Accordion Section',
-                            'content' => 'WP Content Section',
-                            'clients' => 'Clients Section',
-                            'about' => 'About Section',
-                            'fifty' => '50/50 Section',
-                            'contact' => 'Contact Section',
-                            'facts' => 'Facts Section',
-                            'featured_services' => 'Featured Services Section',
-                            'services' => 'Services Section',
-                            'hero' => 'Hero Section',
-                            'portfolio' => 'Portfolio Section',
-                            'skills' => 'Skills Section',
-                            'team' => 'Team Section',
-                            'testimonials' => 'Testimonials Section',
-                            'post_partial' => 'Posts',
-                            'menu' => 'Menu Section',
-                            'geomap' => 'Map Section',
+                            'cta' => 'CTA Section',                             // 1
+                            'accordion' => 'Accordion Section',                 // 2
+                            'content' => 'WP Content Section',                  // 3
+                            'clients' => 'Clients Section',                     // 4
+                            'about' => 'About Section',                         // 5
+                            'fifty' => '50/50 Section',                         // 6
+                            'contact' => 'Contact Section',                     // 7
+                            //'facts' => 'Facts Section', // Deprecated
+                            'featured_services' => 'Featured Services Section', // 8               
+                            'services' => 'Services Section',                   // 9 
+                            'hero' => 'Hero Section',                           // 10
+                            'portfolio' => 'Portfolio Section',                 // 11     
+                            'skills' => 'Skills Section',                       // 12 
+                            'team' => 'Team Section',                           // 13
+                            'testimonials' => 'Testimonials Section',           // 14
+                            'post_partial' => 'Posts',                          // 15
+                            'menu' => 'Menu Section',                           // 16
+                            'geomap' => 'Map Section',                          // 17
                         ),
                         'placeholder'     => 'Select an Item',
                     ),
@@ -250,64 +250,64 @@ function metabox_section_creator( $meta_boxes ) {
                     ),
 
                     // Facts Section
-                    array(
-                        'name'          => 'Facts Section',
-                        'id'            => 'facts',
-                        'type'          => 'group',
-                        'save_state'    => true,
-                        'visible'       => array( 'section_selector', '=', 'facts' ),
-                        'group_title'   => 'Settings',
-                        'fields'        => array(
-                            array(
-                                'name'  => 'Show Section?',
-                                'id'    => 'show_hide',
-                                'type'  => 'radio',
-                                'options' => array(
-                                    'yes'   => 'Yes',
-                                    'no'    => 'No'
-                                ),
-                                'std' => 'yes',
-                            ),
-                            array(
-                                'name'  => 'Title',
-                                'id'    => 'fact_title',
-                                'type'  => 'text',
-                            ),
-                            array(
-                                'name'  => 'Subtitle',
-                                'id'    => 'fact_subtitle',
-                                'type'  => 'text',
-                            ),
-                            array(
-                                'name'  => 'Section Image',
-                                'id'    => 'fact_img',
-                                'type'  => 'file_input',
-                            ),
-                            array(
-                                'id'            => 'fact_counter',
-                                'type'          => 'group',
-                                'group_title'   => 'Counter Group {#}',
-                                'clone'         => true,
-                                'sort_clone'    => true,
-                                'save_state'    => true,
-                                'collapsible'   => true,
-                                'fields'        => array(
-                                    array(
-                                        'name'  => 'Label',
-                                        'desc'  => 'Label for the counter',
-                                        'id'    => 'fact_label',
-                                        'type'  => 'text',
-                                    ),
-                                    array(
-                                        'name'  => 'Number to count up to',
-                                        'desc' => 'This is what the counter script will count up to.  The count starts at 0 and ends at this value.',
-                                        'id'    => 'fact_count_to',
-                                        'type'  => 'text',
-                                    ),
-                                ),
-                            ),
-                        ),
-                    ),
+                    // array(
+                    //     'name'          => 'Facts Section',
+                    //     'id'            => 'facts',
+                    //     'type'          => 'group',
+                    //     'save_state'    => true,
+                    //     'visible'       => array( 'section_selector', '=', 'facts' ),
+                    //     'group_title'   => 'Settings',
+                    //     'fields'        => array(
+                    //         array(
+                    //             'name'  => 'Show Section?',
+                    //             'id'    => 'show_hide',
+                    //             'type'  => 'radio',
+                    //             'options' => array(
+                    //                 'yes'   => 'Yes',
+                    //                 'no'    => 'No'
+                    //             ),
+                    //             'std' => 'yes',
+                    //         ),
+                    //         array(
+                    //             'name'  => 'Title',
+                    //             'id'    => 'fact_title',
+                    //             'type'  => 'text',
+                    //         ),
+                    //         array(
+                    //             'name'  => 'Subtitle',
+                    //             'id'    => 'fact_subtitle',
+                    //             'type'  => 'text',
+                    //         ),
+                    //         array(
+                    //             'name'  => 'Section Image',
+                    //             'id'    => 'fact_img',
+                    //             'type'  => 'file_input',
+                    //         ),
+                    //         array(
+                    //             'id'            => 'fact_counter',
+                    //             'type'          => 'group',
+                    //             'group_title'   => 'Counter Group {#}',
+                    //             'clone'         => true,
+                    //             'sort_clone'    => true,
+                    //             'save_state'    => true,
+                    //             'collapsible'   => true,
+                    //             'fields'        => array(
+                    //                 array(
+                    //                     'name'  => 'Label',
+                    //                     'desc'  => 'Label for the counter',
+                    //                     'id'    => 'fact_label',
+                    //                     'type'  => 'text',
+                    //                 ),
+                    //                 array(
+                    //                     'name'  => 'Number to count up to',
+                    //                     'desc' => 'This is what the counter script will count up to.  The count starts at 0 and ends at this value.',
+                    //                     'id'    => 'fact_count_to',
+                    //                     'type'  => 'text',
+                    //                 ),
+                    //             ),
+                    //         ),
+                    //     ),
+                    // ),
 
                     // Portfolio Section
                     array(
