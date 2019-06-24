@@ -1,5 +1,12 @@
   <!-- Header -->
-  <header id="header">
+  <?php  
+    if (get_theme_mod('header_scroll_behavior') == 'no_scroll') {
+      $box_shadow = 'style="box-shadow: 0 0 23px rgba(0,0,0,0.34);"';
+    } else {
+      $box_shadow = 'class="change_onscroll"';
+    }
+  ?>
+  <header id="header" <?php echo $box_shadow ?>>
     <div class="container-fluid">
     <div class="row align-items-center appender">
       <div class="col-3">

@@ -32,14 +32,10 @@ function get_partial_menu($mb) {
     $css .=     'background:'.$section_bcgnd_color.';';
     $css .= '}';
     $css .= '.menu-item-single {';
-    $css .=     'border:1px solid '.$menu_item_border_color.';';
     $css .=     'background:'.$menu_card_color.';';
     $css .= '}';
     $css .= '.menu-item-single-head h3, .menu-item-single-head .menu-item-price {';
     $css .=     'color:'.$menu_item_title_color.';';
-    $css .= '}';
-    $css .= '.menu-item-single-head {';
-    $css .=     'border-bottom:2px solid '.$menu_item_border_color.';';
     $css .= '}';
     $css .= 'p.menu-item-desc {';
     $css .=     'color:'.$menu_item_desc_color.';';
@@ -60,30 +56,38 @@ function get_partial_menu($mb) {
     ?>
     
     <section id="wt-menu-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12"><?php 
-                    $output = '<div class="section-header">';
-                    $output .= $title;
-                    $output .= $subtitle;
-                    $output .= '</div>';
-                    echo $output; ?>
-                </div>
-            </div><?php
+        <div class="container"><?php 
+                    
+            $output = '<div class="row">';
+            $output .= '<div class="col-md-12">';
+            $output .= '<div class="section-header">';
+            $output .= $title;
+            $output .= $subtitle;
+            $output .= '</div>';
+            $output .= '</div>';
+            $output .= '</div>';
 
-            $navigator = '<div class="row">';
-            $navigator .= '<div class="col-md-12">';
-            $navigator .= '<div class="menu-section-navigator">';
-            foreach($mb['menu_navigator'] as $nav) {
-                $navigator .= '<a class="menu-nav-link scrollto" href="'.$nav['menu_nav_item_link'].'">'.$nav['menu_nav_item'].'</a>';
+            if ($title || $subtitle) {
+                echo $output; 
             }
-            $navigator .= '</div>';
-            $navigator .= '</div>';
-            $navigator .= '</div>';
-            echo $navigator; 
+                    
+            foreach ($mb['menu_navigator'] as $show) {
+                if ($show['menu_nav_item']) {
+                    $navigator = '<div class="row">';
+                    $navigator .= '<div class="col-md-12">';
+                    $navigator .= '<div class="menu-section-navigator">';
+                    foreach($mb['menu_navigator'] as $nav) {
+                        $navigator .= '<a class="menu-nav-link scrollto" href="'.$nav['menu_nav_item_link'].'">'.$nav['menu_nav_item'].'</a>';
+                    }
+                    $navigator .= '</div>';
+                    $navigator .= '</div>';
+                    $navigator .= '</div>';
+                    
+                    echo $navigator; 
+                }
+            }
 
             foreach($mb['menu_section'] as $menu) { 
-                
                 $menu_section_title = isset($menu['menu_section_heading']) ? $menu['menu_section_heading'] : 'Section heading';
                 $menu_section_subtitle = isset($menu['menu_section_subtitle']) ? '<p>'.$menu['menu_section_subtitle'].'</p>' : '';
 
@@ -99,21 +103,31 @@ function get_partial_menu($mb) {
 
                         foreach($menu['menu_item'] as $item) {
 
-                            $item_title = isset($item['menu_item_name']) ? $item['menu_item_name'] : 'Item Name';
-                            $item_desc = isset($item['menu_item_description']) ? $item['menu_item_description'] : 'Item Description';
+                            $item_title = isset($item['menu_item_name']) ? $item['menu_item_name'] : null;
+                            $item_desc = isset($item['menu_item_description']) ? $item['menu_item_description'] : null;
                             $item_price = isset($item['menu_item_price']) ? $item['menu_item_price'] : '$10.00';
 
+                            if ($item_desc) {
+                                $has_description = 'style="border-bottom: 2px solid '.$menu_item_border_color.';"';
+                            } else {
+                                $has_description = '';
+                            }
 
-                            $menu_item = '<div class="menu-item-outer">';
-                            $menu_item .=   '<div class="menu-item-single">';
-                            $menu_item .=       '<div class="menu-item-single-head">';
-                            $menu_item .=           '<h3>'.$item_title.'</h3>';
-                            $menu_item .=           '<p class="menu-item-price">'.$item_price.'</p>';
-                            $menu_item .=       '</div>';
-                            $menu_item .=       '<p class="menu-item-desc">'.$item_desc.'</p>';
-                            $menu_item .=   '</div>';
-                            $menu_item .= '</div>';
-                            echo $menu_item;
+                            if ($item_title) {
+                                $menu_item = '<div class="menu-item-outer">';
+                                $menu_item .=   '<div class="menu-item-single">';
+                                $menu_item .=       '<div class="menu-item-single-head" '.$has_description.'>';
+                                $menu_item .=           '<h3>'.$item_title.'</h3>';
+                                $menu_item .=           '<p class="menu-item-price">'.$item_price.'</p>';
+                                $menu_item .=       '</div>';
+                                if ($item_desc) {
+                                    $menu_item .=       '<p class="menu-item-desc">'.$item_desc.'</p>';
+                                }
+                                $menu_item .=   '</div>';
+                                $menu_item .= '</div>';
+                                echo $menu_item;
+                            }
+                            
 
                         } ?>
 

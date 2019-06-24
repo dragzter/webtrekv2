@@ -40,6 +40,8 @@ class Webtrek {
         if ( $mb !== null ) {
             if ( array_key_exists($key, $mb) && $mb[$key] !== '') { 
                 return "{$a}{$mb[$key]}{$b}";
+            } else {
+                return null;
             }
         }
     }
