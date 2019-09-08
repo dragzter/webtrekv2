@@ -4,6 +4,9 @@
     $b_footer = (get_theme_mod('brand_bottom_footer_color')) ? get_theme_mod('brand_bottom_footer_color') : '#111';
     $t_footer = (get_theme_mod('brand_top_footer_color')) ? get_theme_mod('brand_top_footer_color') : '#111';
 
+    $nav_link_color = (get_theme_mod('header_nav_color')) ? get_theme_mod('header_nav_color') : '#fff';
+    $nav_link_color_hover = (get_theme_mod('header_nav_color_hover')) ? get_theme_mod('header_nav_color_hover') : $brand;
+
 ?>
 
 /**
@@ -174,6 +177,11 @@ a:focus {
     border-left: 4px solid <?php echo $brand; ?>;
 }
 
+#footer .footer-top h4::before {
+    right: 0;
+    background: <?php echo $brand; ?>;
+}
+
 #footer .footer-top .social-links a:hover {
     background: <?php echo $brand; ?> !important;
 }
@@ -201,6 +209,14 @@ a:focus {
     padding: 20px 0;
     height: auto;
     transition: all 0.5s;
+}
+
+#header .nav-menu a {
+    color: <?php echo $nav_link_color ?>;
+}
+
+#header .nav-menu a:hover {
+    color: <?php echo $nav_link_color_hover ?>;
 }
 
 /**

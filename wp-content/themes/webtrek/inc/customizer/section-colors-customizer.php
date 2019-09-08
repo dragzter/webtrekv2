@@ -323,7 +323,7 @@ function section_colors_customizations($wp_customize) {
     // Header behavior
     $section = 'header';
     $wp_customize->add_section($section, array(
-        'title' => 'Header & Navigation',
+        'title' => 'Navigation',
         'priority' => 100,
         'panel' => $panel
     ));
@@ -344,6 +344,28 @@ function section_colors_customizations($wp_customize) {
             'no_scroll' => 'Solid Color'
         )
     )));
+
+    $setting = $section.'_nav_color';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Header nav color',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 20
+    )));
+
+    $setting = $section.'_nav_color_hover';
+    $wp_customize->add_setting($setting);
+    
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting.'_control', array(
+        'label'     => 'Header nav color on hover',
+        'section'   => $section,
+        'settings'  => $setting,
+        'priority'  => 30
+    )));
+
+
 
     //  Map Settings
     $section = 'geomap';

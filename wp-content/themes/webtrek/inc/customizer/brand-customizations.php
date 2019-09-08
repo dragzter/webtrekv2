@@ -7,7 +7,7 @@ function brand_customizations($wp_customize) {
     
     $section = 'contact_settings';
     $wp_customize->add_section($section, array(
-        'title' => 'Contact Forms Settings',
+        'title' => 'Contact Settings',
         'priority' => 0
     ));
 
@@ -56,7 +56,8 @@ function brand_customizations($wp_customize) {
     $section = 'brand';
     $wp_customize->add_section($section, array(
         'title' => 'Brand Settings',
-        'priority' => 2
+        'priority' => 2,
+        'panel' => 'section_panel'
     ));
 
     // ---------------------------------------
